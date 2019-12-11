@@ -165,3 +165,4 @@ set_location_assignment PIN_AJ22 -to VGA_SYNC_N
 set_location_assignment PIN_AK18 -to VGA_VS
 set_location_assignment PIN_AK19 -to VGA_HS
 set_location_assignment PIN_AK22 -to VGA_BLANK_N
+set_global_assignment -name VERILOG_FILE regs.v

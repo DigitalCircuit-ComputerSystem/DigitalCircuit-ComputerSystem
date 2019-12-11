@@ -1,0 +1,4 @@
+module regs(  // chenlu: 寄存器模块，输入写数据
+
+
+);  
