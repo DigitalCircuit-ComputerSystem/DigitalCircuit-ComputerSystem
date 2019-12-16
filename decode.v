@@ -201,7 +201,7 @@ always @ (*) begin
 			reg2_read<=DISABLE;
 			valid<=VALID;
 			imm=imm_sext;   //符号扩展
-			wraddr<=rt;   //不是默认的rd了
+			wraddr<=rt;   //不是默认的rd
 		end
 		EXE_ADDIU:begin
 			aluop<=ADDU;
@@ -250,7 +250,7 @@ always @ (*) begin
 		end
 		EXE_LW:begin
 		//不确定
-			aluop<=LW;    //rd=rt<<rs 算数
+			aluop<=LW;    //$1=memory[$2+10]
 			wreg<=ENABLE; 
 			reg1_read<=ENABLE; 
 			reg2_read<=DISABLE;
@@ -260,7 +260,7 @@ always @ (*) begin
 		end
 		EXE_SW:begin
 		//不确定
-			aluop<=SW;    //rd=rt<<rs 算数
+			aluop<=SW;    //memory[$2+10]=$1
 			wreg<=DISABLE; 
 			reg1_read<=ENABLE; 
 			reg2_read<=ENABLE;
