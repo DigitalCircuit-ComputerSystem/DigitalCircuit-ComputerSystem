@@ -3,7 +3,7 @@ module excute(  			//chenlu: 执行模块
 	input [31:0] src1_i;   //原操作数
 	input [31:0] src2_i;   
 	input [31:0] dest_r;  //目的操作数
-	input [31:0] ex_op_i;   //执行的指令
+	input [6:0] ex_op_i;   //执行的指令
 	input [31:0] now_pc;
 	input [4:0] write_r_i; 
 	input rst;

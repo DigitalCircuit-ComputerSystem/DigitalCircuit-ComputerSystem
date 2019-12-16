@@ -1,2 +1,0 @@
-module fetch();    //chenlu: 取指令，
-intput [31:0] intr;    //取到的指令
