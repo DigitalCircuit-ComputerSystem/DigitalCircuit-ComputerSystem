@@ -1,0 +1,116 @@
+module decode(
+	input [31:0] ins,  //指令码
+	input clk,
+	output wr,
+	output aluop,  //要写个alu
+	
+wire [5:0] opcode=inst[31:26];    
+wire [4:0] rs=inst[25:21];    //R-type&I-type
+wire [4:0] rt=inst[20:16];    //R-type&I-type
+wire [4:0] rd=inst[15:11];    //R-type
+wire [4:0] shamt=inst[10:6];  //R-type
+wire [5:0] funct=inst[5:0];   //R-type
+wire [15:0] Iimm=inst[15:0];  //I-type
+wire [25:0] Jimm=inst[25:0];  //J-type
+
+parameter EXE_SPECIAL=6'b000000;   //R-type到时候写到宏里
+parameter EXE_ADD=6'b100000,
+			 EXE_ADDU=6'b100001,
+			 EXE_SUB=6'b100010,
+			 EXE_SUBU=6'b100011,
+			 ......
+			 
+			
+always @ (*) begin
+	case(opcode)begin	
+		EXE_SPECIAL: begin    //R-type
+			case(funct)begin
+				EXE_ADD:begin   //rd<-rs+rt
+					aluop<=ADD;   //有符号加法
+					wreg<=ENABLE;    //需要写入寄存器，默认的rd
+					reg1_read<=ENABLE;   //寄存器1需要读入
+					reg2_read<=ENABLE;   //寄存器2需要读入
+				end
+				EXE_ADDU:begin
+					aluop<=ADDU;   //无符号数
+					wreg<=ENABLE; 
+					reg1_read<=ENABLE;
+					reg2_read<=ENABLE;
+				end
+				EXE_SUB:begin
+					aluop<=
+				end
+				EXE_SUBU:begin
+				end
+				EXE_AND:begin
+				end
+				EXE_OR:begin
+				end
+				EXE_XOR:begin
+				end
+				EXE_NOR:begin
+				end
+				EXE_SLT:begin
+				end
+				EXE_SLTU:begin
+				end
+				EXE_SLL:begin
+				end
+				EXE_SRL:begin
+				end
+				EXE_SRA:begin
+				end
+				EXE_SLLV:begin
+				end
+				EXE_SRLV:begin
+				end
+				EXE_SRAV:begin
+				end
+				EXE_JR:begin
+				end
+			end
+		EXE_ADDI:begin   //I-type
+		end
+		EXE_ADDIU:begin
+		end
+		EXE_ANDI:begin
+		end
+		EXE_ORI:begin
+		end
+		EXE_XORI:begin
+		end
+		EXE_LUI:begin
+		end
+		EXE_LW:begin
+		end
+		EXE_SW:begin
+		end
+		EXE_BEQ:begin
+		end
+		EXE_BNE:begin
+		end
+		EXE_SLTI:begin
+		end
+		EXE_SLTIU:begin
+		end
+		EXE_PREF:begin
+		end
+		EXE_BLEZ:begin
+		end
+		EXE_BGTZ:begin
+		end
+		EXE_
+		//EXE_REGIMM:  //先不写吧
+		EXE_J:begin
+		end
+		EXE_JAL:begin
+		end
+		EX_LB:begin
+		end
+		EX_LBU:begin
+		end
+		
+		
+					
+					
+			
