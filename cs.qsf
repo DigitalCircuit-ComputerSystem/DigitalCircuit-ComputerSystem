@@ -166,3 +166,9 @@ set_location_assignment PIN_AK18 -to VGA_VS
 set_location_assignment PIN_AK19 -to VGA_HS
 set_location_assignment PIN_AK22 -to VGA_BLANK_N
 set_global_assignment -name VERILOG_FILE regs.v
+set_global_assignment -name VERILOG_FILE excute.v
+set_global_assignment -name VERILOG_FILE write.v
+set_global_assignment -name VERILOG_FILE init.v
+set_global_assignment -name VERILOG_FILE cpu.v
+set_global_assignment -name VERILOG_FILE update_pc.v
+set_global_assignment -name VERILOG_FILE fetch_pc.v

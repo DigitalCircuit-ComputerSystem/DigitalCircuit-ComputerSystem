@@ -1,0 +1,8 @@
+module excute(  			//chenlu: 执行模块
+	input [31:0] src1;   //原操作数
+	input [31:0] src2;   //目的操作数
+	input [5:0] op;      //执行的指令编号
+	output [31:0] dest;  //目的操作数
+	
+
+)

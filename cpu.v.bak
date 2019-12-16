@@ -1,0 +1,8 @@
+module cpu(
+	input rst;
+	input clk;
+)
+
+wire pc;
+
+init init0(.rst(rst), .pc_i(pc), .clk(clk), .(pc_o));
