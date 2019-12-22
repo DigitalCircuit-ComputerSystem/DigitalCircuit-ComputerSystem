@@ -1,27 +1,24 @@
 module decode(
 	input clk,
 	input [31:0] ins,  //指令码
-	//input clk,
 	input [31:0] PC,
 	input [31:0] reg1_data,
 	input [31:0] reg2_data,
 	output reg [4:0] wraddr,   //写入的寄存器  对接regs.v的write_reg
-	output reg aluop,  //要写个alu
-	output reg [4:0] shift,   //移位指令的位数
-	output reg [31:0] imm,    //输出的立即数
-	output reg [31:0] addrout,   //JAL指令用
 	output reg [31:0] reg1_addr, //读的寄存器
 	output reg [31:0] reg2_addr,
 	output reg [31:0] reg1_o,  //输出的数据
 	output reg [31:0] reg2_o,
 	output reg [31:0] jmp_addr,
-	output reg wreg
+	output reg wreg,
+	output reg is_jmp
 	);
 	
 	
 reg [31:0] reg1_addr; //读的寄存器
 reg [31:0] reg2_addr;
 reg [31:0] wdata;
+reg [31:0] imm;
 
 wire [5:0] opcode=inst[31:26];    
 wire [4:0] rs=inst[25:21];    //R-type&I-type
@@ -64,6 +61,7 @@ always @ (*) begin
 	wraddr<=rd;   //默认写入rd
 	reg1_addr<=rs;//reg1默认rs
 	reg2_addr<=rt;//reg2默认rt
+	is_jmp<=`DISABLE;
 	case(opcode)begin	
 		`EXE_SPECIAL: begin    //R-type
 			case(funct)begin
@@ -222,6 +220,7 @@ always @ (*) begin
 					valid<=`VALID;
 					jmp_flag<=1;
 					jmp_addr<=reg1_o;
+					is_jmp<=`ENABLE;
 				end
 				default:begin
 				end
@@ -328,6 +327,7 @@ always @ (*) begin
 			if(reg1_o==reg2_o)begin
 				//jmp_flag<=1;
 				jmp_addr<=pcadd4+imm;
+				is_jmp<=`ENABLE;
 			end
 		end
 		
@@ -341,6 +341,7 @@ always @ (*) begin
 			if(reg1_o!=reg2_o)begin
 				//jmp_flag<=1;
 				jmp_addr<=pcadd4+imm;
+				is_jmp<=`ENABLE;
 			end
 		end
 		
@@ -381,6 +382,7 @@ always @ (*) begin
 				imm=pcadd4+imm_sext_mov2;
 				//jmp_flag<=1;
 				jmp_addr<=imm;
+				is_jmp<=`ENABLE;
 			end
 		end
 		
@@ -396,7 +398,9 @@ always @ (*) begin
 			imm={{pcadd4[31:28]},Jimm,2'b00};
 			//jmp_flag<=1;
 			jmp_addr<=imm;
+			is_jmp<=`ENABLE;
 		end
+		
 		
 		`EXE_JAL:begin
 			//aluop<=JAL;
@@ -409,6 +413,7 @@ always @ (*) begin
 			wdata<=pcadd8;
 			//jmp_flag<=1;
 			jmp_addr<=imm;
+			is_jmp<=`ENABLE;
 		end
 		
 		//EX_LB:begin
