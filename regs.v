@@ -1,4 +1,3 @@
-
 module regs(  // chenlu: 寄存器模块，输入写数据
 	input wire clk,
 	input [31:0] write_data, 		//写数据
@@ -32,7 +31,7 @@ always @(posedge clk) begin
 end
 
 always @ (*)begin
-	ans=all_reg[write_reg];
+	ans=write_data;
 end
 
 endmodule

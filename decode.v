@@ -3,6 +3,7 @@ module decode(
 	input [31:0] PC,
 	input [31:0] reg1_data,
 	input [31:0] reg2_data,
+	input [31:0] mem_data;
 	output reg [4:0] wraddr,   //写入的寄存器  对接regs.v的write_reg
 	output reg [31:0] reg1_addr, //读的寄存器
 	output reg [31:0] reg2_addr,
@@ -12,16 +13,15 @@ module decode(
 	output reg reg1_read,
 	output reg reg2_read,
 	output reg [31:0] wdata,
-	output reg ori=1'B0,
-	output reg test=1'b0
+	output reg [31:0] mem_addr,
+	output reg wren
 	);
 	
 reg [31:0] imm;
 reg [31:0] reg1_o;  //操作数1的数据
 reg [31:0] reg2_o;
 reg valid;
-
-wire [5:0] opcode=inst[31:26];    
+wire [5:0] opcode=inst[31:26];
 wire [4:0] rs=inst[25:21];    //R-type&I-type
 wire [4:0] rt=inst[20:16];    //R-type&I-type
 wire [4:0] rd=inst[15:11];    //R-type
@@ -36,6 +36,7 @@ wire [31:0] imm_sext_mov2;
 wire [31:0] imm_sext;
 wire [31:0] imm_zext;
 wire [31:0] neg;
+
 assign pcadd4=PC+4;
 assign pcadd8=PC+8;
 assign imm_sext_mov2={{14{Iimm[15]}},Iimm[15:0],2'b00};  //符号扩展再左移两位
@@ -170,7 +171,6 @@ always @ (*) begin
 					reg1_read<=ENABLE;
 					reg2_read<=ENABLE;
 					valid<=VALID;
-					ori<=1'b1;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -346,22 +346,22 @@ always @ (*) begin
 			reg1_read<=ENABLE;
 			reg2_read<=DISABLE;
 			valid<=VALID;
-			imm=imm_zext;   //零扩展
+			imm<=imm_zext;   //零扩展
 			wraddr<=rt;
 			reg1_addr<=rs;//reg1默认rs
-			wdata<=reg1_o&reg2_o;
+			wdata<=reg1_o&imm;
 		end
-		
+		//001100 00001 00011 
 		EXE_ORI:begin
 			//aluop<=OR;
 			wreg<=ENABLE;
 			reg1_read<=ENABLE;
 			reg2_read<=DISABLE;
 			valid<=VALID;
-			imm=imm_zext;   //零扩展
+			imm<=imm_zext;   //零扩展
 			wraddr<=rt;
 			reg1_addr<=rs;//reg1默认rs
-			wdata<=reg1_o|reg2_o;
+			wdata<=reg1_o|imm;
 		end
 		
 		EXE_XORI:begin
@@ -373,7 +373,7 @@ always @ (*) begin
 			imm=imm_zext;   //零扩展
 			wraddr<=rt;
 			reg1_addr<=rs;//reg1默认rs
-			wdata<=reg1_o^reg2_o;
+			wdata<=reg1_o^imm;
 		end
 		
 		EXE_LUI:begin
@@ -397,7 +397,9 @@ always @ (*) begin
 			reg1_addr<=rs;//reg1默认rs
 			valid<=VALID;
 			imm<=imm_sext;   //符号扩展
-			//wdata<=memory[reg1_o+reg2_o];   //要访问内存，之后改
+			mem_addr<=reg1_o+imm;
+			wren<=1'b0;  //读内存
+			wdata<=mem_data;
 		end
 		
 		EXE_SW:begin
@@ -409,8 +411,10 @@ always @ (*) begin
 			valid<=VALID;
 			reg1_addr<=rs;//reg1默认rs
 			reg2_addr<=rt;//reg2默认rt
-			imm=imm_sext;   //符号扩展
-			//memory[reg1_o+imm]<=reg2_o;    //要写入内存，之后改
+			imm<=imm_sext;   //符号扩展
+			wren<=1'b1;  //写内存
+			mem_addr<=reg1_o+imm;
+			mem_data<=reg2_o;
 		end
 		
 		EXE_BEQ:begin
@@ -419,10 +423,9 @@ always @ (*) begin
 			reg1_read<=ENABLE;
 			reg2_read<=ENABLE;
 			valid<=VALID;
-			imm=imm_sext_mov2;
+			imm<=imm_sext_mov2;
 			reg1_addr<=rs;//reg1默认rs
 			reg2_addr<=rt;//reg2默认rt
-			test<=1'b1;
 			if(reg1_o==reg2_o)begin
 				//jmp_flag<=1;
 				jmp_addr<=pcadd4+imm;
@@ -436,7 +439,7 @@ always @ (*) begin
 			reg1_read<=ENABLE;
 			reg2_read<=ENABLE;
 			valid<=VALID;
-			imm=imm_sext_mov2;
+			imm<=imm_sext_mov2;
 			reg1_addr<=rs;//reg1默认rs
 			reg2_addr<=rt;//reg2默认rt
 			if(reg1_o!=reg2_o)begin
@@ -482,7 +485,7 @@ always @ (*) begin
 			reg2_read<=DISABLE;
 			valid<=VALID;
 			if(reg1_o[31]==1||reg1_o==31'd0)begin
-				imm=pcadd4+imm_sext_mov2;
+				imm<=pcadd4+imm_sext_mov2;
 				//jmp_flag<=1;
 				jmp_addr<=imm;
 				is_jmp<=ENABLE;
@@ -498,7 +501,7 @@ always @ (*) begin
 			reg1_read<=DISABLE;
 			reg2_read<=DISABLE;
 			valid<=VALID;
-			imm={{pcadd4[31:28]},Jimm,{2'b00}};
+			imm<={{pcadd4[31:28]},Jimm,{2'b00}};
 			//jmp_flag<=1;
 			jmp_addr<=imm;
 			is_jmp<=ENABLE;
@@ -512,7 +515,7 @@ always @ (*) begin
 			reg2_read<=DISABLE;
 			valid<=VALID;
 			wraddr<=5'b11111;  //貌似是$31
-			imm={{pcadd4[31:28]},Jimm,{2'b00}};
+			imm<={{pcadd4[31:28]},Jimm,{2'b00}};
 			wdata<=pcadd8;
 			//jmp_flag<=1;
 			jmp_addr<=imm;
