@@ -8,8 +8,8 @@ module regs(  // chenlu: 寄存器模块，输入写数据
 	input [4:0]  read_reg2,	 		
 	input wire read_en2,  			
 	output reg [31:0] read_data1_o, 	//读出数据
-	output reg [31:0] read_data2_o,
-	output reg [31:0] ans
+	output reg [31:0] read_data2_o
+	//output reg [31:0] ans
 );  
 /* 问题：读写数据可能发生冲突，暂时通过不同的时钟沿避免冲突，之后考虑如何修改  */
 reg[31:0] all_reg[31:0];    //cpu内部32个寄存器
@@ -30,9 +30,9 @@ always @(posedge clk) begin
 	end
 end
 
-always @ (*)begin
-	ans=write_data;
-end
+//always @ (*)begin
+//	ans=write_data;
+//end
 
 endmodule
 			

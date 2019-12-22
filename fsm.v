@@ -29,10 +29,7 @@ begin
   con = dep0;
   upper = 0;
   indi = 0;
-  asch = 0;
-  ascv = 0;
-  markh = 1;
-  markv = 0;
+
   en = 0;
   $readmemh("D:/program/FPGA/8/mem.txt", mem, 0, 255);
 end

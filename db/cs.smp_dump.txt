@@ -1,0 +1,20 @@
+
+State Machine - |cs|fsm:myfsm|con
+Name con.dep0 con.outdep1 con.dep1 
+con.dep0 0 0 0 
+con.dep1 1 0 1 
+con.outdep1 1 1 0 
+
+State Machine - |cs|fsm:myfsm|nows
+Name nows.fin nows.jud nows.in7 nows.in4 nows.in3 nows.in5 nows.in6 nows.in1 nows.in2 nows.in0 nows.ini 
+nows.ini 0 0 0 0 0 0 0 0 0 0 0 
+nows.in0 0 0 0 0 0 0 0 0 0 1 1 
+nows.in2 0 0 0 0 0 0 0 0 1 0 1 
+nows.in1 0 0 0 0 0 0 0 1 0 0 1 
+nows.in6 0 0 0 0 0 0 1 0 0 0 1 
+nows.in5 0 0 0 0 0 1 0 0 0 0 1 
+nows.in3 0 0 0 0 1 0 0 0 0 0 1 
+nows.in4 0 0 0 1 0 0 0 0 0 0 1 
+nows.in7 0 0 1 0 0 0 0 0 0 0 1 
+nows.jud 0 1 0 0 0 0 0 0 0 0 1 
+nows.fin 1 0 0 0 0 0 0 0 0 0 1 

@@ -2,12 +2,12 @@ module clkgen(
 		input clkin,
 		input rst,
 		input clken,
-		output reg clkout
+		output reg clkout = 0
 );
 parameter clk_freq=1000;
 parameter countlimit=50000000/2/clk_freq; // 自 动 计 算 计 数 次 数
 
- reg[31:0] clkcount;
+ reg[31:0] clkcount = 0;
  always @ (posedge clkin)
  if(rst)
 		 begin

@@ -3,7 +3,7 @@ module decode(
 	input [31:0] PC,
 	input [31:0] reg1_data,
 	input [31:0] reg2_data,
-	input [31:0] mem_read_data;
+	input [31:0] mem_read_data,
 	output reg [4:0] wraddr,   //写入的寄存器  对接regs.v的write_reg
 	output reg [31:0] reg1_addr, //读的寄存器
 	output reg [31:0] reg2_addr,

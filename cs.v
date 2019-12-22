@@ -29,7 +29,7 @@ module cs(
 	output		     [7:0]		VGA_G,
 	output		          		VGA_HS,
 	output		     [7:0]		VGA_R,
-	output		          		VGA_SYNC_N,
+	output		reg          		VGA_SYNC_N,
 	output		          		VGA_VS,
 
 	//////////// Audio //////////
@@ -60,58 +60,51 @@ wire [9:0]vgavaddr;
 
 
 reg[8:0] allchar[4095:0];  //12位，所有字符对应数据
-wire[4:0] ascv;			//列坐标
-wire[6:0] asch;  //行坐标  位置通过{ascv,asch}标识
-wire[4:0] markv; //光标			
-wire[6:0] markh;
+
 reg[7:0] asccode;
 reg[5:0]pos;   //vga扫描的行对应字符；
 reg[3:0]offset; //行字符偏移
-reg [7:0]vga_asc;
+wire [7:0]vga_asc;
 reg[8:0]linedata;
 wire fsmen;
 wire [32:0] pc;
-reg [31:0] intr;  //执行指令
+wire [31:0] intr;  //执行指令
 
 initial begin
-	asc[0][0]=36;
-	vga_sync_n = 0;
+
+	VGA_SYNC_N = 0;
 	$readmemh("D:/program/FPGA/11/vga_font.txt", allchar, 0, 4095);
 end
 
-
-
+//clkgen #(500000) my_csclk(CLOCK_50,SW[0],1'b1,cs_clk);
+assign cs_clk = KEY[0];
+clkgen #(25000000) my_vgaclk(CLOCK_50,SW[0],1'b1,vga_clk);
 fsm myfsm(.clk(fsmclk), .data(fsmdata), .asc(fsmin),.en(fsmen));   //当前存数据的地址
-
+wire [31:0] wdata;
+wire wren;
+wire [31:0] rdata;
+wire [31:0] memaddr;
+wire rst;
 //hel_rom
 //fib_rom
-mips_os os0(.clk(cs_clk), .addr(pc[9:0]), .q(intr));
-cpu cpu0(.clk(cs_clk), .inst(intr),.pc(pc),.raddr(memaddr),.rdata(rdata),.wren(wren),.wdata(mem));
-memery memery0(.address_a(memaddr), .data_a(mem_data), .wren_a(wren),.data_a(wdata), .q_a(rdata),
-					.address_b(0x2000|{vgavaddr[8:4]pos[5:0]}),wren_b(1'b0), q_b(vga_asc), clock_b(vga_clk));
+mips_os os0(.clock(cs_clk), .address(pc[9:0]), .q(intr));
+cpu cpu0(.rst(rst),.clk(cs_clk), .inst(intr),.pc(pc),.mem_addr(memaddr),.mem_read_data(rdata),.wren(wren),.mem_write_data(wdata));
+memery memery0(.address_a(memaddr), .data_a(wdata), .wren_a(wren),.clock_a(cs_clk), .q_a(rdata),
+					.address_b(14'h2000|{vgavaddr[8:4],pos[5:0]}),.wren_b(1'b0), .q_b(vga_asc), .clock_b(vga_clk));
 
 
 always @(negedge vga_clk) begin
-	 linedata = allchar[vga_asc,vgavaddr[3:0]}];
+	 linedata = allchar[{vga_asc,vgavaddr[3:0]}];
 	 vgadata1 = linedata[offset]? 24'hFFFFFF: 24'h000000;
 end
 assign vgadata = vgadata1;
-
+assign VGA_CLK = vga_clk;
 vga_ctrl my_vga(.pclk(vga_clk), .reset(reset), .vga_data(vgadata), .h_addr(vgahaddr), 
-			.v_addr(vgavaddr),.boffset(offset),.hblock(pos), .hsync(hs), .vsync(vs),
-			.valid(blank_n), .vga_r(vga_r), .vga_g(vga_g), .vga_b(vga_b));
+			.v_addr(vgavaddr),.boffset(offset),.hblock(pos), .hsync(VGA_HS), .vsync(VGA_VS),
+			.valid(VGA_BLANK_N), .vga_r(VGA_R), .vga_g(VGA_G), .vga_b(VGA_B));
 
-cpu(.pc(rom_addr), .rom_data_i(rom_data), .waddr(waddr), .wdata(wdata), .rdata(rdata), .raddr(raddr));
 			
-always @(posedge fsmclk) begin
-	//if(fsmen)
-		asc[markv[4:0]][0]=36;
-		asc[ascv[4:0]][asch[6:0]]=fsmin;
-
-end
-
-
-
-
-
+assign LEDR[5:0] = intr[31:26];
+assign LEDR[9:6] = pc[5:2];
+assign rst = SW[0];
 endmodule 
