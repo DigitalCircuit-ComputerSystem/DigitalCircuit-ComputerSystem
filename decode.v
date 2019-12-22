@@ -3,7 +3,7 @@ module decode(
 	input [31:0] PC,
 	input [31:0] reg1_data,
 	input [31:0] reg2_data,
-	input [31:0] mem_data;
+	input [31:0] mem_read_data;
 	output reg [4:0] wraddr,   //写入的寄存器  对接regs.v的write_reg
 	output reg [31:0] reg1_addr, //读的寄存器
 	output reg [31:0] reg2_addr,
@@ -14,7 +14,8 @@ module decode(
 	output reg reg2_read,
 	output reg [31:0] wdata,
 	output reg [31:0] mem_addr,
-	output reg wren
+	output reg wren,
+	output reg [31:0] mem_write_data
 	);
 	
 reg [31:0] imm;
@@ -399,7 +400,7 @@ always @ (*) begin
 			imm<=imm_sext;   //符号扩展
 			mem_addr<=reg1_o+imm;
 			wren<=1'b0;  //读内存
-			wdata<=mem_data;
+			wdata<=mem_read_data;
 		end
 		
 		EXE_SW:begin
@@ -414,7 +415,7 @@ always @ (*) begin
 			imm<=imm_sext;   //符号扩展
 			wren<=1'b1;  //写内存
 			mem_addr<=reg1_o+imm;
-			mem_data<=reg2_o;
+			mem_write_data<=reg2_o;
 		end
 		
 		EXE_BEQ:begin
