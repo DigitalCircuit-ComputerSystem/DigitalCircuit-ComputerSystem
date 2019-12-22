@@ -7,18 +7,17 @@ module decode(
 	output reg [4:0] wraddr,   //写入的寄存器  对接regs.v的write_reg
 	output reg [31:0] reg1_addr, //读的寄存器
 	output reg [31:0] reg2_addr,
-	output reg [31:0] reg1_o,  //输出的数据
-	output reg [31:0] reg2_o,
 	output reg [31:0] jmp_addr,
 	output reg wreg,
-	output reg is_jmp
+	output reg is_jmp,
+	output reg reg1_read,
+	output reg reg2_read,
+	output reg [31:0] wdata;
 	);
 	
-	
-reg [31:0] reg1_addr; //读的寄存器
-reg [31:0] reg2_addr;
-reg [31:0] wdata;
 reg [31:0] imm;
+reg [31:0] reg1_o;  //操作数1的数据
+reg [31:0] reg2_o;
 
 wire [5:0] opcode=inst[31:26];    
 wire [4:0] rs=inst[25:21];    //R-type&I-type
@@ -62,6 +61,8 @@ always @ (*) begin
 	reg1_addr<=rs;//reg1默认rs
 	reg2_addr<=rt;//reg2默认rt
 	is_jmp<=`DISABLE;
+	reg1_read<=`DISABLE;
+	reg2_read<=`DISABLE;
 	case(opcode)begin	
 		`EXE_SPECIAL: begin    //R-type
 			case(funct)begin
@@ -162,7 +163,7 @@ always @ (*) begin
 					//aluop<=SLL;
 					wreg<=`ENABLE;   //rd
 					reg1_read<=`DISABLE;  //rs
-					reg2_read<=`DENABLE;  //rt
+					reg2_read<=`ENABLE;  //rt
 					valid<=`VALID;    //rd=rt<<shamt
 					wdata<=reg2_data<<shamt;
 				end

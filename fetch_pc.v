@@ -9,6 +9,6 @@ module fetch_pc(  //
 
 always @(posedge clk) begin
 	if(rst) pc_o <= 32'b0;
-	else if(is_jmp) pc_o <= pc_i;
+	else if(is_jmp) pc_o <= jmp_pc;
 	else pc_o = pc_i + 32'h4;
 end
