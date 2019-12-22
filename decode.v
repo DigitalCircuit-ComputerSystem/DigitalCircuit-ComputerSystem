@@ -2,7 +2,7 @@ module decode(
 	input clk,
 	input [31:0] ins,  //指令码
 	//input clk,
-	input [31:0]PC,
+	input [31:0] PC,
 	input [31:0] reg1_data,
 	input [31:0] reg2_data,
 	output reg [4:0] wraddr,   //写入的寄存器  对接regs.v的write_reg
@@ -60,169 +60,168 @@ assign [31:0] neg=(~reg2_data)+1;
 
 always @ (*) begin
 	//
-	valid<=INVALID;    //先把指令设成无效
+	valid<=`INVALID;    //先把指令设成无效
 	wraddr<=rd;   //默认写入rd
 	reg1_addr<=rs;//reg1默认rs
 	reg2_addr<=rt;//reg2默认rt
 	case(opcode)begin	
-		EXE_SPECIAL: begin    //R-type
+		`EXE_SPECIAL: begin    //R-type
 			case(funct)begin
 			
-				EXE_ADD:begin   //rd<-rs+rt
+				`EXE_ADD:begin   //rd<-rs+rt
 					//aluop<=ADD;   //有符号加法
-					wreg<=ENABLE;    //需要写入寄存器，默认的rd 
-					reg1_read<=ENABLE;   //需要读入 rs
-					reg2_read<=ENABLE;   //需要读入 rt
-					valid<=VALID;    //设成有效
+					wreg<=`ENABLE;    //需要写入寄存器，默认的rd 
+					reg1_read<=`ENABLE;   //需要读入 rs
+					reg2_read<=`ENABLE;   //需要读入 rt
+					valid<=`VALID;    //设成有效
 					wdata<=reg1_data+reg2_data;
 				end
 				
-				EXE_ADDU:begin
+				`EXE_ADDU:begin
 					//aluop<=ADDU;   //无符号数
-					wreg<=ENABLE; 
-					reg1_read<=ENABLE;
-					reg2_read<=ENABLE;
-					valid<=VALID;
+					wreg<=`ENABLE; 
+					reg1_read<=`ENABLE;
+					reg2_read<=`ENABLE;
+					valid<=`VALID;
 					wdata<=reg1_data+reg2_data;
 				end
 				
-				EXE_SUB:begin
+				`EXE_SUB:begin
 					//aluop<=SUB;     //有符号  rd<-rs-rt
-					wreg<=ENABLE; //rd
-					reg1_read<=ENABLE;  //rs
-					reg2_read<=ENABLE;  //rt
-					valid<=VALID;
+					wreg<=`ENABLE; //rd
+					reg1_read<=`ENABLE;  //rs
+					reg2_read<=`ENABLE;  //rt
+					valid<=`VALID;
 					wdata<=reg1_data+neg;
 				end
 				
-				EXE_SUBU:begin
+				`EXE_SUBU:begin
 					//aluop<=SUBU;     //无符号
-					wreg<=ENABLE; 
-					reg1_read<=ENABLE;
-					reg2_read<=ENABLE;
-					valid<=VALID;
+					wreg<=`ENABLE; 
+					reg1_read<=`ENABLE;
+					reg2_read<=`ENABLE;
+					valid<=`VALID;
 					wdata<=reg1_data+neg;
 				end
 				
-				EXE_AND:begin
+				`EXE_AND:begin
 					//aluop<=AND;
-					wreg<=ENABLE; 
-					reg1_read<=ENABLE;
-					reg2_read<=ENABLE;
-					valid<=VALID;
+					wreg<=`ENABLE; 
+					reg1_read<=`ENABLE;
+					reg2_read<=`ENABLE;
+					valid<=`VALID;
 					wdata<=reg1_data&reg2_data;
 				end
 				
-				EXE_OR:begin
+				`EXE_OR:begin
 					//aluop<=OR;
-					wreg<=ENABLE; 
-					reg1_read<=ENABLE;
-					reg2_read<=ENABLE;
-					valid<=VALID;
+					wreg<=`ENABLE; 
+					reg1_read<=`ENABLE;
+					reg2_read<=`ENABLE;
+					valid<=`VALID;
 					wdata<=reg1_data|reg2_data;
 				end
 				
-				EXE_XOR:begin
+				`EXE_XOR:begin
 					//aluop<=XOR;
-					wreg<=ENABLE; 
-					reg1_read<=ENABLE;
-					reg2_read<=ENABLE;
-					valid<=VALID;
+					wreg<=`ENABLE; 
+					reg1_read<=`ENABLE;
+					reg2_read<=`ENABLE;
+					valid<=`VALID;
 					wdata<=reg1_data^reg2_data;
 				end
 				
-				EXE_NOR:begin
+				`EXE_NOR:begin
 					//aluop<=NOR;
-					wreg<=ENABLE; 
-					reg1_read<=ENABLE;
-					reg2_read<=ENABLE;
-					valid<=VALID;
+					wreg<=`ENABLE; 
+					reg1_read<=`ENABLE;
+					reg2_read<=`ENABLE;
+					valid<=`VALID;
 					wdata<=~(reg1_data|reg2_data);
 				end
 				
-				EXE_SLT:begin
+				`EXE_SLT:begin
 					//aluop<=SLT;
-					wreg<=ENABLE; 
-					reg1_read<=ENABLE;
-					reg2_read<=ENABLE;
-					valid<=VALID;
+					wreg<=`ENABLE; 
+					reg1_read<=`ENABLE;
+					reg2_read<=`ENABLE;
+					valid<=`VALID;
 					if(reg1_data<reg2_data)wdata<=1;
 					else wdata<=0;  //有符号
 				end
 				
-				EXE_SLTU:begin
+				`EXE_SLTU:begin
 					//aluop<=SLTU;   //无符号
-					wreg<=ENABLE; 
-					reg1_read<=ENABLE;
-					reg2_read<=ENABLE;
-					valid<=VALID;
+					wreg<=`ENABLE; 
+					reg1_read<=`ENABLE;
+					reg2_read<=`ENABLE;
+					valid<=`VALID;
 					if(reg1_data<reg2_data)wdata<=1;
 					else wdata<=0;
 				end
 				
-				EXE_SLL:begin
+				`EXE_SLL:begin
 					//aluop<=SLL;
-					wreg<=ENABLE;   //rd
-					reg1_read<=DISABLE;  //rs
-					reg2_read<=DENABLE;  //rt
-					valid<=VALID;    //rd=rt<<shamt
+					wreg<=`ENABLE;   //rd
+					reg1_read<=`DISABLE;  //rs
+					reg2_read<=`DENABLE;  //rt
+					valid<=`VALID;    //rd=rt<<shamt
 					wdata<=reg2_data<<shamt;
 				end
 				
-				EXE_SRL:begin
+				`EXE_SRL:begin
 					//aluop<=SRL;   //逻辑右移
-					wreg<=ENABLE; 
-					reg1_read<=DISABLE;   //rs
-					reg2_read<=ENABLE;   //rt
-					valid<=VALID;    //rd=rt>>shamt
+					wreg<=`ENABLE; 
+					reg1_read<=`DISABLE;   //rs
+					reg2_read<=`ENABLE;   //rt
+					valid<=`VALID;    //rd=rt>>shamt
 					wdata<=reg2_data>>shamt;
 				end
 				
-				EXE_SRA:begin
+				`EXE_SRA:begin
 					//aluop<=SRA;   //算数右移
-					wreg<=ENABLE; 
-					reg1_read<=DISABLE;   //rs
-					reg2_read<=ENABLE;  //rt
-					valid<=VALID;   //rd=rt>>shamt
+					wreg<=`ENABLE; 
+					reg1_read<=`DISABLE;   //rs
+					reg2_read<=`ENABLE;  //rt
+					valid<=`VALID;   //rd=rt>>shamt
 					wdata<=($signed)reg2_data>>shamt;  //这个$signed可以强制转换成有符号数，真乃神器啊！
 				end
 				
-				EXE_SLLV:begin
+				`EXE_SLLV:begin
 					//aluop<=SLLV;    //rd=rt<<rs
-					wreg<=ENABLE; 
-					reg1_read<=ENABLE; 
-					reg2_read<=ENABLE;
-					valid<=VALID;
+					wreg<=`ENABLE; 
+					reg1_read<=`ENABLE; 
+					reg2_read<=`ENABLE;
+					valid<=`VALID;
 					wdata<=reg2_data<<reg1_data;
 				end
 				
-				EXE_SRLV:begin
+				`EXE_SRLV:begin
 					//aluop<=SRLV;    //rd=rt>>rs 逻辑
-					wreg<=ENABLE; 
-					reg1_read<=ENABLE; 
-					reg2_read<=ENABLE;
-					valid<=VALID;
+					wreg<=`ENABLE; 
+					reg1_read<=`ENABLE; 
+					reg2_read<=`ENABLE;
+					valid<=`VALID;
 					wdata<=reg2_data>>reg1_data;
 				end
 				
-				EXE_SRAV:begin
+				`EXE_SRAV:begin
 					//aluop<=SRAV;    //rd=rt>>rs 算数
-					wreg<=ENABLE; 
-					reg1_read<=ENABLE; 
-					reg2_read<=ENABLE;
-					valid<=VALID;
+					wreg<=`ENABLE; 
+					reg1_read<=`ENABLE; 
+					reg2_read<=`ENABLE;
+					valid<=`VALID;
 					wdata<=($signed)reg2_data>>reg1_data;
 				end
 				
-				EXE_JR:begin
+				`EXE_JR:begin
 					//aluop<=JR;    //PC<-rs
-					wreg<=DISABLE;  //rd 
-					reg1_read<=ENABLE;   //rs
-					reg2_read<=DISABLE;   //rt
-					valid<=VALID;
+					wreg<=`DISABLE;  //rd 
+					reg1_read<=`ENABLE;   //rs
+					reg2_read<=`DISABLE;   //rt
+					valid<=`VALID;
 					jmp_flag<=1;
 					jmp_addr<=reg1_o;
-					PC<=reg1_o;
 				end
 				default:begin
 				end
@@ -230,141 +229,139 @@ always @ (*) begin
 			end
 		end
 		
-		EXE_ADDI:begin   //I-type   rt<-rs+(sign-extended)immediate
+		`EXE_ADDI:begin   //I-type   rt<-rs+(sign-extended)immediate
 			//aluop<=ADD;   //同样用加法器
-			wreg<=ENABLE;  //rt
-			reg1_read<=ENABLE;  //rs
-			reg2_read<=DISABLE;
-			valid<=VALID;
+			wreg<=`ENABLE;  //rt
+			reg1_read<=`ENABLE;  //rs
+			reg2_read<=`DISABLE;
+			valid<=`VALID;
 			imm<=imm_sext;   //符号扩展
 			wraddr<=rt;   //不是默认的rd
 			wdata<=reg1_o+reg2_o;  //这里的reg2_o是imm
 		end
 		
-		EXE_ADDIU:begin
+		`EXE_ADDIU:begin
 			//aluop<=ADDU;
-			wreg<=ENABLE;
-			reg1_read<=ENABLE;
-			reg2_read<=DISABLE;
-			valid<=VALID;
+			wreg<=`ENABLE;
+			reg1_read<=`ENABLE;
+			reg2_read<=`DISABLE;
+			valid<=`VALID;
 			imm<=imm_zext;   //零扩展
 			wraddr<=rt;
 			wdata<=reg1_o+reg2_o;  //这里的reg2_o是imm
 		end
 		
-		EXE_ANDI:begin
+		`EXE_ANDI:begin
 			//aluop<=AND;
-			wreg<=ENABLE;
-			reg1_read<=ENABLE;
-			reg2_read<=DISABLE;
-			valid<=VALID;
+			wreg<=`ENABLE;
+			reg1_read<=`ENABLE;
+			reg2_read<=`DISABLE;
+			valid<=`VALID;
 			imm=imm_zext;   //零扩展
 			wraddr<=rt;
 			wdata<=reg1_o&reg2_o;
 		end
 		
-		EXE_ORI:begin
+		`EXE_ORI:begin
 			//aluop<=OR;
-			wreg<=ENABLE;
-			reg1_read<=ENABLE;
-			reg2_read<=DISABLE;
-			valid<=VALID;
+			wreg<=`ENABLE;
+			reg1_read<=`ENABLE;
+			reg2_read<=`DISABLE;
+			valid<=`VALID;
 			imm=imm_zext;   //零扩展
 			wraddr<=rt;
 			wdata<=reg1_o|reg2_o;
 		end
 		
-		EXE_XORI:begin
+		`EXE_XORI:begin
 			//aluop<=XOR;
-			wreg<=ENABLE;
-			reg1_read<=ENABLE;
-			reg2_read<=DISABLE;
-			valid<=VALID;
+			wreg<=`ENABLE;
+			reg1_read<=`ENABLE;
+			reg2_read<=`DISABLE;
+			valid<=`VALID;
 			imm=imm_zext;   //零扩展
 			wraddr<=rt;
 			wdata<=reg1_o^reg2_o;
 		end
 		
-		EXE_LUI:begin
+		`EXE_LUI:begin
 			//aluop<=LUI;   //将16位立即数放到目标寄存器高16位，低16位填0
-			wreg<=ENABLE;
-			reg1_read<=DISABLE;
-			reg2_read<=DISABLE;
-			valid<=VALID;
+			wreg<=`ENABLE;
+			reg1_read<=`DISABLE;
+			reg2_read<=`DISABLE;
+			valid<=`VALID;
 			imm<={Iimm[15:0],16'H0}  //imm*65536
 			wraddr<=rt;
 			wdata<=imm;
 		end
 		
-		EXE_LW:begin
+		`EXE_LW:begin
 		//不确定
 			//aluop<=LW;    //$1=memory[$2+10]
-			wreg<=ENABLE; 
-			reg1_read<=ENABLE; 
-			reg2_read<=DISABLE;
+			wreg<=`ENABLE; 
+			reg1_read<=`ENABLE; 
+			reg2_read<=`DISABLE;
 			wraddr<=rt;
-			valid<=VALID;
+			valid<=`VALID;
 			imm<=imm_sext;   //符号扩展
 			wdata<=memory[reg1_o+reg2_o];   //要访问内存，之后改
 		end
 		
-		EXE_SW:begin
+		`EXE_SW:begin
 		//不确定
 			//aluop<=SW;    //memory[$2+10]=$1
-			wreg<=DISABLE; 
-			reg1_read<=ENABLE; 
-			reg2_read<=ENABLE;
-			valid<=VALID;
+			wreg<=`DISABLE; 
+			reg1_read<=`ENABLE; 
+			reg2_read<=`ENABLE;
+			valid<=`VALID;
 			imm=imm_sext;   //符号扩展
 			memory[reg1_o+imm]<=reg2_o;    //要写入内存，之后改
 		end
 		
-		EXE_BEQ:begin
+		`EXE_BEQ:begin
 			//aluop<=BEQ;
-			wreg<=DISABLE;
-			reg1_read<=ENABLE;
-			reg2_read<=ENABLE;
-			valid<=VALID;
+			wreg<=`DISABLE;
+			reg1_read<=`ENABLE;
+			reg2_read<=`ENABLE;
+			valid<=`VALID;
 			imm=imm_sext_mov2;
 			if(reg1_o==reg2_o)begin
 				//jmp_flag<=1;
 				jmp_addr<=pcadd4+imm;
-				PC<=jmp_addr;
 			end
 		end
 		
-		EXE_BNE:begin    //和BEQ类似，只不过是不等于
+		`EXE_BNE:begin    //和BEQ类似，只不过是不等于
 			//aluop<=BNE;
-			wreg<=DISABLE;
-			reg1_read<=ENABLE;
-			reg2_read<=ENABLE;
-			valid<=VALID;
+			wreg<=`DISABLE;
+			reg1_read<=`ENABLE;
+			reg2_read<=`ENABLE;
+			valid<=`VALID;
 			imm=imm_sext_mov2;
 			if(reg1_o!=reg2_o)begin
 				//jmp_flag<=1;
 				jmp_addr<=pcadd4+imm;
-				PC<=jmp_addr;
 			end
 		end
 		
-		EXE_SLTI:begin
+		`EXE_SLTI:begin
 			//aluop<=SLT;   
-			wreg<=ENABLE;  //rt
-			reg1_read<=ENABLE;  //rs
-			reg2_read<=DISABLE;
-			valid<=VALID;
+			wreg<=`ENABLE;  //rt
+			reg1_read<=`ENABLE;  //rs
+			reg2_read<=`DISABLE;
+			valid<=`VALID;
 			imm=imm_sext;   //符号扩展
 			wraddr<=rt;
 			if(reg_o<imm)wdata<=1;
 			else wdata<=0;
 		end
 		
-		EXE_SLTIU:begin
+		`EXE_SLTIU:begin
 			//aluop<=SLT; 
-			wreg<=ENABLE;  //rt
-			reg1_read<=ENABLE;  //rs
-			reg2_read<=DISABLE;
-			valid<=VALID;
+			wreg<=`ENABLE;  //rt
+			reg1_read<=`ENABLE;  //rs
+			reg2_read<=`DISABLE;
+			valid<=`VALID;
 			imm=imm_zext;   //零扩展
 			wraddr<=rt;
 			if(reg_o<imm)wdata<=1;
@@ -374,47 +371,44 @@ always @ (*) begin
 		//EXE_PREF:begin
 			
 		//end
-		EXE_BLEZ:begin
+		`EXE_BLEZ:begin
 			//aluop<=BLEZ;
-			wreg<=DISABLE;
-			reg1_read<=DISABLE;
-			reg2_read<=DISABLE;
-			valid<=VALID;
+			wreg<=`DISABLE;
+			reg1_read<=`DISABLE;
+			reg2_read<=`DISABLE;
+			valid<=`VALID;
 			if(reg1_o[31]==1||reg1_o=31'd0)begin
 				imm=pcadd4+imm_sext_mov2;
 				//jmp_flag<=1;
 				jmp_addr<=imm;
-				PC<=jmp_addr;
 			end
 		end
 		
 		//EXE_BGTZ:begin
 		//end
 		//EXE_REGIMM:  //先不写吧
-		EXE_J:begin
+		`EXE_J:begin
 			//aluop<=J;
-			wreg<=DISABLE;
-			reg1_read<=DISABLE;
-			reg2_read<=DISABLE;
-			valid<=VALID;
+			wreg<=`DISABLE;
+			reg1_read<=`DISABLE;
+			reg2_read<=`DISABLE;
+			valid<=`VALID;
 			imm={{pcadd4[31:28]},Jimm,2'b00};
 			//jmp_flag<=1;
 			jmp_addr<=imm;
-			PC<=jmp_addr;
 		end
 		
-		EXE_JAL:begin
+		`EXE_JAL:begin
 			//aluop<=JAL;
-			wreg<=ENABLE;
-			reg1_read<=DISABLE;
-			reg2_read<=DISABLE;
-			valid<=VALID;
+			wreg<=`ENABLE;
+			reg1_read<=`DISABLE;
+			reg2_read<=`DISABLE;
+			valid<=`VALID;
 			wraddr<=5'b11111;  //貌似是$31
 			imm={{pcadd4[31:28]},Jimm,2'b00};
 			wdata<=pcadd8;
 			//jmp_flag<=1;
 			jmp_addr<=imm;
-			PC<=jmp_addr;
 		end
 		
 		//EX_LB:begin
