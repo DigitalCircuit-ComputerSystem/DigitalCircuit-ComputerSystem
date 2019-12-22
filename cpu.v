@@ -20,7 +20,7 @@ wire [33:0] dest_type;
 
 fetch_pc fetch_pc0 (.rst(rst), .clk(clk), .pc_i(pc), .is_jmp(is_jmp), .jmp_pc(jmp_pc), .pc_o(pc);  //取指令以及更新pc
 
-decode decode0(.ins(data_rom_i), .PC(pc),.reg1_data(src1_data),.reg2_data(src2_data),, .wraddr(dest_type), .aluop(alu), .
+decode decode0(.ins(data_rom_i), .PC(pc),.reg1_data(src1_data),.reg2_data(src2_data),, .wraddr(dest_type), 
 
 
 
