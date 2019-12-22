@@ -174,3 +174,7 @@ set_global_assignment -name VERILOG_FILE update_pc.v
 set_global_assignment -name VERILOG_FILE fetch_pc.v
 set_global_assignment -name VERILOG_FILE fsm.v
 set_global_assignment -name VERILOG_FILE clk.v
+set_global_assignment -name QIP_FILE try_rom.qip
+set_global_assignment -name QIP_FILE mips_os.qip
+set_global_assignment -name QIP_FILE memery.qip
+set_global_assignment -name QIP_FILE mem1.qip
