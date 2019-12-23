@@ -1,5 +1,5 @@
 EDA Netlist Writer report for cs
-Mon Dec 23 09:37:48 2019
+Mon Dec 23 20:53:14 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -8,9 +8,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ---------------------
   1. Legal Notice
   2. EDA Netlist Writer Summary
-  3. Simulation Settings
-  4. Simulation Generated Files
-  5. EDA Netlist Writer Messages
+  3. EDA Netlist Writer Messages
 
 
 
@@ -36,43 +34,11 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Dec 23 09:37:48 2019 ;
+; EDA Netlist Writer Status ; Successful - Mon Dec 23 20:53:14 2019 ;
 ; Revision Name             ; cs                                    ;
 ; Top-level Entity Name     ; cs                                    ;
 ; Family                    ; Cyclone V                             ;
-; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                           ;
-+---------------------------------------------------------------------------------------------------+---------------------------+
-; Option                                                                                            ; Setting                   ;
-+---------------------------------------------------------------------------------------------------+---------------------------+
-; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
-; Generate functional simulation netlist                                                            ; Off                       ;
-; Time scale                                                                                        ; 1 ps                      ;
-; Truncate long hierarchy paths                                                                     ; Off                       ;
-; Map illegal HDL characters                                                                        ; Off                       ;
-; Flatten buses into individual nodes                                                               ; Off                       ;
-; Maintain hierarchy                                                                                ; Off                       ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                       ;
-; Enable glitch filtering                                                                           ; Off                       ;
-; Do not write top level VHDL entity                                                                ; Off                       ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                       ;
-; Architecture name in VHDL output netlist                                                          ; structure                 ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                       ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                       ;
-+---------------------------------------------------------------------------------------------------+---------------------------+
-
-
-+-------------------------------------------------------------------------+
-; Simulation Generated Files                                              ;
-+-------------------------------------------------------------------------+
-; Generated Files                                                         ;
-+-------------------------------------------------------------------------+
-; D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim/cs.vo ;
-+-------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -81,15 +47,15 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Dec 23 09:37:44 2019
-Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off cs -c cs
+    Info: Processing started: Mon Dec 23 20:53:13 2019
+Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off cs -c cs --gen_testbench
+Info (119006): Selected device 5CSXFC6D6F31C6 for design "cs"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Warning (10905): Generated the EDA functional simulation netlist because it is the only supported netlist type for this device.
-Info (204019): Generated file cs.vo in folder "D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim/" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4794 megabytes
-    Info: Processing ended: Mon Dec 23 09:37:49 2019
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+Info (201000): Generated Verilog Test Bench File D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim/cs.vt for simulation
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4735 megabytes
+    Info: Processing ended: Mon Dec 23 20:53:14 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

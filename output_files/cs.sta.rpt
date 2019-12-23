@@ -1,5 +1,5 @@
 Timing Analyzer report for cs
-Mon Dec 23 09:37:43 2019
+Mon Dec 23 18:47:02 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -99,14 +99,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.90        ;
+; Average used               ; 1.88        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  30.5%      ;
-;     Processor 3            ;  30.2%      ;
-;     Processor 4            ;  29.7%      ;
+;     Processor 2            ;  29.9%      ;
+;     Processor 3            ;  29.4%      ;
+;     Processor 4            ;  28.9%      ;
 +----------------------------+-------------+
 
 
@@ -127,10 +127,10 @@ refer to the applicable agreement for further details.
 +------------+-----------------+-----------------------------------------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                                                      ; Note ;
 +------------+-----------------+-----------------------------------------------------------------------------------------------------------------+------+
-; 33.89 MHz  ; 33.89 MHz       ; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ;      ;
-; 52.65 MHz  ; 52.65 MHz       ; clkgen:my_vgaclk|clkout                                                                                         ;      ;
-; 117.26 MHz ; 117.26 MHz      ; KEY[0]                                                                                                          ;      ;
-; 137.25 MHz ; 137.25 MHz      ; CLOCK_50                                                                                                        ;      ;
+; 31.99 MHz  ; 31.99 MHz       ; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ;      ;
+; 56.55 MHz  ; 56.55 MHz       ; clkgen:my_vgaclk|clkout                                                                                         ;      ;
+; 119.16 MHz ; 119.16 MHz      ; KEY[0]                                                                                                          ;      ;
+; 133.87 MHz ; 133.87 MHz      ; CLOCK_50                                                                                                        ;      ;
 +------------+-----------------+-----------------------------------------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -146,10 +146,10 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                                                           ; Slack   ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------+---------+---------------+
-; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -19.322 ; -1879.382     ;
-; clkgen:my_vgaclk|clkout                                                                                         ; -8.997  ; -505.645      ;
-; KEY[0]                                                                                                          ; -7.528  ; -519.746      ;
-; CLOCK_50                                                                                                        ; -6.286  ; -148.588      ;
+; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -19.450 ; -1840.617     ;
+; clkgen:my_vgaclk|clkout                                                                                         ; -8.342  ; -488.788      ;
+; KEY[0]                                                                                                          ; -7.392  ; -893.262      ;
+; CLOCK_50                                                                                                        ; -6.470  ; -152.489      ;
 +-----------------------------------------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -158,10 +158,10 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
-; KEY[0]                                                                                                          ; -6.650 ; -1946.493     ;
-; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -4.499 ; -313.231      ;
-; CLOCK_50                                                                                                        ; -1.820 ; -1.820        ;
-; clkgen:my_vgaclk|clkout                                                                                         ; 0.550  ; 0.000         ;
+; KEY[0]                                                                                                          ; -7.064 ; -1886.532     ;
+; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -5.579 ; -392.348      ;
+; CLOCK_50                                                                                                        ; 0.382  ; 0.000         ;
+; clkgen:my_vgaclk|clkout                                                                                         ; 0.470  ; 0.000         ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -182,10 +182,10 @@ No paths to report.
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
-; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -3.617 ; -2268.407     ;
-; KEY[0]                                                                                                          ; -2.174 ; -1246.445     ;
-; clkgen:my_vgaclk|clkout                                                                                         ; -2.174 ; -815.019      ;
-; CLOCK_50                                                                                                        ; -0.406 ; -17.370       ;
+; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -4.862 ; -2490.522     ;
+; KEY[0]                                                                                                          ; -2.174 ; -1245.667     ;
+; clkgen:my_vgaclk|clkout                                                                                         ; -2.174 ; -801.494      ;
+; CLOCK_50                                                                                                        ; -0.394 ; -17.386       ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -200,10 +200,10 @@ No synchronizer chains to report.
 +------------+-----------------+-----------------------------------------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                                                      ; Note ;
 +------------+-----------------+-----------------------------------------------------------------------------------------------------------------+------+
-; 34.63 MHz  ; 34.63 MHz       ; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ;      ;
-; 52.63 MHz  ; 52.63 MHz       ; clkgen:my_vgaclk|clkout                                                                                         ;      ;
-; 116.62 MHz ; 116.62 MHz      ; KEY[0]                                                                                                          ;      ;
-; 133.58 MHz ; 133.58 MHz      ; CLOCK_50                                                                                                        ;      ;
+; 32.56 MHz  ; 32.56 MHz       ; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ;      ;
+; 55.93 MHz  ; 55.93 MHz       ; clkgen:my_vgaclk|clkout                                                                                         ;      ;
+; 119.23 MHz ; 119.23 MHz      ; KEY[0]                                                                                                          ;      ;
+; 129.89 MHz ; 129.89 MHz      ; CLOCK_50                                                                                                        ;      ;
 +------------+-----------------+-----------------------------------------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -213,10 +213,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                                                           ; Slack   ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------+---------+---------------+
-; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -19.114 ; -1863.645     ;
-; clkgen:my_vgaclk|clkout                                                                                         ; -9.001  ; -488.951      ;
-; KEY[0]                                                                                                          ; -7.575  ; -469.188      ;
-; CLOCK_50                                                                                                        ; -6.486  ; -148.813      ;
+; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -19.183 ; -1822.612     ;
+; clkgen:my_vgaclk|clkout                                                                                         ; -8.440  ; -473.739      ;
+; KEY[0]                                                                                                          ; -7.387  ; -824.456      ;
+; CLOCK_50                                                                                                        ; -6.699  ; -155.342      ;
 +-----------------------------------------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -225,10 +225,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
-; KEY[0]                                                                                                          ; -6.470 ; -1949.021     ;
-; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -4.483 ; -312.862      ;
-; CLOCK_50                                                                                                        ; -1.774 ; -1.774        ;
-; clkgen:my_vgaclk|clkout                                                                                         ; 0.567  ; 0.000         ;
+; KEY[0]                                                                                                          ; -6.868 ; -1876.654     ;
+; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -5.487 ; -391.944      ;
+; CLOCK_50                                                                                                        ; 0.381  ; 0.000         ;
+; clkgen:my_vgaclk|clkout                                                                                         ; 0.425  ; 0.000         ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -249,10 +249,10 @@ No paths to report.
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
-; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -3.612 ; -2253.982     ;
-; KEY[0]                                                                                                          ; -2.174 ; -1243.794     ;
-; clkgen:my_vgaclk|clkout                                                                                         ; -2.174 ; -809.074      ;
-; CLOCK_50                                                                                                        ; -0.409 ; -18.729       ;
+; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -4.777 ; -2491.327     ;
+; KEY[0]                                                                                                          ; -2.174 ; -1244.385     ;
+; clkgen:my_vgaclk|clkout                                                                                         ; -2.174 ; -798.282      ;
+; CLOCK_50                                                                                                        ; -0.412 ; -18.766       ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -267,10 +267,10 @@ No synchronizer chains to report.
 +-----------------------------------------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                                                           ; Slack   ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------+---------+---------------+
-; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -11.064 ; -1042.873     ;
-; clkgen:my_vgaclk|clkout                                                                                         ; -5.286  ; -285.065      ;
-; KEY[0]                                                                                                          ; -4.820  ; -339.289      ;
-; CLOCK_50                                                                                                        ; -3.466  ; -70.222       ;
+; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -10.799 ; -1011.210     ;
+; KEY[0]                                                                                                          ; -4.930  ; -583.841      ;
+; clkgen:my_vgaclk|clkout                                                                                         ; -4.918  ; -277.201      ;
+; CLOCK_50                                                                                                        ; -3.660  ; -73.125       ;
 +-----------------------------------------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -279,10 +279,10 @@ No synchronizer chains to report.
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
-; KEY[0]                                                                                                          ; -3.867 ; -1045.398     ;
-; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -2.655 ; -183.175      ;
-; CLOCK_50                                                                                                        ; -0.987 ; -0.987        ;
-; clkgen:my_vgaclk|clkout                                                                                         ; 0.205  ; 0.000         ;
+; KEY[0]                                                                                                          ; -3.938 ; -967.151      ;
+; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -3.670 ; -229.775      ;
+; CLOCK_50                                                                                                        ; 0.203  ; 0.000         ;
+; clkgen:my_vgaclk|clkout                                                                                         ; 0.213  ; 0.000         ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -303,10 +303,10 @@ No paths to report.
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
-; KEY[0]                                                                                                          ; -2.174 ; -1242.869     ;
-; clkgen:my_vgaclk|clkout                                                                                         ; -2.174 ; -782.167      ;
-; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -2.071 ; -1018.736     ;
-; CLOCK_50                                                                                                        ; -0.410 ; -3.338        ;
+; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -2.904 ; -1146.288     ;
+; KEY[0]                                                                                                          ; -2.174 ; -1243.637     ;
+; clkgen:my_vgaclk|clkout                                                                                         ; -2.174 ; -773.666      ;
+; CLOCK_50                                                                                                        ; -0.440 ; -3.317        ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -321,10 +321,10 @@ No synchronizer chains to report.
 +-----------------------------------------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                                                           ; Slack   ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------+---------+---------------+
-; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -10.334 ; -989.304      ;
-; clkgen:my_vgaclk|clkout                                                                                         ; -4.874  ; -245.240      ;
-; KEY[0]                                                                                                          ; -3.928  ; -233.163      ;
-; CLOCK_50                                                                                                        ; -3.205  ; -63.781       ;
+; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -10.059 ; -958.690      ;
+; clkgen:my_vgaclk|clkout                                                                                         ; -4.533  ; -239.083      ;
+; KEY[0]                                                                                                          ; -4.035  ; -423.248      ;
+; CLOCK_50                                                                                                        ; -3.381  ; -66.524       ;
 +-----------------------------------------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -333,10 +333,10 @@ No synchronizer chains to report.
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
-; KEY[0]                                                                                                          ; -3.879 ; -1077.603     ;
-; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -2.433 ; -169.269      ;
-; CLOCK_50                                                                                                        ; -1.015 ; -1.015        ;
-; clkgen:my_vgaclk|clkout                                                                                         ; 0.199  ; 0.000         ;
+; KEY[0]                                                                                                          ; -3.909 ; -1004.891     ;
+; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -3.223 ; -209.125      ;
+; clkgen:my_vgaclk|clkout                                                                                         ; 0.185  ; 0.000         ;
+; CLOCK_50                                                                                                        ; 0.190  ; 0.000         ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -357,10 +357,10 @@ No paths to report.
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
-; KEY[0]                                                                                                          ; -2.174 ; -1239.828     ;
-; clkgen:my_vgaclk|clkout                                                                                         ; -2.174 ; -776.153      ;
-; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -1.830 ; -900.376      ;
-; CLOCK_50                                                                                                        ; -0.412 ; -3.268        ;
+; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -2.507 ; -1015.795     ;
+; KEY[0]                                                                                                          ; -2.174 ; -1242.302     ;
+; clkgen:my_vgaclk|clkout                                                                                         ; -2.174 ; -769.945      ;
+; CLOCK_50                                                                                                        ; -0.447 ; -3.353        ;
 +-----------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -375,16 +375,16 @@ No synchronizer chains to report.
 +------------------------------------------------------------------------------------------------------------------+-----------+-----------+----------+---------+---------------------+
 ; Clock                                                                                                            ; Setup     ; Hold      ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------------------------------------------------------------------------------------------------------+-----------+-----------+----------+---------+---------------------+
-; Worst-case Slack                                                                                                 ; -19.322   ; -6.650    ; N/A      ; N/A     ; -3.617              ;
-;  CLOCK_50                                                                                                        ; -6.486    ; -1.820    ; N/A      ; N/A     ; -0.412              ;
-;  KEY[0]                                                                                                          ; -7.575    ; -6.650    ; N/A      ; N/A     ; -2.174              ;
-;  clkgen:my_vgaclk|clkout                                                                                         ; -9.001    ; 0.199     ; N/A      ; N/A     ; -2.174              ;
-;  mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -19.322   ; -4.499    ; N/A      ; N/A     ; -3.617              ;
-; Design-wide TNS                                                                                                  ; -3053.361 ; -2263.657 ; 0.0      ; 0.0     ; -4347.241           ;
-;  CLOCK_50                                                                                                        ; -148.813  ; -1.820    ; N/A      ; N/A     ; -18.729             ;
-;  KEY[0]                                                                                                          ; -519.746  ; -1949.021 ; N/A      ; N/A     ; -1246.445           ;
-;  clkgen:my_vgaclk|clkout                                                                                         ; -505.645  ; 0.000     ; N/A      ; N/A     ; -815.019            ;
-;  mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -1879.382 ; -313.231  ; N/A      ; N/A     ; -2268.407           ;
+; Worst-case Slack                                                                                                 ; -19.450   ; -7.064    ; N/A      ; N/A     ; -4.862              ;
+;  CLOCK_50                                                                                                        ; -6.699    ; 0.190     ; N/A      ; N/A     ; -0.447              ;
+;  KEY[0]                                                                                                          ; -7.392    ; -7.064    ; N/A      ; N/A     ; -2.174              ;
+;  clkgen:my_vgaclk|clkout                                                                                         ; -8.440    ; 0.185     ; N/A      ; N/A     ; -2.174              ;
+;  mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -19.450   ; -5.579    ; N/A      ; N/A     ; -4.862              ;
+; Design-wide TNS                                                                                                  ; -3375.156 ; -2278.88  ; 0.0      ; 0.0     ; -4555.069           ;
+;  CLOCK_50                                                                                                        ; -155.342  ; 0.000     ; N/A      ; N/A     ; -18.766             ;
+;  KEY[0]                                                                                                          ; -893.262  ; -1886.532 ; N/A      ; N/A     ; -1245.667           ;
+;  clkgen:my_vgaclk|clkout                                                                                         ; -488.788  ; 0.000     ; N/A      ; N/A     ; -801.494            ;
+;  mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG ; -1840.617 ; -392.348  ; N/A      ; N/A     ; -2491.327           ;
 +------------------------------------------------------------------------------------------------------------------+-----------+-----------+----------+---------+---------------------+
 
 
@@ -928,7 +928,7 @@ No synchronizer chains to report.
 +-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                                                                      ; To Clock                                                                                                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+----------+----------+----------+----------+
-; clkgen:my_vgaclk|clkout                                                                                         ; clkgen:my_vgaclk|clkout                                                                                         ; 1469     ; 0        ; 103752   ; 0        ;
+; clkgen:my_vgaclk|clkout                                                                                         ; clkgen:my_vgaclk|clkout                                                                                         ; 1338     ; 0        ; 103752   ; 0        ;
 ; clkgen:my_vgaclk|clkout                                                                                         ; CLOCK_50                                                                                                        ; 1        ; 1        ; 0        ; 0        ;
 ; CLOCK_50                                                                                                        ; CLOCK_50                                                                                                        ; 17952    ; 0        ; 0        ; 0        ;
 ; KEY[0]                                                                                                          ; KEY[0]                                                                                                          ; 3641     ; 0        ; 0        ; 0        ;
@@ -944,7 +944,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                                                                      ; To Clock                                                                                                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+----------+----------+----------+----------+
-; clkgen:my_vgaclk|clkout                                                                                         ; clkgen:my_vgaclk|clkout                                                                                         ; 1469     ; 0        ; 103752   ; 0        ;
+; clkgen:my_vgaclk|clkout                                                                                         ; clkgen:my_vgaclk|clkout                                                                                         ; 1338     ; 0        ; 103752   ; 0        ;
 ; clkgen:my_vgaclk|clkout                                                                                         ; CLOCK_50                                                                                                        ; 1        ; 1        ; 0        ; 0        ;
 ; CLOCK_50                                                                                                        ; CLOCK_50                                                                                                        ; 17952    ; 0        ; 0        ; 0        ;
 ; KEY[0]                                                                                                          ; KEY[0]                                                                                                          ; 3641     ; 0        ; 0        ; 0        ;
@@ -975,9 +975,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 1     ; 1    ;
-; Unconstrained Input Port Paths  ; 65    ; 65   ;
-; Unconstrained Output Ports      ; 26    ; 26   ;
-; Unconstrained Output Port Paths ; 61    ; 61   ;
+; Unconstrained Input Port Paths  ; 96    ; 96   ;
+; Unconstrained Output Ports      ; 32    ; 32   ;
+; Unconstrained Output Port Paths ; 67    ; 67   ;
 +---------------------------------+-------+------+
 
 
@@ -1007,6 +1007,12 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------+---------------------------------------------------------------------------------------+
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
+; HEX1[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -1050,6 +1056,12 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------+---------------------------------------------------------------------------------------+
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
+; HEX1[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -1085,7 +1097,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Dec 23 09:37:26 2019
+    Info: Processing started: Mon Dec 23 18:46:50 2019
 Info: Command: quartus_sta cs -c cs
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1105,18 +1117,18 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
     Info (332098): Cell: cpu0|decode0|Selector111~1  from: datab  to: combout
     Info (332098): Cell: cpu0|decode0|Selector111~1  from: datae  to: combout
     Info (332098): Cell: cpu0|decode0|Selector147~0  from: dataa  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector147~0  from: datad  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector154~0  from: datac  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector154~1  from: datad  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector164~0  from: datac  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector164~1  from: datac  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector147~0  from: datac  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector154~0  from: dataf  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector154~1  from: datab  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector164~0  from: datab  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector164~1  from: datad  to: combout
     Info (332098): Cell: cpu0|decode0|Selector164~1  from: dataf  to: combout
     Info (332098): Cell: cpu0|decode0|Selector3~0  from: dataa  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector3~14  from: datab  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector3~14  from: dataa  to: combout
     Info (332098): Cell: cpu0|decode0|Selector3~14  from: datae  to: combout
     Info (332098): Cell: cpu0|decode0|Selector72~0  from: datac  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector72~0  from: dataf  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector72~1  from: dataf  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector72~0  from: datad  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector72~1  from: datac  to: combout
     Info (332098): From: mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG  to: os0|altsyncram_component|auto_generated|ram_block1a0|portadataout[5]
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
@@ -1124,29 +1136,29 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -19.322
+Info (332146): Worst-case setup slack is -19.450
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -19.322           -1879.382 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
-    Info (332119):    -8.997            -505.645 clkgen:my_vgaclk|clkout 
-    Info (332119):    -7.528            -519.746 KEY[0] 
-    Info (332119):    -6.286            -148.588 CLOCK_50 
-Info (332146): Worst-case hold slack is -6.650
+    Info (332119):   -19.450           -1840.617 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
+    Info (332119):    -8.342            -488.788 clkgen:my_vgaclk|clkout 
+    Info (332119):    -7.392            -893.262 KEY[0] 
+    Info (332119):    -6.470            -152.489 CLOCK_50 
+Info (332146): Worst-case hold slack is -7.064
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.650           -1946.493 KEY[0] 
-    Info (332119):    -4.499            -313.231 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
-    Info (332119):    -1.820              -1.820 CLOCK_50 
-    Info (332119):     0.550               0.000 clkgen:my_vgaclk|clkout 
+    Info (332119):    -7.064           -1886.532 KEY[0] 
+    Info (332119):    -5.579            -392.348 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
+    Info (332119):     0.382               0.000 CLOCK_50 
+    Info (332119):     0.470               0.000 clkgen:my_vgaclk|clkout 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -3.617
+Info (332146): Worst-case minimum pulse width slack is -4.862
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.617           -2268.407 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
-    Info (332119):    -2.174           -1246.445 KEY[0] 
-    Info (332119):    -2.174            -815.019 clkgen:my_vgaclk|clkout 
-    Info (332119):    -0.406             -17.370 CLOCK_50 
+    Info (332119):    -4.862           -2490.522 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
+    Info (332119):    -2.174           -1245.667 KEY[0] 
+    Info (332119):    -2.174            -801.494 clkgen:my_vgaclk|clkout 
+    Info (332119):    -0.394             -17.386 CLOCK_50 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -1155,45 +1167,45 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
     Info (332098): Cell: cpu0|decode0|Selector111~1  from: datab  to: combout
     Info (332098): Cell: cpu0|decode0|Selector111~1  from: datae  to: combout
     Info (332098): Cell: cpu0|decode0|Selector147~0  from: dataa  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector147~0  from: datad  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector154~0  from: datac  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector154~1  from: datad  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector164~0  from: datac  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector164~1  from: datac  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector147~0  from: datac  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector154~0  from: dataf  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector154~1  from: datab  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector164~0  from: datab  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector164~1  from: datad  to: combout
     Info (332098): Cell: cpu0|decode0|Selector164~1  from: dataf  to: combout
     Info (332098): Cell: cpu0|decode0|Selector3~0  from: dataa  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector3~14  from: datab  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector3~14  from: dataa  to: combout
     Info (332098): Cell: cpu0|decode0|Selector3~14  from: datae  to: combout
     Info (332098): Cell: cpu0|decode0|Selector72~0  from: datac  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector72~0  from: dataf  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector72~1  from: dataf  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector72~0  from: datad  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector72~1  from: datac  to: combout
     Info (332098): From: mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG  to: os0|altsyncram_component|auto_generated|ram_block1a0|portadataout[5]
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -19.114
+Info (332146): Worst-case setup slack is -19.183
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -19.114           -1863.645 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
-    Info (332119):    -9.001            -488.951 clkgen:my_vgaclk|clkout 
-    Info (332119):    -7.575            -469.188 KEY[0] 
-    Info (332119):    -6.486            -148.813 CLOCK_50 
-Info (332146): Worst-case hold slack is -6.470
+    Info (332119):   -19.183           -1822.612 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
+    Info (332119):    -8.440            -473.739 clkgen:my_vgaclk|clkout 
+    Info (332119):    -7.387            -824.456 KEY[0] 
+    Info (332119):    -6.699            -155.342 CLOCK_50 
+Info (332146): Worst-case hold slack is -6.868
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.470           -1949.021 KEY[0] 
-    Info (332119):    -4.483            -312.862 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
-    Info (332119):    -1.774              -1.774 CLOCK_50 
-    Info (332119):     0.567               0.000 clkgen:my_vgaclk|clkout 
+    Info (332119):    -6.868           -1876.654 KEY[0] 
+    Info (332119):    -5.487            -391.944 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
+    Info (332119):     0.381               0.000 CLOCK_50 
+    Info (332119):     0.425               0.000 clkgen:my_vgaclk|clkout 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -3.612
+Info (332146): Worst-case minimum pulse width slack is -4.777
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.612           -2253.982 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
-    Info (332119):    -2.174           -1243.794 KEY[0] 
-    Info (332119):    -2.174            -809.074 clkgen:my_vgaclk|clkout 
-    Info (332119):    -0.409             -18.729 CLOCK_50 
+    Info (332119):    -4.777           -2491.327 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
+    Info (332119):    -2.174           -1244.385 KEY[0] 
+    Info (332119):    -2.174            -798.282 clkgen:my_vgaclk|clkout 
+    Info (332119):    -0.412             -18.766 CLOCK_50 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -1202,96 +1214,96 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
     Info (332098): Cell: cpu0|decode0|Selector111~1  from: datab  to: combout
     Info (332098): Cell: cpu0|decode0|Selector111~1  from: datae  to: combout
     Info (332098): Cell: cpu0|decode0|Selector147~0  from: dataa  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector147~0  from: datad  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector154~0  from: datac  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector154~1  from: datad  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector164~0  from: datac  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector164~1  from: datac  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector147~0  from: datac  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector154~0  from: dataf  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector154~1  from: datab  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector164~0  from: datab  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector164~1  from: datad  to: combout
     Info (332098): Cell: cpu0|decode0|Selector164~1  from: dataf  to: combout
     Info (332098): Cell: cpu0|decode0|Selector3~0  from: dataa  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector3~14  from: datab  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector3~14  from: dataa  to: combout
     Info (332098): Cell: cpu0|decode0|Selector3~14  from: datae  to: combout
     Info (332098): Cell: cpu0|decode0|Selector72~0  from: datac  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector72~0  from: dataf  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector72~1  from: dataf  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector72~0  from: datad  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector72~1  from: datac  to: combout
     Info (332098): From: mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG  to: os0|altsyncram_component|auto_generated|ram_block1a0|portadataout[5]
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -11.064
+Info (332146): Worst-case setup slack is -10.799
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -11.064           -1042.873 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
-    Info (332119):    -5.286            -285.065 clkgen:my_vgaclk|clkout 
-    Info (332119):    -4.820            -339.289 KEY[0] 
-    Info (332119):    -3.466             -70.222 CLOCK_50 
-Info (332146): Worst-case hold slack is -3.867
+    Info (332119):   -10.799           -1011.210 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
+    Info (332119):    -4.930            -583.841 KEY[0] 
+    Info (332119):    -4.918            -277.201 clkgen:my_vgaclk|clkout 
+    Info (332119):    -3.660             -73.125 CLOCK_50 
+Info (332146): Worst-case hold slack is -3.938
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.867           -1045.398 KEY[0] 
-    Info (332119):    -2.655            -183.175 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
-    Info (332119):    -0.987              -0.987 CLOCK_50 
-    Info (332119):     0.205               0.000 clkgen:my_vgaclk|clkout 
+    Info (332119):    -3.938            -967.151 KEY[0] 
+    Info (332119):    -3.670            -229.775 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
+    Info (332119):     0.203               0.000 CLOCK_50 
+    Info (332119):     0.213               0.000 clkgen:my_vgaclk|clkout 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -2.174
+Info (332146): Worst-case minimum pulse width slack is -2.904
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174           -1242.869 KEY[0] 
-    Info (332119):    -2.174            -782.167 clkgen:my_vgaclk|clkout 
-    Info (332119):    -2.071           -1018.736 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
-    Info (332119):    -0.410              -3.338 CLOCK_50 
+    Info (332119):    -2.904           -1146.288 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
+    Info (332119):    -2.174           -1243.637 KEY[0] 
+    Info (332119):    -2.174            -773.666 clkgen:my_vgaclk|clkout 
+    Info (332119):    -0.440              -3.317 CLOCK_50 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: cpu0|decode0|Selector111~1  from: dataa  to: combout
     Info (332098): Cell: cpu0|decode0|Selector111~1  from: datab  to: combout
     Info (332098): Cell: cpu0|decode0|Selector111~1  from: datae  to: combout
     Info (332098): Cell: cpu0|decode0|Selector147~0  from: dataa  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector147~0  from: datad  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector154~0  from: datac  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector154~1  from: datad  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector164~0  from: datac  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector164~1  from: datac  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector147~0  from: datac  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector154~0  from: dataf  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector154~1  from: datab  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector164~0  from: datab  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector164~1  from: datad  to: combout
     Info (332098): Cell: cpu0|decode0|Selector164~1  from: dataf  to: combout
     Info (332098): Cell: cpu0|decode0|Selector3~0  from: dataa  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector3~14  from: datab  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector3~14  from: dataa  to: combout
     Info (332098): Cell: cpu0|decode0|Selector3~14  from: datae  to: combout
     Info (332098): Cell: cpu0|decode0|Selector72~0  from: datac  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector72~0  from: dataf  to: combout
-    Info (332098): Cell: cpu0|decode0|Selector72~1  from: dataf  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector72~0  from: datad  to: combout
+    Info (332098): Cell: cpu0|decode0|Selector72~1  from: datac  to: combout
     Info (332098): From: mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG  to: os0|altsyncram_component|auto_generated|ram_block1a0|portadataout[5]
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -10.334
+Info (332146): Worst-case setup slack is -10.059
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.334            -989.304 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
-    Info (332119):    -4.874            -245.240 clkgen:my_vgaclk|clkout 
-    Info (332119):    -3.928            -233.163 KEY[0] 
-    Info (332119):    -3.205             -63.781 CLOCK_50 
-Info (332146): Worst-case hold slack is -3.879
+    Info (332119):   -10.059            -958.690 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
+    Info (332119):    -4.533            -239.083 clkgen:my_vgaclk|clkout 
+    Info (332119):    -4.035            -423.248 KEY[0] 
+    Info (332119):    -3.381             -66.524 CLOCK_50 
+Info (332146): Worst-case hold slack is -3.909
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.879           -1077.603 KEY[0] 
-    Info (332119):    -2.433            -169.269 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
-    Info (332119):    -1.015              -1.015 CLOCK_50 
-    Info (332119):     0.199               0.000 clkgen:my_vgaclk|clkout 
+    Info (332119):    -3.909           -1004.891 KEY[0] 
+    Info (332119):    -3.223            -209.125 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
+    Info (332119):     0.185               0.000 clkgen:my_vgaclk|clkout 
+    Info (332119):     0.190               0.000 CLOCK_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -2.174
+Info (332146): Worst-case minimum pulse width slack is -2.507
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174           -1239.828 KEY[0] 
-    Info (332119):    -2.174            -776.153 clkgen:my_vgaclk|clkout 
-    Info (332119):    -1.830            -900.376 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
-    Info (332119):    -0.412              -3.268 CLOCK_50 
+    Info (332119):    -2.507           -1015.795 mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG 
+    Info (332119):    -2.174           -1242.302 KEY[0] 
+    Info (332119):    -2.174            -769.945 clkgen:my_vgaclk|clkout 
+    Info (332119):    -0.447              -3.353 CLOCK_50 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5212 megabytes
-    Info: Processing ended: Mon Dec 23 09:37:43 2019
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Peak virtual memory: 5213 megabytes
+    Info: Processing ended: Mon Dec 23 18:47:02 2019
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:20
 
 

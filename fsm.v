@@ -31,7 +31,7 @@ begin
   indi = 0;
 
   en = 0;
-  $readmemh("D:/program/FPGA/8/mem.txt", mem, 0, 255);
+  $readmemh("mem.txt", mem, 0, 255);
 end
 //支持程序：输入异常(8), hel(9): 输出hello world; fib(10): 计算斐波那契数
 always @(negedge clk) begin

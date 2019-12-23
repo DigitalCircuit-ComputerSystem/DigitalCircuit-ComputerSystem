@@ -524,7 +524,7 @@ always @ (*) begin
 		
 		//EX_LB:begin
 		//end
-		EX_LBU:begin
+		EXE_LBU:begin
 				//不确定
 			//aluop<=LW;    //$1=memory[$2+10]
 			wreg<=ENABLE; 
@@ -537,10 +537,10 @@ always @ (*) begin
 			mem_addr<=reg1_o+imm;
 			wren<=1'b0;  //读内存
 			case(mem_addr[1:0])
-				2'b00:wdata<={{24{1'b0}},mem_read_data[31:24];
-				2'b01:wdata<={{24{1'b0}},mem_read_data[23:16];
-				2'b10:wdata<={{24{1'b0}},mem_read_data[15:8];
-				2'b11:wdata<={{24{1'b0}},mem_read_data[7:0];
+				2'b00:wdata<={{24{1'b0}},mem_read_data[31:24]};
+				2'b01:wdata<={{24{1'b0}},mem_read_data[23:16]};
+				2'b10:wdata<={{24{1'b0}},mem_read_data[15:8]};
+				2'b11:wdata<={{24{1'b0}},mem_read_data[7:0]};
 				default:begin
 				end
 			endcase

@@ -1,0 +1,172 @@
+# Reading D:/Program_Files/intelFPGA/modelsim_ase/tcl/vsim/pref.tcl
+# do cs_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/Program_Files/intelFPGA/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/regs.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:40 on Dec 23,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem" D:/program/FPGA/DigitalCircuit-ComputerSystem/regs.v 
+# -- Compiling module regs
+# 
+# Top level modules:
+# 	regs
+# End time: 20:53:40 on Dec 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:40 on Dec 23,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem" D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v 
+# -- Compiling module cpu
+# 
+# Top level modules:
+# 	cpu
+# End time: 20:53:41 on Dec 23,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/fetch_pc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:41 on Dec 23,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem" D:/program/FPGA/DigitalCircuit-ComputerSystem/fetch_pc.v 
+# -- Compiling module fetch_pc
+# 
+# Top level modules:
+# 	fetch_pc
+# End time: 20:53:41 on Dec 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/mips_os.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:41 on Dec 23,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem" D:/program/FPGA/DigitalCircuit-ComputerSystem/mips_os.v 
+# -- Compiling module mips_os
+# 
+# Top level modules:
+# 	mips_os
+# End time: 20:53:41 on Dec 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:41 on Dec 23,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem" D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v 
+# -- Compiling module memery
+# 
+# Top level modules:
+# 	memery
+# End time: 20:53:41 on Dec 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/clkgen.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:41 on Dec 23,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem" D:/program/FPGA/DigitalCircuit-ComputerSystem/clkgen.v 
+# -- Compiling module clkgen
+# 
+# Top level modules:
+# 	clkgen
+# End time: 20:53:42 on Dec 23,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:42 on Dec 23,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem" D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v 
+# -- Compiling module decode
+# 
+# Top level modules:
+# 	decode
+# End time: 20:53:42 on Dec 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/vga_ctrl.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:42 on Dec 23,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem" D:/program/FPGA/DigitalCircuit-ComputerSystem/vga_ctrl.v 
+# -- Compiling module vga_ctrl
+# 
+# Top level modules:
+# 	vga_ctrl
+# End time: 20:53:42 on Dec 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:42 on Dec 23,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem" D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v 
+# -- Compiling module cs
+# 
+# Top level modules:
+# 	cs
+# End time: 20:53:42 on Dec 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:42 on Dec 23,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem" D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v 
+# -- Compiling module fsm
+# 
+# Top level modules:
+# 	fsm
+# End time: 20:53:42 on Dec 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim {D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim/cs.vt}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:42 on Dec 23,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim" D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim/cs.vt 
+# -- Compiling module cs_vlg_tst
+# 
+# Top level modules:
+# 	cs_vlg_tst
+# End time: 20:53:42 on Dec 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  cs_vlg_tst
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" cs_vlg_tst 
+# Start time: 20:53:43 on Dec 23,2019
+# Loading work.cs_vlg_tst
+# Loading work.cs
+# Loading work.clkgen
+# Loading work.fsm
+# Loading work.mips_os
+# Loading altera_mf_ver.altsyncram
+# Loading work.cpu
+# Loading work.fetch_pc
+# Loading work.decode
+# Loading work.regs
+# Loading work.memery
+# Loading work.vga_ctrl
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v(78): [PCDPC] - Port size (8) does not match connection size (1) for port 'asc'. The port definition is at: D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /cs_vlg_tst/i1/myfsm File: D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v
+# ** Warning: (vsim-3015) D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v(87): [PCDPC] - Port size (32) does not match connection size (33) for port 'pc'. The port definition is at: D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v(7).
+#    Time: 0 ps  Iteration: 0  Instance: /cs_vlg_tst/i1/cpu0 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v
+# ** Warning: (vsim-3015) D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v(31): [PCDPC] - Port size (32) does not match connection size (5) for port 'reg1_addr'. The port definition is at: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /cs_vlg_tst/i1/cpu0/decode0 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v
+# ** Warning: (vsim-3015) D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v(31): [PCDPC] - Port size (32) does not match connection size (5) for port 'reg2_addr'. The port definition is at: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /cs_vlg_tst/i1/cpu0/decode0 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v
+# ** Warning: (vsim-3015) D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v(31): [PCDPC] - Port size (32) does not match connection size (1) for port 'mem_read_data'. The port definition is at: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /cs_vlg_tst/i1/cpu0/decode0 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v
+# ** Warning: (vsim-3017) D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v(90): [TFMPC] - Too few port connections. Expected 10, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /cs_vlg_tst/i1/memery0 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v
+# ** Warning: (vsim-3015) D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v(90): [PCDPC] - Port size (14) does not match connection size (32) for port 'address_a'. The port definition is at: D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v(40).
+#    Time: 0 ps  Iteration: 0  Instance: /cs_vlg_tst/i1/memery0 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v
+# ** Warning: (vsim-3015) D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v(90): [PCDPC] - Port size (32) does not match connection size (8) for port 'q_b'. The port definition is at: D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v(49).
+#    Time: 0 ps  Iteration: 0  Instance: /cs_vlg_tst/i1/memery0 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v
+# ** Warning: (vsim-3722) D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v(90): [TFMPC] - Missing connection for port 'data_b'.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: (vsim-7) Failed to open readmem file "mem.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v(34)
+#    Time: 0 ps  Iteration: 0  Instance: /cs_vlg_tst/i1/myfsm
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 206 ns.
+# End time: 21:05:12 on Dec 23,2019, Elapsed time: 0:11:29
+# Errors: 1, Warnings: 10
