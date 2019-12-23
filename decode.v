@@ -82,6 +82,7 @@ parameter EXE_SLTIU=6'b001011;
 parameter  EXE_BLEZ=6'b000110;
 parameter  EXE_J=6'b000010;
 parameter  EXE_JAL=6'b000011;
+parameter  EXE_LBU=6'b100100;
 /*在执行指令的时候需要用到inout进来的regdata，但是这个regdata比接收到ins要慢。（要先让寄存器
 模块先接收到本模块传出的regaddr才能将regdata进到本模块中。*/
 
@@ -305,11 +306,9 @@ always @ (*) begin
 					wreg<=DISABLE;  //rd 
 					reg1_read<=ENABLE;   //rs
 					reg2_read<=DISABLE;   //rt
-					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
 					valid<=VALID;
-					jmp_addr<=reg1_o;
+					jmp_addr<=reg1_data;
 					is_jmp<=ENABLE;
 				end
 				default:begin
@@ -525,8 +524,28 @@ always @ (*) begin
 		
 		//EX_LB:begin
 		//end
-		//EX_LBU:begin
-		//end
+		EX_LBU:begin
+				//不确定
+			//aluop<=LW;    //$1=memory[$2+10]
+			wreg<=ENABLE; 
+			reg1_read<=ENABLE; 
+			reg2_read<=DISABLE;
+			wraddr<=rt;
+			reg1_addr<=rs;//reg1默认rs
+			valid<=VALID;
+			imm<=imm_sext;   //符号扩展
+			mem_addr<=reg1_o+imm;
+			wren<=1'b0;  //读内存
+			case(mem_addr[1:0])
+				2'b00:wdata<={{24{1'b0}},mem_read_data[31:24];
+				2'b01:wdata<={{24{1'b0}},mem_read_data[23:16];
+				2'b10:wdata<={{24{1'b0}},mem_read_data[15:8];
+				2'b11:wdata<={{24{1'b0}},mem_read_data[7:0];
+				default:begin
+				end
+			endcase
+		end
+		
 		default:begin
 		end
 	endcase
