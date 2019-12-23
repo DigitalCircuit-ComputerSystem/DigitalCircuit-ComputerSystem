@@ -1,5 +1,5 @@
 Analysis & Synthesis report for cs
-Sun Dec 22 19:05:10 2019
+Mon Dec 23 09:19:49 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -24,29 +24,31 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  16. Inverted Register Statistics
  17. Registers Packed Into Inferred Megafunctions
  18. Multiplexer Restructuring Statistics (Restructuring Performed)
- 19. Source assignments for mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated
- 20. Source assignments for memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated
+ 19. Source assignments for mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated
+ 20. Source assignments for memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated
  21. Source assignments for cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_0|altsyncram_kvj1:auto_generated
  22. Source assignments for cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_1|altsyncram_kvj1:auto_generated
- 23. Parameter Settings for User Entity Instance: clkgen:my_vgaclk
- 24. Parameter Settings for User Entity Instance: fsm:myfsm
- 25. Parameter Settings for User Entity Instance: mips_os:os0|altsyncram:altsyncram_component
- 26. Parameter Settings for User Entity Instance: cpu:cpu0|decode:decode0
- 27. Parameter Settings for User Entity Instance: memery:memery0|altsyncram:altsyncram_component
- 28. Parameter Settings for User Entity Instance: vga_ctrl:my_vga
- 29. Parameter Settings for Inferred Entity Instance: cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_0
- 30. Parameter Settings for Inferred Entity Instance: cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_1
- 31. altsyncram Parameter Settings by Entity Instance
- 32. Port Connectivity Checks: "vga_ctrl:my_vga"
- 33. Port Connectivity Checks: "memery:memery0"
- 34. Port Connectivity Checks: "cpu:cpu0|decode:decode0"
- 35. Port Connectivity Checks: "cpu:cpu0"
- 36. Port Connectivity Checks: "fsm:myfsm"
- 37. Port Connectivity Checks: "clkgen:my_vgaclk"
- 38. Post-Synthesis Netlist Statistics for Top Partition
- 39. Elapsed Time Per Partition
- 40. Analysis & Synthesis Messages
- 41. Analysis & Synthesis Suppressed Messages
+ 23. Parameter Settings for User Entity Instance: clkgen:my_csclk
+ 24. Parameter Settings for User Entity Instance: clkgen:my_vgaclk
+ 25. Parameter Settings for User Entity Instance: fsm:myfsm
+ 26. Parameter Settings for User Entity Instance: mips_os:os0|altsyncram:altsyncram_component
+ 27. Parameter Settings for User Entity Instance: cpu:cpu0|decode:decode0
+ 28. Parameter Settings for User Entity Instance: memery:memery0|altsyncram:altsyncram_component
+ 29. Parameter Settings for User Entity Instance: vga_ctrl:my_vga
+ 30. Parameter Settings for Inferred Entity Instance: cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_0
+ 31. Parameter Settings for Inferred Entity Instance: cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_1
+ 32. altsyncram Parameter Settings by Entity Instance
+ 33. Port Connectivity Checks: "vga_ctrl:my_vga"
+ 34. Port Connectivity Checks: "memery:memery0"
+ 35. Port Connectivity Checks: "cpu:cpu0|decode:decode0"
+ 36. Port Connectivity Checks: "cpu:cpu0"
+ 37. Port Connectivity Checks: "fsm:myfsm"
+ 38. Port Connectivity Checks: "clkgen:my_vgaclk"
+ 39. Port Connectivity Checks: "clkgen:my_csclk"
+ 40. Post-Synthesis Netlist Statistics for Top Partition
+ 41. Elapsed Time Per Partition
+ 42. Analysis & Synthesis Messages
+ 43. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -72,13 +74,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Dec 22 19:05:10 2019       ;
+; Analysis & Synthesis Status     ; Successful - Mon Dec 23 09:19:49 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; cs                                          ;
 ; Top-level Entity Name           ; cs                                          ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 107                                         ;
+; Total registers                 ; 140                                         ;
 ; Total pins                      ; 111                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 100,352                                     ;
@@ -192,9 +194,9 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -222,10 +224,10 @@ refer to the applicable agreement for further details.
 ; altrom.inc                       ; yes             ; Megafunction                           ; d:/program_files/fpga/quartus/libraries/megafunctions/altrom.inc            ;         ;
 ; altram.inc                       ; yes             ; Megafunction                           ; d:/program_files/fpga/quartus/libraries/megafunctions/altram.inc            ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; d:/program_files/fpga/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_i5f1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf        ;         ;
+; db/altsyncram_7sf1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf        ;         ;
 ; os.mif                           ; yes             ; Auto-Found Memory Initialization File  ; D:/program/FPGA/DigitalCircuit-ComputerSystem/os.mif                        ;         ;
 ; decode.v                         ; yes             ; Auto-Found Verilog HDL File            ; D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v                      ;         ;
-; db/altsyncram_4hi2.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf        ;         ;
+; db/altsyncram_duj2.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf        ;         ;
 ; db/decode_5la.tdf                ; yes             ; Auto-Generated Megafunction            ; D:/program/FPGA/DigitalCircuit-ComputerSystem/db/decode_5la.tdf             ;         ;
 ; db/decode_u0a.tdf                ; yes             ; Auto-Generated Megafunction            ; D:/program/FPGA/DigitalCircuit-ComputerSystem/db/decode_u0a.tdf             ;         ;
 ; db/mux_2hb.tdf                   ; yes             ; Auto-Generated Megafunction            ; D:/program/FPGA/DigitalCircuit-ComputerSystem/db/mux_2hb.tdf                ;         ;
@@ -239,16 +241,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                       ;
 +---------------------------------------------+---------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 1479                                                                                        ;
+; Estimate of Logic utilization (ALMs needed) ; 1503                                                                                        ;
 ;                                             ;                                                                                             ;
-; Combinational ALUT usage for logic          ; 2038                                                                                        ;
+; Combinational ALUT usage for logic          ; 2076                                                                                        ;
 ;     -- 7 input functions                    ; 126                                                                                         ;
-;     -- 6 input functions                    ; 792                                                                                         ;
-;     -- 5 input functions                    ; 374                                                                                         ;
-;     -- 4 input functions                    ; 172                                                                                         ;
-;     -- <=3 input functions                  ; 574                                                                                         ;
+;     -- 6 input functions                    ; 802                                                                                         ;
+;     -- 5 input functions                    ; 366                                                                                         ;
+;     -- 4 input functions                    ; 178                                                                                         ;
+;     -- <=3 input functions                  ; 604                                                                                         ;
 ;                                             ;                                                                                             ;
-; Dedicated logic registers                   ; 107                                                                                         ;
+; Dedicated logic registers                   ; 140                                                                                         ;
 ;                                             ;                                                                                             ;
 ; I/O pins                                    ; 111                                                                                         ;
 ; Total MLAB memory bits                      ; 0                                                                                           ;
@@ -256,10 +258,10 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                                                             ;
 ; Total DSP Blocks                            ; 0                                                                                           ;
 ;                                             ;                                                                                             ;
-; Maximum fan-out node                        ; memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a34 ;
-; Maximum fan-out                             ; 403                                                                                         ;
-; Total fan-out                               ; 11773                                                                                       ;
-; Average fan-out                             ; 4.75                                                                                        ;
+; Maximum fan-out node                        ; memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a34 ;
+; Maximum fan-out                             ; 401                                                                                         ;
+; Total fan-out                               ; 11977                                                                                       ;
+; Average fan-out                             ; 4.70                                                                                        ;
 +---------------------------------------------+---------------------------------------------------------------------------------------------+
 
 
@@ -268,7 +270,8 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |cs                                          ; 2038 (648)          ; 107 (12)                  ; 100352            ; 0          ; 111  ; 0            ; |cs                                                                                                  ; cs              ; work         ;
+; |cs                                          ; 2076 (646)          ; 140 (12)                  ; 100352            ; 0          ; 111  ; 0            ; |cs                                                                                                  ; cs              ; work         ;
+;    |clkgen:my_csclk|                         ; 40 (40)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |cs|clkgen:my_csclk                                                                                  ; clkgen          ; work         ;
 ;    |clkgen:my_vgaclk|                        ; 40 (40)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |cs|clkgen:my_vgaclk                                                                                 ; clkgen          ; work         ;
 ;    |cpu:cpu0|                                ; 1277 (0)            ; 32 (0)                    ; 2048              ; 0          ; 0    ; 0            ; |cs|cpu:cpu0                                                                                         ; cpu             ; work         ;
 ;       |decode:decode0|                       ; 1244 (1244)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cs|cpu:cpu0|decode:decode0                                                                          ; decode          ; work         ;
@@ -280,11 +283,11 @@ refer to the applicable agreement for further details.
 ;             |altsyncram_kvj1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |cs|cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_1|altsyncram_kvj1:auto_generated                      ; altsyncram_kvj1 ; work         ;
 ;    |memery:memery0|                          ; 1 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |cs|memery:memery0                                                                                   ; memery          ; work         ;
 ;       |altsyncram:altsyncram_component|      ; 1 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |cs|memery:memery0|altsyncram:altsyncram_component                                                   ; altsyncram      ; work         ;
-;          |altsyncram_4hi2:auto_generated|    ; 1 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |cs|memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated                    ; altsyncram_4hi2 ; work         ;
-;             |decode_5la:decode2|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cs|memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|decode_5la:decode2 ; decode_5la      ; work         ;
+;          |altsyncram_duj2:auto_generated|    ; 1 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |cs|memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated                    ; altsyncram_duj2 ; work         ;
+;             |decode_5la:decode2|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cs|memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|decode_5la:decode2 ; decode_5la      ; work         ;
 ;    |mips_os:os0|                             ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |cs|mips_os:os0                                                                                      ; mips_os         ; work         ;
 ;       |altsyncram:altsyncram_component|      ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |cs|mips_os:os0|altsyncram:altsyncram_component                                                      ; altsyncram      ; work         ;
-;          |altsyncram_i5f1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |cs|mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated                       ; altsyncram_i5f1 ; work         ;
+;          |altsyncram_7sf1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |cs|mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated                       ; altsyncram_7sf1 ; work         ;
 ;    |vga_ctrl:my_vga|                         ; 72 (72)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |cs|vga_ctrl:my_vga                                                                                  ; vga_ctrl        ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -297,8 +300,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------+
 ; cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_0|altsyncram_kvj1:auto_generated|ALTSYNCRAM   ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024   ; None   ;
 ; cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_1|altsyncram_kvj1:auto_generated|ALTSYNCRAM   ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024   ; None   ;
-; memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port   ; 16384        ; 32           ; 16384        ; 32           ; 524288 ; None   ;
-; mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|ALTSYNCRAM    ; AUTO ; ROM              ; 1024         ; 32           ; --           ; --           ; 32768  ; os.mif ;
+; memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port   ; 16384        ; 32           ; 16384        ; 32           ; 524288 ; None   ;
+; mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ALTSYNCRAM    ; AUTO ; ROM              ; 1024         ; 32           ; --           ; --           ; 32768  ; os.mif ;
 +------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------+
 
 
@@ -387,12 +390,12 @@ Encoding Type:  One-Hot
 ; cpu:cpu0|decode:decode0|jmp_addr[3]                  ; cpu:cpu0|decode:decode0|Selector3   ; yes                    ;
 ; cpu:cpu0|decode:decode0|jmp_addr[4]                  ; cpu:cpu0|decode:decode0|Selector3   ; yes                    ;
 ; cpu:cpu0|decode:decode0|jmp_addr[5]                  ; cpu:cpu0|decode:decode0|Selector3   ; yes                    ;
-; cpu:cpu0|decode:decode0|jmp_addr[0]                  ; cpu:cpu0|decode:decode0|Selector3   ; yes                    ;
-; cpu:cpu0|decode:decode0|jmp_addr[1]                  ; cpu:cpu0|decode:decode0|Selector3   ; yes                    ;
 ; cpu:cpu0|decode:decode0|jmp_addr[6]                  ; cpu:cpu0|decode:decode0|Selector3   ; yes                    ;
 ; cpu:cpu0|decode:decode0|jmp_addr[7]                  ; cpu:cpu0|decode:decode0|Selector3   ; yes                    ;
 ; cpu:cpu0|decode:decode0|jmp_addr[8]                  ; cpu:cpu0|decode:decode0|Selector3   ; yes                    ;
 ; cpu:cpu0|decode:decode0|jmp_addr[9]                  ; cpu:cpu0|decode:decode0|Selector3   ; yes                    ;
+; cpu:cpu0|decode:decode0|jmp_addr[10]                 ; cpu:cpu0|decode:decode0|Selector3   ; yes                    ;
+; cpu:cpu0|decode:decode0|jmp_addr[11]                 ; cpu:cpu0|decode:decode0|Selector3   ; yes                    ;
 ; cpu:cpu0|decode:decode0|wreg                         ; cpu:cpu0|decode:decode0|Selector164 ; yes                    ;
 ; cpu:cpu0|decode:decode0|wdata[0]                     ; cpu:cpu0|decode:decode0|Selector2   ; yes                    ;
 ; cpu:cpu0|decode:decode0|wraddr[0]                    ; cpu:cpu0|decode:decode0|Selector72  ; yes                    ;
@@ -441,65 +444,62 @@ Encoding Type:  One-Hot
 ; cpu:cpu0|decode:decode0|wdata[29]                    ; cpu:cpu0|decode:decode0|Selector2   ; yes                    ;
 ; cpu:cpu0|decode:decode0|wdata[30]                    ; cpu:cpu0|decode:decode0|Selector2   ; yes                    ;
 ; cpu:cpu0|decode:decode0|wdata[31]                    ; cpu:cpu0|decode:decode0|Selector2   ; yes                    ;
+; cpu:cpu0|decode:decode0|jmp_addr[0]                  ; cpu:cpu0|decode:decode0|Selector3   ; yes                    ;
+; cpu:cpu0|decode:decode0|jmp_addr[1]                  ; cpu:cpu0|decode:decode0|Selector3   ; yes                    ;
 ; cpu:cpu0|decode:decode0|mem_addr[13]                 ; cpu:cpu0|decode:decode0|WideOr22    ; yes                    ;
 ; cpu:cpu0|decode:decode0|wren                         ; cpu:cpu0|decode:decode0|WideOr22    ; yes                    ;
 ; cpu:cpu0|decode:decode0|mem_write_data[2]            ; cpu:cpu0|decode:decode0|Decoder1    ; yes                    ;
 ; cpu:cpu0|decode:decode0|mem_addr[0]                  ; cpu:cpu0|decode:decode0|WideOr22    ; yes                    ;
 ; cpu:cpu0|decode:decode0|mem_addr[1]                  ; cpu:cpu0|decode:decode0|WideOr22    ; yes                    ;
 ; cpu:cpu0|decode:decode0|mem_addr[2]                  ; cpu:cpu0|decode:decode0|WideOr22    ; yes                    ;
-; cpu:cpu0|decode:decode0|mem_addr[3]                  ; cpu:cpu0|decode:decode0|WideOr22    ; yes                    ;
-; cpu:cpu0|decode:decode0|mem_addr[4]                  ; cpu:cpu0|decode:decode0|WideOr22    ; yes                    ;
 ; Number of user-specified and inferred latches = 137  ;                                     ;                        ;
 +------------------------------------------------------+-------------------------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                          ;
-+----------------------------------------------------------------------------------------------------+----------------------------------------+
-; Register name                                                                                      ; Reason for Removal                     ;
-+----------------------------------------------------------------------------------------------------+----------------------------------------+
-; memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|address_reg_b[0]     ; Stuck at VCC due to stuck port data_in ;
-; memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|out_address_reg_b[0] ; Stuck at VCC due to stuck port data_in ;
-; fsm:myfsm|nowd[0..7]                                                                               ; Stuck at GND due to stuck port clock   ;
-; fsm:myfsm|con.dep1                                                                                 ; Stuck at GND due to stuck port clock   ;
-; fsm:myfsm|con.outdep1                                                                              ; Stuck at GND due to stuck port clock   ;
-; fsm:myfsm|con~8                                                                                    ; Lost fanout                            ;
-; fsm:myfsm|con.dep0                                                                                 ; Stuck at GND due to stuck port clock   ;
-; fsm:myfsm|nows~2                                                                                   ; Lost fanout                            ;
-; fsm:myfsm|nows~3                                                                                   ; Lost fanout                            ;
-; fsm:myfsm|nows~4                                                                                   ; Lost fanout                            ;
-; fsm:myfsm|nows~5                                                                                   ; Lost fanout                            ;
-; fsm:myfsm|nows~6                                                                                   ; Lost fanout                            ;
-; fsm:myfsm|nows.ini                                                                                 ; Stuck at GND due to stuck port clock   ;
-; fsm:myfsm|nows.fin                                                                                 ; Lost fanout                            ;
-; fsm:myfsm|nows.jud                                                                                 ; Lost fanout                            ;
-; fsm:myfsm|nows.in7                                                                                 ; Lost fanout                            ;
-; fsm:myfsm|nows.in6                                                                                 ; Lost fanout                            ;
-; fsm:myfsm|nows.in5                                                                                 ; Lost fanout                            ;
-; fsm:myfsm|nows.in4                                                                                 ; Lost fanout                            ;
-; fsm:myfsm|nows.in3                                                                                 ; Lost fanout                            ;
-; fsm:myfsm|nows.in2                                                                                 ; Lost fanout                            ;
-; fsm:myfsm|nows.in1                                                                                 ; Lost fanout                            ;
-; fsm:myfsm|nows.in0                                                                                 ; Lost fanout                            ;
-; Total Number of Removed Registers = 30                                                             ;                                        ;
-+----------------------------------------------------------------------------------------------------+----------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                      ;
++------------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                                  ; Reason for Removal                     ;
++------------------------------------------------------------------------------------------------+----------------------------------------+
+; memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|address_reg_b[0] ; Stuck at VCC due to stuck port data_in ;
+; fsm:myfsm|con~8                                                                                ; Lost fanout                            ;
+; fsm:myfsm|nows~2                                                                               ; Lost fanout                            ;
+; fsm:myfsm|nows~3                                                                               ; Lost fanout                            ;
+; fsm:myfsm|nows~4                                                                               ; Lost fanout                            ;
+; fsm:myfsm|nows~5                                                                               ; Lost fanout                            ;
+; fsm:myfsm|nows~6                                                                               ; Lost fanout                            ;
+; fsm:myfsm|nowd[0..7]                                                                           ; Lost fanout                            ;
+; fsm:myfsm|con.dep1                                                                             ; Lost fanout                            ;
+; fsm:myfsm|con.outdep1                                                                          ; Lost fanout                            ;
+; fsm:myfsm|con.dep0                                                                             ; Lost fanout                            ;
+; fsm:myfsm|nows.ini                                                                             ; Lost fanout                            ;
+; fsm:myfsm|nows.in0                                                                             ; Lost fanout                            ;
+; fsm:myfsm|nows.in2                                                                             ; Lost fanout                            ;
+; fsm:myfsm|nows.in1                                                                             ; Lost fanout                            ;
+; fsm:myfsm|nows.in6                                                                             ; Lost fanout                            ;
+; fsm:myfsm|nows.in5                                                                             ; Lost fanout                            ;
+; fsm:myfsm|nows.in3                                                                             ; Lost fanout                            ;
+; fsm:myfsm|nows.in4                                                                             ; Lost fanout                            ;
+; fsm:myfsm|nows.in7                                                                             ; Lost fanout                            ;
+; fsm:myfsm|nows.jud                                                                             ; Lost fanout                            ;
+; fsm:myfsm|nows.fin                                                                             ; Lost fanout                            ;
+; Total Number of Removed Registers = 29                                                         ;                                        ;
++------------------------------------------------------------------------------------------------+----------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                     ;
-+------------------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------------------+
-; Register name                                                                                  ; Reason for Removal        ; Registers Removed due to This Register                                                             ;
-+------------------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------------------+
-; fsm:myfsm|nows~2                                                                               ; Lost Fanouts              ; fsm:myfsm|nows.in6, fsm:myfsm|nows.in5, fsm:myfsm|nows.in4, fsm:myfsm|nows.in2,                    ;
-;                                                                                                ;                           ; fsm:myfsm|nows.in1                                                                                 ;
-; fsm:myfsm|nows~3                                                                               ; Lost Fanouts              ; fsm:myfsm|nows.jud, fsm:myfsm|nows.in3, fsm:myfsm|nows.in0                                         ;
-; memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|address_reg_b[0] ; Stuck at VCC              ; memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|out_address_reg_b[0] ;
-;                                                                                                ; due to stuck port data_in ;                                                                                                    ;
-; fsm:myfsm|con.dep1                                                                             ; Stuck at GND              ; fsm:myfsm|nows.fin                                                                                 ;
-;                                                                                                ; due to stuck port clock   ;                                                                                                    ;
-; fsm:myfsm|nows~5                                                                               ; Lost Fanouts              ; fsm:myfsm|nows.in7                                                                                 ;
-+------------------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                              ;
++-------------------+--------------------+---------------------------------------------------------------------------------+
+; Register name     ; Reason for Removal ; Registers Removed due to This Register                                          ;
++-------------------+--------------------+---------------------------------------------------------------------------------+
+; fsm:myfsm|nows~2  ; Lost Fanouts       ; fsm:myfsm|nows.in2, fsm:myfsm|nows.in1, fsm:myfsm|nows.in6, fsm:myfsm|nows.in5, ;
+;                   ;                    ; fsm:myfsm|nows.fin                                                              ;
+; fsm:myfsm|nows~3  ; Lost Fanouts       ; fsm:myfsm|nows.in0, fsm:myfsm|nows.in3, fsm:myfsm|nows.jud                      ;
+; fsm:myfsm|nows~4  ; Lost Fanouts       ; fsm:myfsm|nows.ini                                                              ;
+; fsm:myfsm|nows~5  ; Lost Fanouts       ; fsm:myfsm|nows.in7                                                              ;
+; fsm:myfsm|nowd[4] ; Lost Fanouts       ; fsm:myfsm|nows.in4                                                              ;
++-------------------+--------------------+---------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -507,8 +507,8 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 107   ;
-; Number of registers using Synchronous Clear  ; 81    ;
+; Total registers                              ; 140   ;
+; Number of registers using Synchronous Clear  ; 114   ;
 ; Number of registers using Synchronous Load   ; 30    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -523,7 +523,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
 ; vga_ctrl:my_vga|x_cnt[0]               ; 6       ;
-; vga_ctrl:my_vga|y_cnt[0]               ; 29      ;
+; vga_ctrl:my_vga|y_cnt[0]               ; 27      ;
 ; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
 
@@ -544,12 +544,13 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |cs|cpu:cpu0|fetch_pc:fetch_pc0|pc_o[0]  ;
-; 3:1                ; 30 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |cs|cpu:cpu0|fetch_pc:fetch_pc0|pc_o[31] ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |cs|vga_ctrl:my_vga|y_cnt[6]             ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |cs|clkgen:my_vgaclk|clkcount[0]         ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |cs|vga_ctrl:my_vga|hblock[2]            ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |cs|vga_ctrl:my_vga|boffset[0]           ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight2  ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |cs|cpu:cpu0|fetch_pc:fetch_pc0|pc_o[17] ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |cs|vga_ctrl:my_vga|y_cnt[1]             ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |cs|clkgen:my_vgaclk|clkcount[6]         ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |cs|vga_ctrl:my_vga|hblock[1]            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |cs|vga_ctrl:my_vga|boffset[1]           ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |cs|clkgen:my_csclk|clkcount[25]         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft1   ;
 ; 4:1                ; 49 bits   ; 98 LEs        ; 98 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft1   ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight2  ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight3  ;
@@ -557,31 +558,31 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft1   ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft1   ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector3    ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft0   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight0  ;
 ; 4:1                ; 49 bits   ; 98 LEs        ; 98 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft0   ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight0  ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight1  ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft0   ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft0   ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft0   ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector4    ;
-; 6:1                ; 30 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector32   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector36   ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector16   ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector107  ;
-; 7:1                ; 14 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector112  ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector67   ;
-; 9:1                ; 13 bits   ; 78 LEs        ; 52 LEs               ; 26 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector135  ;
+; 7:1                ; 14 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector114  ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector71   ;
+; 9:1                ; 13 bits   ; 78 LEs        ; 52 LEs               ; 26 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector128  ;
 ; 39:1               ; 8 bits    ; 208 LEs       ; 176 LEs              ; 32 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector55   ;
-; 37:1               ; 5 bits    ; 120 LEs       ; 110 LEs              ; 10 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector40   ;
-; 37:1               ; 3 bits    ; 72 LEs        ; 66 LEs               ; 6 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector47   ;
+; 37:1               ; 5 bits    ; 120 LEs       ; 110 LEs              ; 10 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector38   ;
+; 37:1               ; 3 bits    ; 72 LEs        ; 66 LEs               ; 6 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector48   ;
 ; 41:1               ; 2 bits    ; 54 LEs        ; 44 LEs               ; 10 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector44   ;
-; 45:1               ; 3 bits    ; 90 LEs        ; 72 LEs               ; 18 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector64   ;
-; 43:1               ; 2 bits    ; 56 LEs        ; 48 LEs               ; 8 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector60   ;
+; 45:1               ; 3 bits    ; 90 LEs        ; 72 LEs               ; 18 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector62   ;
+; 43:1               ; 2 bits    ; 56 LEs        ; 48 LEs               ; 8 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector59   ;
 ; 43:1               ; 2 bits    ; 56 LEs        ; 48 LEs               ; 8 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector37   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------+
-; Source assignments for mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated ;
+; Source assignments for mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated ;
 +---------------------------------+--------------------+------+-------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                  ;
 +---------------------------------+--------------------+------+-------------------------------------+
@@ -590,7 +591,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 
 
 +------------------------------------------------------------------------------------------------------+
-; Source assignments for memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated ;
+; Source assignments for memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated ;
 +---------------------------------+--------------------+------+----------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                     ;
 +---------------------------------+--------------------+------+----------------------------------------+
@@ -614,6 +615,17 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +---------------------------------+--------------------+------+--------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                    ;
 +---------------------------------+--------------------+------+--------------------------------------+
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clkgen:my_csclk ;
++----------------+--------+------------------------------------+
+; Parameter Name ; Value  ; Type                               ;
++----------------+--------+------------------------------------+
+; clk_freq       ; 500000 ; Signed Integer                     ;
+; countlimit     ; 50     ; Signed Integer                     ;
++----------------+--------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------+
@@ -667,7 +679,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WIDTH_A                            ; 32                   ; Signed Integer               ;
 ; WIDTHAD_A                          ; 10                   ; Signed Integer               ;
 ; NUMWORDS_A                         ; 1024                 ; Signed Integer               ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                      ;
 ; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                      ;
 ; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                      ;
 ; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                      ;
@@ -708,7 +720,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                      ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                      ;
 ; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                      ;
-; CBXI_PARAMETER                     ; altsyncram_i5f1      ; Untyped                      ;
+; CBXI_PARAMETER                     ; altsyncram_7sf1      ; Untyped                      ;
 +------------------------------------+----------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -774,7 +786,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WIDTH_A                            ; 32                   ; Signed Integer                  ;
 ; WIDTHAD_A                          ; 14                   ; Signed Integer                  ;
 ; NUMWORDS_A                         ; 16384                ; Signed Integer                  ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                         ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                         ;
 ; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                         ;
 ; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                         ;
 ; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                         ;
@@ -787,7 +799,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                         ;
 ; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                         ;
 ; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                         ;
-; OUTDATA_REG_B                      ; CLOCK1               ; Untyped                         ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                         ;
 ; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                         ;
 ; INDATA_ACLR_B                      ; NONE                 ; Untyped                         ;
 ; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                         ;
@@ -815,7 +827,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                         ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                         ;
 ; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                         ;
-; CBXI_PARAMETER                     ; altsyncram_4hi2      ; Untyped                         ;
+; CBXI_PARAMETER                     ; altsyncram_duj2      ; Untyped                         ;
 +------------------------------------+----------------------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -971,7 +983,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OPERATION_MODE                     ; ROM                                            ;
 ;     -- WIDTH_A                            ; 32                                             ;
 ;     -- NUMWORDS_A                         ; 1024                                           ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                   ;
 ;     -- WIDTH_B                            ; 1                                              ;
 ;     -- NUMWORDS_B                         ; 1                                              ;
 ;     -- ADDRESS_REG_B                      ; CLOCK1                                         ;
@@ -982,11 +994,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                                ;
 ;     -- WIDTH_A                            ; 32                                             ;
 ;     -- NUMWORDS_A                         ; 16384                                          ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                   ;
 ;     -- WIDTH_B                            ; 32                                             ;
 ;     -- NUMWORDS_B                         ; 16384                                          ;
 ;     -- ADDRESS_REG_B                      ; CLOCK1                                         ;
-;     -- OUTDATA_REG_B                      ; CLOCK1                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                   ;
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                           ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                      ;
 ; Entity Instance                           ; cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_0   ;
@@ -1049,25 +1061,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cpu:cpu0"                                                                                                                                                                           ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port             ; Type   ; Severity ; Details                                                                                                                                                                 ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; pc               ; Output ; Warning  ; Output or bidir port (32 bits) is smaller than the port expression (33 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; pc[31..10]       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
-; mem_addr[31..14] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu0"                                                                                                                                                                     ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                                                 ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; pc         ; Output ; Warning  ; Output or bidir port (32 bits) is smaller than the port expression (33 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
+; pc[31..12] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
+; pc[1..0]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "fsm:myfsm"                                                                          ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; asc  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; en   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fsm:myfsm"                                                                                                             ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; asc  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "asc[7..1]" have no fanouts ;
+; en   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                    ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------+
@@ -1079,42 +1091,51 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+-------+----------+-------------------+
 
 
++---------------------------------------------+
+; Port Connectivity Checks: "clkgen:my_csclk" ;
++-------+-------+----------+------------------+
+; Port  ; Type  ; Severity ; Details          ;
++-------+-------+----------+------------------+
+; clken ; Input ; Info     ; Stuck at VCC     ;
++-------+-------+----------+------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 107                         ;
+; arriav_ff             ; 140                         ;
 ;     ENA               ; 8                           ;
 ;     ENA SCLR          ; 9                           ;
-;     SCLR              ; 42                          ;
+;     SCLR              ; 75                          ;
 ;     SCLR SLD          ; 30                          ;
 ;     plain             ; 18                          ;
 ; arriav_io_obuf        ; 8                           ;
-; arriav_lcell_comb     ; 2038                        ;
-;     arith             ; 258                         ;
-;         1 data inputs ; 118                         ;
+; arriav_lcell_comb     ; 2076                        ;
+;     arith             ; 290                         ;
+;         1 data inputs ; 150                         ;
 ;         2 data inputs ; 94                          ;
 ;         3 data inputs ; 14                          ;
 ;         4 data inputs ; 4                           ;
 ;         5 data inputs ; 28                          ;
 ;     extend            ; 126                         ;
 ;         7 data inputs ; 126                         ;
-;     normal            ; 1622                        ;
+;     normal            ; 1628                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 57                          ;
-;         3 data inputs ; 257                         ;
-;         4 data inputs ; 168                         ;
-;         5 data inputs ; 346                         ;
-;         6 data inputs ; 792                         ;
+;         2 data inputs ; 53                          ;
+;         3 data inputs ; 259                         ;
+;         4 data inputs ; 174                         ;
+;         5 data inputs ; 338                         ;
+;         6 data inputs ; 802                         ;
 ;     shared            ; 32                          ;
 ;         2 data inputs ; 32                          ;
 ; boundary_port         ; 111                         ;
 ; stratixv_ram_block    ; 104                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.10                       ;
-; Average LUT depth     ; 6.65                        ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 6.61                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1123,7 +1144,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:16     ;
 +----------------+--------------+
 
 
@@ -1133,7 +1154,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Dec 22 19:04:47 2019
+    Info: Processing started: Mon Dec 23 09:19:13 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cs -c cs
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1159,11 +1180,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file memery.
     Info (12023): Found entity 1: memery File: D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file mem1.v
     Info (12023): Found entity 1: mem1 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/mem1.v Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at cs.v(80): created implicit net for "cs_clk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 80
-Warning (10236): Verilog HDL Implicit Net warning at cs.v(81): created implicit net for "vga_clk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 81
-Warning (10236): Verilog HDL Implicit Net warning at cs.v(82): created implicit net for "fsmclk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 82
-Warning (10236): Verilog HDL Implicit Net warning at cs.v(82): created implicit net for "fsmdata" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 82
-Warning (10236): Verilog HDL Implicit Net warning at cs.v(102): created implicit net for "reset" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 102
+Warning (10236): Verilog HDL Implicit Net warning at cs.v(75): created implicit net for "cs_clk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 75
+Warning (10236): Verilog HDL Implicit Net warning at cs.v(77): created implicit net for "vga_clk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 77
+Warning (10236): Verilog HDL Implicit Net warning at cs.v(78): created implicit net for "fsmin" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 78
+Warning (10236): Verilog HDL Implicit Net warning at cs.v(99): created implicit net for "reset" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 99
 Warning (10236): Verilog HDL Implicit Net warning at cpu.v(32): created implicit net for "mem_data" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v Line: 32
 Info (12127): Elaborating entity "cs" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at vga_font.txt(1): truncated value with size 12 to match size of target (9) File: D:/program/FPGA/11/vga_font.txt Line: 1
@@ -5262,9 +5282,9 @@ Warning (10230): Verilog HDL assignment warning at vga_font.txt(4093): truncated
 Warning (10230): Verilog HDL assignment warning at vga_font.txt(4094): truncated value with size 12 to match size of target (9) File: D:/program/FPGA/11/vga_font.txt Line: 4094
 Warning (10230): Verilog HDL assignment warning at vga_font.txt(4095): truncated value with size 12 to match size of target (9) File: D:/program/FPGA/11/vga_font.txt Line: 4095
 Warning (10230): Verilog HDL assignment warning at vga_font.txt(4096): truncated value with size 12 to match size of target (9) File: D:/program/FPGA/11/vga_font.txt Line: 4096
-Warning (10030): Net "allchar.data_a" at cs.v(62) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 62
-Warning (10030): Net "allchar.waddr_a" at cs.v(62) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 62
-Warning (10030): Net "allchar.we_a" at cs.v(62) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 62
+Warning (10030): Net "allchar.data_a" at cs.v(58) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 58
+Warning (10030): Net "allchar.waddr_a" at cs.v(58) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 58
+Warning (10030): Net "allchar.we_a" at cs.v(58) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 58
 Warning (10034): Output port "HEX0" at cs.v(18) has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 18
 Warning (10034): Output port "HEX1" at cs.v(19) has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 19
 Warning (10034): Output port "HEX2" at cs.v(20) has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 20
@@ -5276,8 +5296,9 @@ Warning (10034): Output port "AUD_XCK" at cs.v(41) has no driver File: D:/progra
 Warning (10034): Output port "FPGA_I2C_SCLK" at cs.v(50) has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 50
 Warning (12125): Using design file clkgen.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: clkgen File: D:/program/FPGA/DigitalCircuit-ComputerSystem/clkgen.v Line: 1
-Info (12128): Elaborating entity "clkgen" for hierarchy "clkgen:my_vgaclk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 81
-Info (12128): Elaborating entity "fsm" for hierarchy "fsm:myfsm" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 82
+Info (12128): Elaborating entity "clkgen" for hierarchy "clkgen:my_csclk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 75
+Info (12128): Elaborating entity "clkgen" for hierarchy "clkgen:my_vgaclk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 77
+Info (12128): Elaborating entity "fsm" for hierarchy "fsm:myfsm" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 78
 Warning (10036): Verilog HDL or VHDL warning at fsm.v(9): object "cou" assigned a value but never read File: D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v Line: 9
 Warning (10036): Verilog HDL or VHDL warning at fsm.v(20): object "indi" assigned a value but never read File: D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v Line: 20
 Warning (10036): Verilog HDL or VHDL warning at fsm.v(22): object "upper" assigned a value but never read File: D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v Line: 22
@@ -5285,7 +5306,7 @@ Warning (10036): Verilog HDL or VHDL warning at fsm.v(23): object "conen" assign
 Warning (10030): Net "mem.data_a" at fsm.v(10) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v Line: 10
 Warning (10030): Net "mem.waddr_a" at fsm.v(10) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v Line: 10
 Warning (10030): Net "mem.we_a" at fsm.v(10) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v Line: 10
-Info (12128): Elaborating entity "mips_os" for hierarchy "mips_os:os0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 90
+Info (12128): Elaborating entity "mips_os" for hierarchy "mips_os:os0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 86
 Info (12128): Elaborating entity "altsyncram" for hierarchy "mips_os:os0|altsyncram:altsyncram_component" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/mips_os.v Line: 81
 Info (12130): Elaborated megafunction instantiation "mips_os:os0|altsyncram:altsyncram_component" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/mips_os.v Line: 81
 Info (12133): Instantiated megafunction "mips_os:os0|altsyncram:altsyncram_component" with the following parameter: File: D:/program/FPGA/DigitalCircuit-ComputerSystem/mips_os.v Line: 81
@@ -5299,14 +5320,14 @@ Info (12133): Instantiated megafunction "mips_os:os0|altsyncram:altsyncram_compo
     Info (12134): Parameter "numwords_a" = "1024"
     Info (12134): Parameter "operation_mode" = "ROM"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
-    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
     Info (12134): Parameter "widthad_a" = "10"
     Info (12134): Parameter "width_a" = "32"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_i5f1.tdf
-    Info (12023): Found entity 1: altsyncram_i5f1 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_i5f1" for hierarchy "mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated" File: d:/program_files/fpga/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 91
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7sf1.tdf
+    Info (12023): Found entity 1: altsyncram_7sf1 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_7sf1" for hierarchy "mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated" File: d:/program_files/fpga/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 87
 Info (12128): Elaborating entity "fetch_pc" for hierarchy "cpu:cpu0|fetch_pc:fetch_pc0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v Line: 28
 Warning (12125): Using design file decode.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: decode File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 1
@@ -5558,7 +5579,7 @@ Info (10041): Inferred latch for "reg2_read" at decode.v(101) File: D:/program/F
 Info (10041): Inferred latch for "reg1_read" at decode.v(101) File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Info (10041): Inferred latch for "wreg" at decode.v(101) File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Info (12128): Elaborating entity "regs" for hierarchy "cpu:cpu0|regs:regs0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v Line: 36
-Info (12128): Elaborating entity "memery" for hierarchy "memery:memery0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 93
+Info (12128): Elaborating entity "memery" for hierarchy "memery:memery0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 90
 Info (12128): Elaborating entity "altsyncram" for hierarchy "memery:memery0|altsyncram:altsyncram_component" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v Line: 99
 Info (12130): Elaborated megafunction instantiation "memery:memery0|altsyncram:altsyncram_component" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v Line: 99
 Info (12133): Instantiated megafunction "memery:memery0|altsyncram:altsyncram_component" with the following parameter: File: D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v Line: 99
@@ -5575,8 +5596,8 @@ Info (12133): Instantiated megafunction "memery:memery0|altsyncram:altsyncram_co
     Info (12134): Parameter "operation_mode" = "BIDIR_DUAL_PORT"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
     Info (12134): Parameter "outdata_aclr_b" = "NONE"
-    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
-    Info (12134): Parameter "outdata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
     Info (12134): Parameter "power_up_uninitialized" = "FALSE"
     Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
     Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
@@ -5587,85 +5608,85 @@ Info (12133): Instantiated megafunction "memery:memery0|altsyncram:altsyncram_co
     Info (12134): Parameter "width_byteena_a" = "1"
     Info (12134): Parameter "width_byteena_b" = "1"
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4hi2.tdf
-    Info (12023): Found entity 1: altsyncram_4hi2 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 33
-Info (12128): Elaborating entity "altsyncram_4hi2" for hierarchy "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated" File: d:/program_files/fpga/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_duj2.tdf
+    Info (12023): Found entity 1: altsyncram_duj2 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 33
+Info (12128): Elaborating entity "altsyncram_duj2" for hierarchy "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated" File: d:/program_files/fpga/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_5la.tdf
     Info (12023): Found entity 1: decode_5la File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/decode_5la.tdf Line: 22
-Info (12128): Elaborating entity "decode_5la" for hierarchy "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|decode_5la:decode2" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 51
+Info (12128): Elaborating entity "decode_5la" for hierarchy "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|decode_5la:decode2" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 49
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_u0a.tdf
     Info (12023): Found entity 1: decode_u0a File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/decode_u0a.tdf Line: 22
-Info (12128): Elaborating entity "decode_u0a" for hierarchy "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|decode_u0a:rden_decode_a" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 53
+Info (12128): Elaborating entity "decode_u0a" for hierarchy "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|decode_u0a:rden_decode_a" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 51
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_2hb.tdf
     Info (12023): Found entity 1: mux_2hb File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/mux_2hb.tdf Line: 22
-Info (12128): Elaborating entity "mux_2hb" for hierarchy "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|mux_2hb:mux4" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 55
+Info (12128): Elaborating entity "mux_2hb" for hierarchy "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|mux_2hb:mux4" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 53
 Warning (12125): Using design file vga_ctrl.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: vga_ctrl File: D:/program/FPGA/DigitalCircuit-ComputerSystem/vga_ctrl.v Line: 1
-Info (12128): Elaborating entity "vga_ctrl" for hierarchy "vga_ctrl:my_vga" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 104
+Info (12128): Elaborating entity "vga_ctrl" for hierarchy "vga_ctrl:my_vga" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 101
 Warning (10230): Verilog HDL assignment warning at vga_ctrl.v(45): truncated value with size 32 to match size of target (4) File: D:/program/FPGA/DigitalCircuit-ComputerSystem/vga_ctrl.v Line: 45
 Warning (10230): Verilog HDL assignment warning at vga_ctrl.v(48): truncated value with size 32 to match size of target (6) File: D:/program/FPGA/DigitalCircuit-ComputerSystem/vga_ctrl.v Line: 48
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 57
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a1" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 96
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a2" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 135
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a3" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 174
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a4" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 213
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a5" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 252
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a6" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 291
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a7" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 330
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a8" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 369
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a9" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 408
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a10" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 447
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a11" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 486
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a12" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 525
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a13" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 564
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a14" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 603
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a15" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 642
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a16" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 681
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a17" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 720
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a18" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 759
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a19" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 798
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a20" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 837
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a21" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 876
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a22" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 915
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a23" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 954
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a24" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 993
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a25" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1032
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a26" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1071
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a27" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1110
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a28" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1149
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a29" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1188
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a30" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1227
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a31" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1266
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a40" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1617
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a41" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1656
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a42" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1695
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a43" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1734
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a44" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1773
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a45" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1812
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a46" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1851
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a47" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1890
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a48" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1929
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a49" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 1968
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a50" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2007
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a51" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2046
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a52" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2085
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a53" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2124
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a54" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2163
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a55" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2202
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a56" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2241
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a57" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2280
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a58" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2319
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a59" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2358
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a60" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2397
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a61" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2436
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a62" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2475
-        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_4hi2:auto_generated|ram_block1a63" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_4hi2.tdf Line: 2514
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 55
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a1" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 90
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a2" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 125
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a3" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 160
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a4" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 195
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a5" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 230
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a6" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 265
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a7" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 300
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a8" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 335
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a9" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 370
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a10" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 405
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a11" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 440
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a12" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 475
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a13" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 510
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a14" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 545
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a15" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 580
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a16" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 615
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a17" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 650
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a18" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 685
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a19" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 720
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a20" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 755
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a21" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 790
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a22" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 825
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a23" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 860
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a24" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 895
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a25" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 930
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a26" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 965
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a27" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1000
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a28" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1035
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a29" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1070
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a30" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1105
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a31" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1140
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a40" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1455
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a41" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1490
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a42" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1525
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a43" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1560
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a44" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1595
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a45" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1630
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a46" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1665
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a47" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1700
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a48" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1735
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a49" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1770
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a50" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1805
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a51" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1840
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a52" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1875
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a53" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1910
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a54" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1945
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a55" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1980
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a56" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2015
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a57" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2050
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a58" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2085
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a59" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2120
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a60" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2155
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a61" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2190
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a62" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2225
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a63" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2260
 Warning (276027): Inferred dual-clock RAM node "cpu:cpu0|regs:regs0|all_reg_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "cpu:cpu0|regs:regs0|all_reg_rtl_1" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "allchar" is uninferred due to asynchronous read logic File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 62
+    Info (276007): RAM logic "allchar" is uninferred due to asynchronous read logic File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 58
 Info (19000): Inferred 2 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "cpu:cpu0|regs:regs0|all_reg_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
@@ -5715,96 +5736,92 @@ Info (12133): Instantiated megafunction "cpu:cpu0|regs:regs0|altsyncram:all_reg_
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_kvj1.tdf
     Info (12023): Found entity 1: altsyncram_kvj1 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_kvj1.tdf Line: 27
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "PS2_CLK" has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 44
+    Warning (13040): bidirectional pin "PS2_DAT" has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 46
     Warning (13040): bidirectional pin "AUD_ADCLRCK" has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 37
     Warning (13040): bidirectional pin "AUD_BCLK" has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 38
     Warning (13040): bidirectional pin "AUD_DACLRCK" has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 40
-    Warning (13040): bidirectional pin "PS2_CLK" has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 44
     Warning (13040): bidirectional pin "PS2_CLK2" has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 45
-    Warning (13040): bidirectional pin "PS2_DAT" has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 46
     Warning (13040): bidirectional pin "PS2_DAT2" has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 47
     Warning (13040): bidirectional pin "FPGA_I2C_SDAT" has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 52
 Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[2] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
     Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[2] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[0] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|reg1_read has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 13
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|reg2_read has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 14
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[29] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[29] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[1] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[2] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[3] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[4] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[5] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[6] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[7] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[8] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[9] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[10] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[11] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[12] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[13] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[14] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[15] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[16] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[17] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[18] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[19] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[20] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[21] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[22] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[23] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[24] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[25] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[26] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[27] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[28] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[29] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[30] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|imm[31] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[3] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
     Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[3] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[4] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
     Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[4] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[5] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
     Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[5] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[0] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[0] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[1] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[1] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[6] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
     Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[6] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[7] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
@@ -5813,84 +5830,92 @@ Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[8] has unsafe behavior F
     Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[8] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[9] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
     Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[9] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
+Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[10] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[10] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
+Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[11] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[11] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Warning (13012): Latch cpu:cpu0|decode:decode0|wreg has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[28] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[28] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[0] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wraddr[0] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wraddr[1] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wraddr[2] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wraddr[3] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wraddr[4] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[27] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[1] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[2] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[3] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[4] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[5] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[6] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[7] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[8] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[9] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[10] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[11] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[12] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[13] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[14] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[15] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[16] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[17] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[18] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[19] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[20] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[21] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[22] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[23] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[24] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[25] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[26] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[27] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[28] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[29] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[30] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|wdata[31] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
+Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[0] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[0] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
+Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[1] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[1] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Warning (13012): Latch cpu:cpu0|decode:decode0|wren has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_i5f1:auto_generated|q_a[26] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_i5f1.tdf Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|q_a[26] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 31
 Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[28] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
     Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[28] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[29] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
@@ -5899,10 +5924,6 @@ Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[30] has unsafe behavior 
     Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[30] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[31] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
     Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[31] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[10] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[10] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[11] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[11] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[12] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
     Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu0|decode:decode0|imm[12] File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
 Warning (13012): Latch cpu:cpu0|decode:decode0|jmp_addr[13] has unsafe behavior File: D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v Line: 101
@@ -5995,14 +6016,15 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "AUD_XCK" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 41
     Warning (13410): Pin "FPGA_I2C_SCLK" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 50
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 16 registers lost all their fanouts during netlist optimizations.
+Info (17049): 28 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/program/FPGA/DigitalCircuit-ComputerSystem/output_files/cs.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 16 input pin(s) that do not drive logic
+Warning (21074): Design contains 17 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK2_50" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 3
     Warning (15610): No output dependent on input pin "CLOCK3_50" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 4
     Warning (15610): No output dependent on input pin "CLOCK4_50" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 5
+    Warning (15610): No output dependent on input pin "KEY[0]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 9
     Warning (15610): No output dependent on input pin "KEY[1]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 9
     Warning (15610): No output dependent on input pin "KEY[2]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 9
     Warning (15610): No output dependent on input pin "KEY[3]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 9
@@ -6016,17 +6038,17 @@ Warning (21074): Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[8]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 12
     Warning (15610): No output dependent on input pin "SW[9]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 12
     Warning (15610): No output dependent on input pin "AUD_ADCDAT" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 36
-Info (21057): Implemented 2327 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2396 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 84 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 2112 logic cells
+    Info (21061): Implemented 2181 logic cells
     Info (21064): Implemented 104 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4502 warnings
     Info: Peak virtual memory: 4882 megabytes
-    Info: Processing ended: Sun Dec 22 19:05:10 2019
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:36
+    Info: Processing ended: Mon Dec 23 09:19:49 2019
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:58
 
 
 +------------------------------------------+

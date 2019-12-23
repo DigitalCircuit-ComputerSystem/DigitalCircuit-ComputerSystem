@@ -16,7 +16,7 @@
 _start:
     j	    init				#≥ı ºªØ
 
-#.org 0x100                              
+.org 0x10                              
 init:
     nop
     ori     $1,$0,0x0
