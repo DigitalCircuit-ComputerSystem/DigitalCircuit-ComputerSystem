@@ -65,10 +65,13 @@ mainloop:
 
 key_input:
 	nop
-	lbu $23, 0x1604($0)  #键盘输入使能端
+#	lbu $23, 0x1604($0)  #键盘输入使能端
+#	beq $23, $0, noinput
+#	nop
+	lbu $23, 0x1600($0)  #键盘输入
+	nop
 	beq $23, $0, noinput
 	nop
-	lbu $23, 0x1600($0)  #键盘输入
 	beq $23, $2, same_input
 	nop
 	ori $2, $23, 0x0  #将当前输入作为上一个输入
@@ -99,7 +102,7 @@ print_asc:
 #从1900开始存放每一行的行位置, 0x2000起存放vga映射，每行只能显示64个字符
 input_newline:
 	nop
-	sb $25, 0x1900($24) 
+	sb $25, 0x2000($24) 
 	ori $25, $0, 0x0
 	addi $24, $24, 0x1
 	j finish_input
@@ -123,7 +126,7 @@ input_asc:  #输入正常ascii码
 	nop
 	sll $5, $24, 0x6   
 	add $5, $5, $25
-	sb  $23, 0x1900($5)
+	sb  $23, 0x2000($5)
 	addi $25, $25, 0x1
 	beq $25, 0x40, input_newline #换行
 	j finish_input
@@ -131,19 +134,16 @@ finish_input:            #结束输入
 	nop
 	jr $31
 
-	
 #比较输入指令是否为运行程序
 run_program:  #4为地址索引，5为比较值，6为地址中值
 	nop
 	sub $4, $24, 0x1
 	sll $4, $4, 0x6 
 	lb $6, 0x2000($4)
-	ori $5, $5, 0x2e
-	bne $6, $5, not_program  #不为句号
+	bne $6, 0x2e, not_program  #不为句号
 	addi $4, $4, 1
 	lb $6, 0x2000($4)
-	ori $5, $5, 0x2f
-	bne $6, $5, not_program #不为/
+	bne $6, 0x2f, not_program #不为/
 	addi $4, $4, 1
 	j is_hello
 
@@ -156,16 +156,14 @@ not_fib:
 is_hello: 
 	nop
 	lb $6, 0x2000($4)
-	ori $5, $5, 0x68
-	bne $6, $5, not_hello
+	bne $6, 0x68, not_hello
 	nop
 	addi $4, $4, 1
 	lb $6, 0x2000($4)
-	ori $5, $5, 0x65
-	bne $6, $5, not_hello
+	bne $6, 0x65, not_hello
 	nop
 	addi $4, $4, 1
-	lb $6, 0x5200($4)
+	lb $6, 0x2000($4)
 	ori $5, $5, 0x6c
 	bne $6, $5, not_hello
 	nop 
@@ -192,14 +190,14 @@ is_fib:
 not_program:
 	nop
 	jr $31
-	nop
+
 wrong_program:  #错误程序输出F，并换行
 	nop
-	ori $23, $0, 0x46
+	ori $23, $0, 0x46   #输出F
 	jal print_asc
 	nop
-	ori $23, $0, 0x0a
-	jal input_newline
+	ori $23, $0, 0x0d    #输出换行
+	jal print_asc
 	nop 
 	j  mainloop
 	nop
@@ -239,7 +237,7 @@ run_hello:
     ori     $23,$0,0x64                     # 0x64 d
     jal		print_asc
     nop
-    ori     $23,$0,0x0a                     # 0x0a \n
+    ori     $23,$0,0x0d                     # 0x0d  回车
     jal		print_asc
     nop
     ori     $31,$7,0x0                      # 获得返回地址
@@ -250,8 +248,7 @@ run_fib:
 	nop
 	jal key_input
 	nop
-	ori $15, $0, 0x0d
-	beq $23, $15, fib_inputing
+	beq $23, 0x0d, fib_inputing
 	nop
 	jal fib_getinput
 	nop
@@ -277,7 +274,7 @@ fib_getinput:
 	sub $16, $24, 0x1
 	sll $16, $16, 0x6 
 	lb $17, 0x2000($16)
-	subi $8, $17, 0x30
+	subi $8, $17, 0x30    #减30获得对应数字
 	jr $31
 	
 fib_out0:
@@ -287,7 +284,12 @@ fib_out0:
 
 fib_out: 
 	nop
-	or $23, $0, $10
+	or 	$23, $0, $10
+    	jal		print_asc
+        nop
+  	ori     $23,$0,0x0d                     # 输出换行
+  	jal		print_asc
+ 	nop
 	j mainloop
 	
 	

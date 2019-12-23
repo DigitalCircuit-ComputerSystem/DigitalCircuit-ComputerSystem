@@ -3,195 +3,195 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG'
-Slack : -15.665
-TNS   : -1184.890
-
-Type  : Slow 1100mV 85C Model Setup 'clkgen:my_csclk|clkout'
-Slack : -10.447
-TNS   : -2053.605
+Slack : -19.322
+TNS   : -1879.382
 
 Type  : Slow 1100mV 85C Model Setup 'clkgen:my_vgaclk|clkout'
-Slack : -9.337
-TNS   : -510.237
+Slack : -8.997
+TNS   : -505.645
+
+Type  : Slow 1100mV 85C Model Setup 'KEY[0]'
+Slack : -7.528
+TNS   : -519.746
 
 Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -4.615
-TNS   : -289.444
+Slack : -6.286
+TNS   : -148.588
+
+Type  : Slow 1100mV 85C Model Hold 'KEY[0]'
+Slack : -6.650
+TNS   : -1946.493
 
 Type  : Slow 1100mV 85C Model Hold 'mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG'
-Slack : -5.011
-TNS   : -346.698
+Slack : -4.499
+TNS   : -313.231
 
 Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : -3.832
-TNS   : -6.237
-
-Type  : Slow 1100mV 85C Model Hold 'clkgen:my_csclk|clkout'
-Slack : -0.478
-TNS   : -5.045
+Slack : -1.820
+TNS   : -1.820
 
 Type  : Slow 1100mV 85C Model Hold 'clkgen:my_vgaclk|clkout'
-Slack : 0.482
+Slack : 0.550
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG'
-Slack : -3.865
-TNS   : -2228.852
+Slack : -3.617
+TNS   : -2268.407
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clkgen:my_csclk|clkout'
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
 Slack : -2.174
-TNS   : -1263.449
+TNS   : -1246.445
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clkgen:my_vgaclk|clkout'
 Slack : -2.174
-TNS   : -801.271
+TNS   : -815.019
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.472
-TNS   : -34.945
+Slack : -0.406
+TNS   : -17.370
 
 Type  : Slow 1100mV 0C Model Setup 'mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG'
-Slack : -15.407
-TNS   : -1169.697
-
-Type  : Slow 1100mV 0C Model Setup 'clkgen:my_csclk|clkout'
-Slack : -10.339
-TNS   : -1995.070
+Slack : -19.114
+TNS   : -1863.645
 
 Type  : Slow 1100mV 0C Model Setup 'clkgen:my_vgaclk|clkout'
-Slack : -9.148
-TNS   : -489.644
+Slack : -9.001
+TNS   : -488.951
+
+Type  : Slow 1100mV 0C Model Setup 'KEY[0]'
+Slack : -7.575
+TNS   : -469.188
 
 Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -4.794
-TNS   : -295.063
+Slack : -6.486
+TNS   : -148.813
+
+Type  : Slow 1100mV 0C Model Hold 'KEY[0]'
+Slack : -6.470
+TNS   : -1949.021
 
 Type  : Slow 1100mV 0C Model Hold 'mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG'
-Slack : -4.977
-TNS   : -344.118
+Slack : -4.483
+TNS   : -312.862
 
 Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : -3.649
-TNS   : -5.974
-
-Type  : Slow 1100mV 0C Model Hold 'clkgen:my_csclk|clkout'
-Slack : -0.346
-TNS   : -2.230
+Slack : -1.774
+TNS   : -1.774
 
 Type  : Slow 1100mV 0C Model Hold 'clkgen:my_vgaclk|clkout'
-Slack : 0.443
+Slack : 0.567
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG'
-Slack : -3.782
-TNS   : -2228.680
+Slack : -3.612
+TNS   : -2253.982
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clkgen:my_csclk|clkout'
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
 Slack : -2.174
-TNS   : -1257.882
+TNS   : -1243.794
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clkgen:my_vgaclk|clkout'
 Slack : -2.174
-TNS   : -799.248
+TNS   : -809.074
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.483
-TNS   : -37.774
+Slack : -0.409
+TNS   : -18.729
 
 Type  : Fast 1100mV 85C Model Setup 'mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG'
-Slack : -9.330
-TNS   : -693.353
-
-Type  : Fast 1100mV 85C Model Setup 'clkgen:my_csclk|clkout'
-Slack : -6.283
-TNS   : -1225.126
+Slack : -11.064
+TNS   : -1042.873
 
 Type  : Fast 1100mV 85C Model Setup 'clkgen:my_vgaclk|clkout'
-Slack : -5.468
-TNS   : -284.202
+Slack : -5.286
+TNS   : -285.065
+
+Type  : Fast 1100mV 85C Model Setup 'KEY[0]'
+Slack : -4.820
+TNS   : -339.289
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -2.340
-TNS   : -134.098
+Slack : -3.466
+TNS   : -70.222
+
+Type  : Fast 1100mV 85C Model Hold 'KEY[0]'
+Slack : -3.867
+TNS   : -1045.398
 
 Type  : Fast 1100mV 85C Model Hold 'mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG'
-Slack : -3.043
-TNS   : -200.663
+Slack : -2.655
+TNS   : -183.175
 
 Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
-Slack : -2.284
-TNS   : -3.746
-
-Type  : Fast 1100mV 85C Model Hold 'clkgen:my_csclk|clkout'
-Slack : -0.361
-TNS   : -5.766
+Slack : -0.987
+TNS   : -0.987
 
 Type  : Fast 1100mV 85C Model Hold 'clkgen:my_vgaclk|clkout'
-Slack : 0.209
+Slack : 0.205
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG'
-Slack : -2.252
-TNS   : -978.987
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clkgen:my_csclk|clkout'
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
 Slack : -2.174
-TNS   : -1242.381
+TNS   : -1242.869
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clkgen:my_vgaclk|clkout'
 Slack : -2.174
-TNS   : -771.862
+TNS   : -782.167
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG'
+Slack : -2.071
+TNS   : -1018.736
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.494
-TNS   : -6.953
+Slack : -0.410
+TNS   : -3.338
 
 Type  : Fast 1100mV 0C Model Setup 'mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG'
-Slack : -8.371
-TNS   : -622.983
-
-Type  : Fast 1100mV 0C Model Setup 'clkgen:my_csclk|clkout'
-Slack : -5.648
-TNS   : -1087.308
+Slack : -10.334
+TNS   : -989.304
 
 Type  : Fast 1100mV 0C Model Setup 'clkgen:my_vgaclk|clkout'
-Slack : -4.946
-TNS   : -244.501
+Slack : -4.874
+TNS   : -245.240
+
+Type  : Fast 1100mV 0C Model Setup 'KEY[0]'
+Slack : -3.928
+TNS   : -233.163
 
 Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -2.199
-TNS   : -122.574
+Slack : -3.205
+TNS   : -63.781
+
+Type  : Fast 1100mV 0C Model Hold 'KEY[0]'
+Slack : -3.879
+TNS   : -1077.603
 
 Type  : Fast 1100mV 0C Model Hold 'mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG'
-Slack : -2.776
-TNS   : -184.207
+Slack : -2.433
+TNS   : -169.269
 
 Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : -2.150
-TNS   : -3.586
-
-Type  : Fast 1100mV 0C Model Hold 'clkgen:my_csclk|clkout'
-Slack : -0.295
-TNS   : -4.294
+Slack : -1.015
+TNS   : -1.015
 
 Type  : Fast 1100mV 0C Model Hold 'clkgen:my_vgaclk|clkout'
-Slack : 0.172
+Slack : 0.199
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clkgen:my_csclk|clkout'
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
 Slack : -2.174
-TNS   : -1236.956
+TNS   : -1239.828
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clkgen:my_vgaclk|clkout'
 Slack : -2.174
-TNS   : -768.982
+TNS   : -776.153
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated|ram_block1a0~PORT_A_WRITE_ENABLE_REG'
-Slack : -1.984
-TNS   : -872.990
+Slack : -1.830
+TNS   : -900.376
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.488
-TNS   : -6.868
+Slack : -0.412
+TNS   : -3.268
 
 ------------------------------------------------------------

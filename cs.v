@@ -72,8 +72,8 @@ initial begin
 	$readmemh("D:/program/FPGA/11/vga_font.txt", allchar, 0, 4095);
 end
 
-clkgen #(500000) my_csclk(CLOCK_50,SW[0],1'b1,cs_clk);
-//assign cs_clk = KEY[0];
+//clkgen #(500000) my_csclk(CLOCK_50,SW[0],1'b1,cs_clk);
+assign cs_clk = KEY[0];
 clkgen #(25000000) my_vgaclk(CLOCK_50,SW[0],1'b1,vga_clk);
 fsm myfsm(.clk(PS2_CLK), .data(PS2_DAT), .asc(fsmin),.en(fsmen));   //当前存数据的地址
 wire [31:0] wdata;
@@ -89,19 +89,19 @@ cpu cpu0(.rst(rst),.clk(cs_clk), .inst(intr),.pc(pc),.mem_addr(memaddr),.mem_rea
 memery memery0(.address_a(memaddr), .data_a(wdata), .wren_a(wren),.clock_a(cs_clk), .q_a(rdata1),
 					.address_b(14'h2000|{vgavaddr[8:4],pos[5:0]}),.wren_b(1'b0), .q_b(vga_asc), .clock_b(vga_clk));
 
-assign rdata = memaddr == 14'h2000 ? fsmin: rdata1;
+assign rdata = memaddr == 14'h1600 ? fsmin: rdata1;
 always @(negedge vga_clk) begin
 	 linedata = allchar[{vga_asc,vgavaddr[3:0]}];
 	 vgadata1 = linedata[offset]? 24'hFFFFFF: 24'h000000;
 end
 assign vgadata = vgadata1;
 assign VGA_CLK = vga_clk;
-vga_ctrl my_vga(.pclk(vga_clk), .reset(reset), .vga_data(vgadata), .h_addr(vgahaddr), 
+vga_ctrl my_vga(.pclk(vga_clk), .reset(rst), .vga_data(vgadata), .h_addr(vgahaddr), 
 			.v_addr(vgavaddr),.boffset(offset),.hblock(pos), .hsync(VGA_HS), .vsync(VGA_VS),
 			.valid(VGA_BLANK_N), .vga_r(VGA_R), .vga_g(VGA_G), .vga_b(VGA_B));
 
 			
-assign LEDR[3:0] = intr[29:26];
-assign LEDR[9:4] = pc[7:2];
+assign HEX[5:0] = intr[31:26];
+assign LEDR[9:0] = pc[11:2];
 assign rst = SW[0];
 endmodule 

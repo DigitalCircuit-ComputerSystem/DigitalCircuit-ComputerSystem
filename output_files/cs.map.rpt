@@ -1,5 +1,5 @@
 Analysis & Synthesis report for cs
-Mon Dec 23 09:19:49 2019
+Mon Dec 23 09:31:06 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -28,27 +28,25 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  20. Source assignments for memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated
  21. Source assignments for cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_0|altsyncram_kvj1:auto_generated
  22. Source assignments for cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_1|altsyncram_kvj1:auto_generated
- 23. Parameter Settings for User Entity Instance: clkgen:my_csclk
- 24. Parameter Settings for User Entity Instance: clkgen:my_vgaclk
- 25. Parameter Settings for User Entity Instance: fsm:myfsm
- 26. Parameter Settings for User Entity Instance: mips_os:os0|altsyncram:altsyncram_component
- 27. Parameter Settings for User Entity Instance: cpu:cpu0|decode:decode0
- 28. Parameter Settings for User Entity Instance: memery:memery0|altsyncram:altsyncram_component
- 29. Parameter Settings for User Entity Instance: vga_ctrl:my_vga
- 30. Parameter Settings for Inferred Entity Instance: cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_0
- 31. Parameter Settings for Inferred Entity Instance: cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_1
- 32. altsyncram Parameter Settings by Entity Instance
- 33. Port Connectivity Checks: "vga_ctrl:my_vga"
- 34. Port Connectivity Checks: "memery:memery0"
- 35. Port Connectivity Checks: "cpu:cpu0|decode:decode0"
- 36. Port Connectivity Checks: "cpu:cpu0"
- 37. Port Connectivity Checks: "fsm:myfsm"
- 38. Port Connectivity Checks: "clkgen:my_vgaclk"
- 39. Port Connectivity Checks: "clkgen:my_csclk"
- 40. Post-Synthesis Netlist Statistics for Top Partition
- 41. Elapsed Time Per Partition
- 42. Analysis & Synthesis Messages
- 43. Analysis & Synthesis Suppressed Messages
+ 23. Parameter Settings for User Entity Instance: clkgen:my_vgaclk
+ 24. Parameter Settings for User Entity Instance: fsm:myfsm
+ 25. Parameter Settings for User Entity Instance: mips_os:os0|altsyncram:altsyncram_component
+ 26. Parameter Settings for User Entity Instance: cpu:cpu0|decode:decode0
+ 27. Parameter Settings for User Entity Instance: memery:memery0|altsyncram:altsyncram_component
+ 28. Parameter Settings for User Entity Instance: vga_ctrl:my_vga
+ 29. Parameter Settings for Inferred Entity Instance: cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_0
+ 30. Parameter Settings for Inferred Entity Instance: cpu:cpu0|regs:regs0|altsyncram:all_reg_rtl_1
+ 31. altsyncram Parameter Settings by Entity Instance
+ 32. Port Connectivity Checks: "vga_ctrl:my_vga"
+ 33. Port Connectivity Checks: "memery:memery0"
+ 34. Port Connectivity Checks: "cpu:cpu0|decode:decode0"
+ 35. Port Connectivity Checks: "cpu:cpu0"
+ 36. Port Connectivity Checks: "fsm:myfsm"
+ 37. Port Connectivity Checks: "clkgen:my_vgaclk"
+ 38. Post-Synthesis Netlist Statistics for Top Partition
+ 39. Elapsed Time Per Partition
+ 40. Analysis & Synthesis Messages
+ 41. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -74,13 +72,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Dec 23 09:19:49 2019       ;
+; Analysis & Synthesis Status     ; Successful - Mon Dec 23 09:31:06 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; cs                                          ;
 ; Top-level Entity Name           ; cs                                          ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 140                                         ;
+; Total registers                 ; 107                                         ;
 ; Total pins                      ; 111                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 100,352                                     ;
@@ -241,16 +239,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                       ;
 +---------------------------------------------+---------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 1503                                                                                        ;
+; Estimate of Logic utilization (ALMs needed) ; 1480                                                                                        ;
 ;                                             ;                                                                                             ;
-; Combinational ALUT usage for logic          ; 2076                                                                                        ;
+; Combinational ALUT usage for logic          ; 2036                                                                                        ;
 ;     -- 7 input functions                    ; 126                                                                                         ;
-;     -- 6 input functions                    ; 802                                                                                         ;
+;     -- 6 input functions                    ; 795                                                                                         ;
 ;     -- 5 input functions                    ; 366                                                                                         ;
 ;     -- 4 input functions                    ; 178                                                                                         ;
-;     -- <=3 input functions                  ; 604                                                                                         ;
+;     -- <=3 input functions                  ; 571                                                                                         ;
 ;                                             ;                                                                                             ;
-; Dedicated logic registers                   ; 140                                                                                         ;
+; Dedicated logic registers                   ; 107                                                                                         ;
 ;                                             ;                                                                                             ;
 ; I/O pins                                    ; 111                                                                                         ;
 ; Total MLAB memory bits                      ; 0                                                                                           ;
@@ -260,8 +258,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                                                             ;
 ; Maximum fan-out node                        ; memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a34 ;
 ; Maximum fan-out                             ; 401                                                                                         ;
-; Total fan-out                               ; 11977                                                                                       ;
-; Average fan-out                             ; 4.70                                                                                        ;
+; Total fan-out                               ; 11771                                                                                       ;
+; Average fan-out                             ; 4.75                                                                                        ;
 +---------------------------------------------+---------------------------------------------------------------------------------------------+
 
 
@@ -270,8 +268,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |cs                                          ; 2076 (646)          ; 140 (12)                  ; 100352            ; 0          ; 111  ; 0            ; |cs                                                                                                  ; cs              ; work         ;
-;    |clkgen:my_csclk|                         ; 40 (40)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |cs|clkgen:my_csclk                                                                                  ; clkgen          ; work         ;
+; |cs                                          ; 2036 (646)          ; 107 (12)                  ; 100352            ; 0          ; 111  ; 0            ; |cs                                                                                                  ; cs              ; work         ;
 ;    |clkgen:my_vgaclk|                        ; 40 (40)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |cs|clkgen:my_vgaclk                                                                                 ; clkgen          ; work         ;
 ;    |cpu:cpu0|                                ; 1277 (0)            ; 32 (0)                    ; 2048              ; 0          ; 0    ; 0            ; |cs|cpu:cpu0                                                                                         ; cpu             ; work         ;
 ;       |decode:decode0|                       ; 1244 (1244)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cs|cpu:cpu0|decode:decode0                                                                          ; decode          ; work         ;
@@ -507,8 +504,8 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 140   ;
-; Number of registers using Synchronous Clear  ; 114   ;
+; Total registers                              ; 107   ;
+; Number of registers using Synchronous Clear  ; 81    ;
 ; Number of registers using Synchronous Load   ; 30    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -543,15 +540,14 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |cs|cpu:cpu0|fetch_pc:fetch_pc0|pc_o[0]  ;
-; 3:1                ; 30 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |cs|cpu:cpu0|fetch_pc:fetch_pc0|pc_o[17] ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |cs|vga_ctrl:my_vga|y_cnt[1]             ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |cs|clkgen:my_vgaclk|clkcount[6]         ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |cs|vga_ctrl:my_vga|hblock[1]            ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |cs|vga_ctrl:my_vga|boffset[1]           ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |cs|clkgen:my_csclk|clkcount[25]         ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft1   ;
-; 4:1                ; 49 bits   ; 98 LEs        ; 98 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft1   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |cs|cpu:cpu0|fetch_pc:fetch_pc0|pc_o[1]  ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |cs|cpu:cpu0|fetch_pc:fetch_pc0|pc_o[25] ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |cs|vga_ctrl:my_vga|y_cnt[5]             ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |cs|clkgen:my_vgaclk|clkcount[9]         ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |cs|vga_ctrl:my_vga|hblock[0]            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |cs|vga_ctrl:my_vga|boffset[3]           ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight2  ;
+; 4:1                ; 49 bits   ; 98 LEs        ; 98 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight3  ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight2  ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight3  ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft1   ;
@@ -559,22 +555,22 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft1   ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector3    ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight0  ;
-; 4:1                ; 49 bits   ; 98 LEs        ; 98 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft0   ;
+; 4:1                ; 49 bits   ; 98 LEs        ; 98 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight1  ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight0  ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftRight1  ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft0   ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft0   ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|ShiftLeft0   ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector36   ;
-; 6:1                ; 30 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector16   ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector8    ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector107  ;
-; 7:1                ; 14 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector114  ;
+; 7:1                ; 14 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector121  ;
 ; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector71   ;
-; 9:1                ; 13 bits   ; 78 LEs        ; 52 LEs               ; 26 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector128  ;
-; 39:1               ; 8 bits    ; 208 LEs       ; 176 LEs              ; 32 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector55   ;
-; 37:1               ; 5 bits    ; 120 LEs       ; 110 LEs              ; 10 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector38   ;
+; 9:1                ; 13 bits   ; 78 LEs        ; 52 LEs               ; 26 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector133  ;
+; 39:1               ; 8 bits    ; 208 LEs       ; 176 LEs              ; 32 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector53   ;
+; 37:1               ; 5 bits    ; 120 LEs       ; 110 LEs              ; 10 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector42   ;
 ; 37:1               ; 3 bits    ; 72 LEs        ; 66 LEs               ; 6 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector48   ;
-; 41:1               ; 2 bits    ; 54 LEs        ; 44 LEs               ; 10 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector44   ;
+; 41:1               ; 2 bits    ; 54 LEs        ; 44 LEs               ; 10 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector43   ;
 ; 45:1               ; 3 bits    ; 90 LEs        ; 72 LEs               ; 18 LEs                 ; No         ; |cs|cpu:cpu0|decode:decode0|Selector62   ;
 ; 43:1               ; 2 bits    ; 56 LEs        ; 48 LEs               ; 8 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector59   ;
 ; 43:1               ; 2 bits    ; 56 LEs        ; 48 LEs               ; 8 LEs                  ; No         ; |cs|cpu:cpu0|decode:decode0|Selector37   ;
@@ -615,17 +611,6 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +---------------------------------+--------------------+------+--------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                    ;
 +---------------------------------+--------------------+------+--------------------------------------+
-
-
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: clkgen:my_csclk ;
-+----------------+--------+------------------------------------+
-; Parameter Name ; Value  ; Type                               ;
-+----------------+--------+------------------------------------+
-; clk_freq       ; 500000 ; Signed Integer                     ;
-; countlimit     ; 50     ; Signed Integer                     ;
-+----------------+--------+------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------+
@@ -1091,51 +1076,42 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+-------+----------+-------------------+
 
 
-+---------------------------------------------+
-; Port Connectivity Checks: "clkgen:my_csclk" ;
-+-------+-------+----------+------------------+
-; Port  ; Type  ; Severity ; Details          ;
-+-------+-------+----------+------------------+
-; clken ; Input ; Info     ; Stuck at VCC     ;
-+-------+-------+----------+------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 140                         ;
+; arriav_ff             ; 107                         ;
 ;     ENA               ; 8                           ;
 ;     ENA SCLR          ; 9                           ;
-;     SCLR              ; 75                          ;
+;     SCLR              ; 42                          ;
 ;     SCLR SLD          ; 30                          ;
 ;     plain             ; 18                          ;
 ; arriav_io_obuf        ; 8                           ;
-; arriav_lcell_comb     ; 2076                        ;
-;     arith             ; 290                         ;
-;         1 data inputs ; 150                         ;
+; arriav_lcell_comb     ; 2036                        ;
+;     arith             ; 258                         ;
+;         1 data inputs ; 118                         ;
 ;         2 data inputs ; 94                          ;
 ;         3 data inputs ; 14                          ;
 ;         4 data inputs ; 4                           ;
 ;         5 data inputs ; 28                          ;
 ;     extend            ; 126                         ;
 ;         7 data inputs ; 126                         ;
-;     normal            ; 1628                        ;
+;     normal            ; 1620                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 53                          ;
+;         2 data inputs ; 52                          ;
 ;         3 data inputs ; 259                         ;
 ;         4 data inputs ; 174                         ;
 ;         5 data inputs ; 338                         ;
-;         6 data inputs ; 802                         ;
+;         6 data inputs ; 795                         ;
 ;     shared            ; 32                          ;
 ;         2 data inputs ; 32                          ;
 ; boundary_port         ; 111                         ;
 ; stratixv_ram_block    ; 104                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 6.61                        ;
+; Average LUT depth     ; 6.66                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1154,7 +1130,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Dec 23 09:19:13 2019
+    Info: Processing started: Mon Dec 23 09:30:29 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cs -c cs
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1180,7 +1156,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file memery.
     Info (12023): Found entity 1: memery File: D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file mem1.v
     Info (12023): Found entity 1: mem1 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/mem1.v Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at cs.v(75): created implicit net for "cs_clk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 75
+Warning (10236): Verilog HDL Implicit Net warning at cs.v(76): created implicit net for "cs_clk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 76
 Warning (10236): Verilog HDL Implicit Net warning at cs.v(77): created implicit net for "vga_clk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 77
 Warning (10236): Verilog HDL Implicit Net warning at cs.v(78): created implicit net for "fsmin" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 78
 Warning (10236): Verilog HDL Implicit Net warning at cs.v(99): created implicit net for "reset" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 99
@@ -5296,7 +5272,6 @@ Warning (10034): Output port "AUD_XCK" at cs.v(41) has no driver File: D:/progra
 Warning (10034): Output port "FPGA_I2C_SCLK" at cs.v(50) has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 50
 Warning (12125): Using design file clkgen.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: clkgen File: D:/program/FPGA/DigitalCircuit-ComputerSystem/clkgen.v Line: 1
-Info (12128): Elaborating entity "clkgen" for hierarchy "clkgen:my_csclk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 75
 Info (12128): Elaborating entity "clkgen" for hierarchy "clkgen:my_vgaclk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 77
 Info (12128): Elaborating entity "fsm" for hierarchy "fsm:myfsm" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 78
 Warning (10036): Verilog HDL or VHDL warning at fsm.v(9): object "cou" assigned a value but never read File: D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v Line: 9
@@ -6020,11 +5995,10 @@ Info (17049): 28 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/program/FPGA/DigitalCircuit-ComputerSystem/output_files/cs.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 17 input pin(s) that do not drive logic
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK2_50" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 3
     Warning (15610): No output dependent on input pin "CLOCK3_50" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 4
     Warning (15610): No output dependent on input pin "CLOCK4_50" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 5
-    Warning (15610): No output dependent on input pin "KEY[0]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 9
     Warning (15610): No output dependent on input pin "KEY[1]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 9
     Warning (15610): No output dependent on input pin "KEY[2]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 9
     Warning (15610): No output dependent on input pin "KEY[3]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 9
@@ -6038,17 +6012,17 @@ Warning (21074): Design contains 17 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[8]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 12
     Warning (15610): No output dependent on input pin "SW[9]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 12
     Warning (15610): No output dependent on input pin "AUD_ADCDAT" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 36
-Info (21057): Implemented 2396 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2325 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 84 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 2181 logic cells
+    Info (21061): Implemented 2110 logic cells
     Info (21064): Implemented 104 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4502 warnings
-    Info: Peak virtual memory: 4882 megabytes
-    Info: Processing ended: Mon Dec 23 09:19:49 2019
-    Info: Elapsed time: 00:00:36
-    Info: Total CPU time (on all processors): 00:00:58
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4501 warnings
+    Info: Peak virtual memory: 4879 megabytes
+    Info: Processing ended: Mon Dec 23 09:31:06 2019
+    Info: Elapsed time: 00:00:37
+    Info: Total CPU time (on all processors): 00:01:01
 
 
 +------------------------------------------+
