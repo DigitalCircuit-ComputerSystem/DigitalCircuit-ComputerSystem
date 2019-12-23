@@ -5,13 +5,10 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/regs.v}
 vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v}
-vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/fetch_pc.v}
 vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/mips_os.v}
 vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v}
 vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/clkgen.v}
-vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/decode.v}
 vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/vga_ctrl.v}
 vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v}
 vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v}

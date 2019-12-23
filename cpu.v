@@ -4,10 +4,10 @@ module cpu(
 	input [31:0] mem_read_data,   //内存读出来的内容
 	//output [31:0] ans,
 	input [31:0] inst,
-	output wire [31:0] pc,
-	output [31:0] mem_addr,  //内存访问地址
-	output [31:0] mem_write_data,  //要写到内存里的内容
-	output wren,  //内存访问使能端
+	output wire [31:0] pc_o,
+	output reg [31:0] mem_addr,  //内存访问地址
+	output reg [31:0] mem_write_data,  //要写到内存里的内容
+	output reg wren,  //内存访问使能端
 	output [31:0]r31
 );
 
@@ -22,7 +22,11 @@ reg [4:0] reg2_addr;
 reg wreg;  //写寄存器使能端
 reg reg1_read;  //读寄存器使能端
 reg reg2_read;
-
+reg [31:0] pc;
+assign pc_o = pc;
+initial begin
+pc = 0;
+end
 //assign address=pc[6:2];    //暂时用的5位pc
 
 /*fetch_pc fetch_pc0 (.rst(rst), .clk(clk), .pc_i(pc), .is_jmp(is_jmp), .jmp_pc(jmp_pc), .pc_o(pc));  //取指令以及更新pc
@@ -42,7 +46,7 @@ reg [31:0] reg1_o;  //操作数1的数据
 reg [31:0] reg2_o;
 reg valid;
 reg[31:0] all_reg[31:0];    //cpu内部32个寄存器
-
+assign r31 = all_reg[31];
 wire [5:0] opcode=inst[31:26];
 wire [4:0] rs=inst[25:21];    //R-type&I-type
 wire [4:0] rt=inst[20:16];    //R-type&I-type

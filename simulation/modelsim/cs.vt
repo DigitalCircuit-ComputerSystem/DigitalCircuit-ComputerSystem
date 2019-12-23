@@ -17,7 +17,7 @@
 // suit user's needs .Comments are provided in each section to help the user    
 // fill out necessary details.                                                  
 // *****************************************************************************
-// Generated on "12/23/2019 20:53:14"
+// Generated on "12/23/2019 21:29:13"
                                                                                 
 // Verilog Test Bench template for design : cs
 // 
@@ -136,6 +136,6 @@ begin
                                                        
 #2; KEY[0] = ~KEY[0];                                             
 // --> end                                             
-end                                                    
+end                                                  
 endmodule
 
