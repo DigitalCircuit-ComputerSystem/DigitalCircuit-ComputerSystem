@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dD:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim
 vclkgen
-Z1 !s110 1577272067
+Z1 !s110 1577282492
 !i10b 1
 !s100 bOzBWnRUon>LjoLPB0R6O0
 IZ5^8>Sd9eSYdJogIeKj_X1
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1577272067.000000
+Z4 !s108 1577282492.000000
 !s107 D:/program/FPGA/DigitalCircuit-ComputerSystem/clkgen.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem|D:/program/FPGA/DigitalCircuit-ComputerSystem/clkgen.v|
 !i113 1
@@ -31,13 +31,13 @@ Z5 o-vlog01compat -work work
 Z6 !s92 -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem
 Z7 tCvgOpt 0
 vcpu
-R1
+Z8 !s110 1577282490
 !i10b 1
-!s100 JNnJWWJd__I?14A8hf=6A2
-I?a1nW@I^?X41M]>9ZBhFW2
+!s100 k0PLCD=8TjO^BX2ee6kQT3
+IAHQ=oDhW_L6^a9d8iN11O1
 R2
 R0
-w1577271689
+w1577282231
 8D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v
 FD:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v
 L0 1
@@ -45,7 +45,7 @@ R3
 r1
 !s85 0
 31
-R4
+Z9 !s108 1577282490.000000
 !s107 D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem|D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v|
 !i113 1
@@ -53,13 +53,13 @@ R5
 R6
 R7
 vcs
-Z8 !s110 1577272068
+Z10 !s110 1577282493
 !i10b 1
-!s100 0mb3LF[@KbLL]MH:B`SXA0
-IJoNNXzVia:Cnj4T0[VCFJ1
+!s100 J1]>GHn@YzG`U4kj@b7]23
+IeRmEZ]b;:F>mDEgjO]eW_2
 R2
 R0
-w1577271951
+w1577281874
 8D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v
 FD:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v
 L0 1
@@ -67,7 +67,7 @@ R3
 r1
 !s85 0
 31
-R4
+Z11 !s108 1577282493.000000
 !s107 D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem|D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v|
 !i113 1
@@ -75,13 +75,13 @@ R5
 R6
 R7
 vcs_vlg_tst
-R8
+R10
 !i10b 1
-!s100 b6HW296Yj0<8NU:EA5iF43
-Ib9X?[oYmVKFY@6U89Qzko2
+!s100 PfLCzZNFL@mHDWgce3>`B3
+IC9TDE6MF6TXCVU>=^G4F91
 R2
 R0
-w1577270615
+w1577281576
 8D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim/cs.vt
 FD:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim/cs.vt
 L0 28
@@ -89,7 +89,7 @@ R3
 r1
 !s85 0
 31
-!s108 1577272068.000000
+R11
 !s107 D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim/cs.vt|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim|D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim/cs.vt|
 !i113 1
@@ -97,21 +97,21 @@ R5
 !s92 -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim
 R7
 vmemery
-R1
+!s110 1577282491
 !i10b 1
 !s100 1gCoUmCV0R`MCMzGo4gKl2
 IoAKG9C^>@WBYeA`QS7cQI0
 R2
 R0
-w1577063078
+w1577274078
 8D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v
 FD:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v
-Z9 L0 39
+Z12 L0 39
 R3
 r1
 !s85 0
 31
-R4
+!s108 1577282491.000000
 !s107 D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem|D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v|
 !i113 1
@@ -119,21 +119,21 @@ R5
 R6
 R7
 vmips_os
-R1
+R8
 !i10b 1
 !s100 U^T]meOUaBLKo[31IXzQ`2
 I08<:fVSY7aIP]T;0?=W0=1
 R2
 R0
-w1577063099
+w1577277394
 8D:/program/FPGA/DigitalCircuit-ComputerSystem/mips_os.v
 FD:/program/FPGA/DigitalCircuit-ComputerSystem/mips_os.v
-R9
+R12
 R3
 r1
 !s85 0
 31
-R4
+R9
 !s107 D:/program/FPGA/DigitalCircuit-ComputerSystem/mips_os.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem|D:/program/FPGA/DigitalCircuit-ComputerSystem/mips_os.v|
 !i113 1

@@ -9,11 +9,10 @@ module cpu(
 	output reg [31:0] mem_write_data,  //要写到内存里的内容
 	output reg wren,  //内存访问使能端
 	output wire [31:0] r31,
-	output wire [31:0] r23
+	output wire [31:0] r23,
+	output wire [31:0] r5
 );
-initial begin
-	pc = 0;
-end
+
 reg is_jmp;
 reg [31:0] jmp_addr;
 reg [31:0] reg1_data;
@@ -22,9 +21,7 @@ reg [31:0] wdata;
 reg [4:0] wraddr;
 reg [4:0] reg1_addr;  //读的寄存器的地址
 reg [4:0] reg2_addr;
-initial begin
-	pc = 0;
-end
+
 //assign address=pc[6:2];    //暂时用的5位pc
 
 /*fetch_pc fetch_pc0 (.rst(rst), .clk(clk), .pc_i(pc), .is_jmp(is_jmp), .jmp_pc(jmp_pc), .pc_o(pc));  //取指令以及更新pc
@@ -43,6 +40,7 @@ reg [31:0] imm;
 reg[31:0] all_reg[31:0];    //cpu内部32个寄存器
 assign r31 = all_reg[31];
 assign r23 = all_reg[23];
+assign r5 = all_reg[5];
 wire [5:0] opcode=inst[31:26];
 wire [4:0] rs=inst[25:21];    //R-type&I-type
 wire [4:0] rt=inst[20:16];    //R-type&I-type
@@ -58,6 +56,11 @@ wire [31:0] imm_sext_mov2;
 wire [31:0] imm_sext;
 wire [31:0] imm_zext;
 wire [31:0] neg;
+
+initial begin
+	pc = 0;
+	all_reg[0] = 0;
+end
 
 assign pcadd4=pc+4;
 assign pcadd8=pc+8;
@@ -104,6 +107,7 @@ parameter  EXE_BLEZ=6'b000110;
 parameter  EXE_J=6'b000010;
 parameter  EXE_JAL=6'b000011;
 parameter  EXE_LBU=6'b100100;
+parameter  EXE_SB=6'b101000;
 /*在执行指令的时候需要用到inout进来的regdata，但是这个regdata比接收到ins要慢。（要先让寄存器
 模块先接收到本模块传出的regaddr才能将regdata进到本模块中。*/
 
@@ -121,191 +125,188 @@ reg [31:0] jmp_pc;
 
 always @ (posedge clk) begin
 
-	if(rst) pc <= 32'b0;
-	else if(is_jmp)pc<=jmp_pc;
-	else pc <= pc + 32'd4;
-	
+	is_jmp = 0;
 	case(opcode)
 		EXE_SPECIAL: begin    //R-type
 			case(funct)
 			
 				EXE_ADD: begin   //rd<-rs+rt
-					is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
-					reg1_data<= all_reg[reg1_addr];
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=reg1_data+reg2_data;
-					all_reg[wraddr] <= wdata;    //需要写入寄存器，默认的rd 
+				//	is_jmp<=0;
+					wraddr=rd;   //默认写入rd
+					reg1_addr=rs;//reg1默认rs
+					reg2_addr=rt;//reg2默认rt
+					reg1_data= all_reg[reg1_addr];
+					reg2_data= all_reg[reg2_addr];
+					wdata=reg1_data+reg2_data;
+					all_reg[wraddr] = wdata;    //需要写入寄存器，默认的rd 
 				end
 				
 				EXE_ADDU: begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
-					reg1_data<= all_reg[reg1_addr];
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=reg1_data+reg2_data;
-					all_reg[wraddr] <= wdata;    //需要写入寄存器，默认的rd 
+			//	is_jmp<=0;
+					wraddr=rd;   //默认写入rd
+					reg1_addr=rs;//reg1默认rs
+					reg2_addr=rt;//reg2默认rt
+					reg1_data= all_reg[reg1_addr];
+					reg2_data= all_reg[reg2_addr];
+					wdata=reg1_data+reg2_data;
+					all_reg[wraddr] = wdata;    //需要写入寄存器，默认的rd 
 				end
 				
 				EXE_SUB:begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
-					reg1_data<= all_reg[reg1_addr];
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=reg1_data+neg;
-					all_reg[wraddr] <= wdata;    //需要写入寄存器，默认的rd 
+				//is_jmp<=0;
+					wraddr=rd;   //默认写入rd
+					reg1_addr=rs;//reg1默认rs
+					reg2_addr=rt;//reg2默认rt
+					reg1_data= all_reg[reg1_addr];
+					reg2_data= all_reg[reg2_addr];
+					wdata=reg1_data+neg;
+					all_reg[wraddr] = wdata;    //需要写入寄存器，默认的rd 
 				end
 				
 				EXE_SUBU:begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
-					reg1_data<= all_reg[reg1_addr];
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=reg1_data+neg;
-					all_reg[wraddr] <= wdata;    //需要写入寄存器，默认的rd 
+			//	is_jmp<=0;
+					wraddr=rd;   //默认写入rd
+					reg1_addr=rs;//reg1默认rs
+					reg2_addr=rt;//reg2默认rt
+					reg1_data= all_reg[reg1_addr];
+					reg2_data= all_reg[reg2_addr];
+					wdata=reg1_data+neg;
+					all_reg[wraddr] = wdata;    //需要写入寄存器，默认的rd 
 				end
 				
 				EXE_AND:begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
-					reg1_data<= all_reg[reg1_addr];
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=reg1_data&reg2_data;
-					all_reg[wraddr] <= wdata;    //需要写入寄存器，默认的rd 
+			//	is_jmp<=0;
+					wraddr=rd;   //默认写入rd
+					reg1_addr=rs;//reg1默认rs
+					reg2_addr=rt;//reg2默认rt
+					reg1_data= all_reg[reg1_addr];
+					reg2_data= all_reg[reg2_addr];
+					wdata=reg1_data&reg2_data;
+					all_reg[wraddr] = wdata;    //需要写入寄存器，默认的rd 
 				end
 				
 				EXE_OR:begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
-					reg1_data<= all_reg[reg1_addr];
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=reg1_data|reg2_data;
-					all_reg[wraddr] <= wdata;    //需要写入寄存器，默认的rd 
+				is_jmp=0;
+					wraddr=rd;   //默认写入rd
+					reg1_addr=rs;//reg1默认rs
+					reg2_addr=rt;//reg2默认rt
+					reg1_data= all_reg[reg1_addr];
+					reg2_data= all_reg[reg2_addr];
+					wdata=reg1_data|reg2_data;
+					all_reg[wraddr] = wdata;    //需要写入寄存器，默认的rd 
 				end
 				
 				EXE_XOR:begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
-					reg1_data<= all_reg[reg1_addr];
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=reg1_data^reg2_data;
-					all_reg[wraddr] <= wdata;    //需要写入寄存器，默认的rd 
+				//is_jmp<=0;
+					wraddr=rd;   //默认写入rd
+					reg1_addr=rs;//reg1默认rs
+					reg2_addr=rt;//reg2默认rt
+					reg1_data= all_reg[reg1_addr];
+					reg2_data= all_reg[reg2_addr];
+					wdata=reg1_data^reg2_data;
+					all_reg[wraddr] = wdata;    //需要写入寄存器，默认的rd 
 				end
 				
 				EXE_NOR:begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
-					reg1_data<= all_reg[reg1_addr];
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=~(reg1_data|reg2_data);
-					all_reg[wraddr] <= wdata;    //需要写入寄存器，默认的rd 
+			//	is_jmp<=0;
+					wraddr=rd;   //默认写入rd
+					reg1_addr=rs;//reg1默认rs
+					reg2_addr=rt;//reg2默认rt
+					reg1_data= all_reg[reg1_addr];
+					reg2_data= all_reg[reg2_addr];
+					wdata=~(reg1_data|reg2_data);
+					all_reg[wraddr] = wdata;    //需要写入寄存器，默认的rd 
 				end
 				
 				EXE_SLT:begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
-					reg1_data<= all_reg[reg1_addr];
-					reg2_data<= all_reg[reg2_addr];
-					if(reg1_data<reg2_data)wdata<=1;
-					else wdata<=0;  //有符号
+			//	is_jmp<=0;
+					wraddr=rd;   //默认写入rd
+					reg1_addr=rs;//reg1默认rs
+					reg2_addr=rt;//reg2默认rt
+					reg1_data= all_reg[reg1_addr];
+					reg2_data= all_reg[reg2_addr];
+					if(reg1_data<reg2_data)wdata=1;
+					else wdata=0;  //有符号
 					all_reg[wraddr] <= wdata;    //需要写入寄存器，默认的rd 
 				end
 				
 				EXE_SLTU:begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
-					reg1_data<= all_reg[reg1_addr];
-					reg2_data<= all_reg[reg2_addr];
-					if(reg1_data<reg2_data)wdata<=1;
-					else wdata<=0;  //有符号
-					all_reg[wraddr] <= wdata;    //需要写入寄存器，默认的rd 
+				//is_jmp<=0;
+					wraddr=rd;   //默认写入rd
+					reg1_addr=rs;//reg1默认rs
+					reg2_addr=rt;//reg2默认rt
+					reg1_data= all_reg[reg1_addr];
+					reg2_data= all_reg[reg2_addr];
+					if(reg1_data<reg2_data)wdata=1;
+					else wdata=0;  //有符号
+					all_reg[wraddr] = wdata;    //需要写入寄存器，默认的rd 
 				end
 				
 				EXE_SLL:begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg2_addr<=rt;//reg2默认rt
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=reg2_data<<shamt;
-					all_reg[wraddr] <= wdata;
+				//is_jmp<=0;
+					wraddr=rd;   //默认写入rd
+					reg2_addr=rt;//reg2默认rt
+					reg2_data= all_reg[reg2_addr];
+					wdata=reg2_data<<shamt;
+					all_reg[wraddr] = wdata;
 				end
 				
 				EXE_SRL:begin
-					wraddr<=rd;   //默认写入rd
-					reg2_addr<=rt;//reg2默认rt
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=reg2_data>>shamt;
-					all_reg[wraddr] <= wdata;
+					wraddr=rd;   //默认写入rd
+					reg2_addr=rt;//reg2默认rt
+					reg2_data= all_reg[reg2_addr];
+					wdata=reg2_data>>shamt;
+					all_reg[wraddr] = wdata;
 				end
 				
 				EXE_SRA:begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg2_addr<=rt;//reg2默认rt
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=$signed(reg2_data)>>>shamt;
-					all_reg[wraddr] <= wdata;
+				//is_jmp=0;
+					wraddr=rd;   //默认写入rd
+					reg2_addr=rt;//reg2默认rt
+					reg2_data= all_reg[reg2_addr];
+					wdata=$signed(reg2_data)>>>shamt;
+					all_reg[wraddr] = wdata;
 				end
 				
 				EXE_SLLV:begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
-					reg1_data<= all_reg[reg1_addr];
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=reg2_data<<reg1_data;
-					all_reg[wraddr] <= wdata;
+				//is_jmp=0;
+					wraddr=rd;   //默认写入rd
+					reg1_addr=rs;//reg1默认rs
+					reg2_addr=rt;//reg2默认rt
+					reg1_data= all_reg[reg1_addr];
+					reg2_data= all_reg[reg2_addr];
+					wdata=reg2_data<<reg1_data;
+					all_reg[wraddr] = wdata;
 				end
 				
 				EXE_SRLV:begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
-					reg1_data<= all_reg[reg1_addr];
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=reg2_data>>reg1_data;
-					all_reg[wraddr] <= wdata;
+				//is_jmp<=0;
+					wraddr=rd;   //默认写入rd
+					reg1_addr=rs;//reg1默认rs
+					reg2_addr=rt;//reg2默认rt
+					reg1_data= all_reg[reg1_addr];
+					reg2_data= all_reg[reg2_addr];
+					wdata=reg2_data>>reg1_data;
+					all_reg[wraddr] = wdata;
 				end
 				
 				EXE_SRAV:begin
-				is_jmp<=0;
-					wraddr<=rd;   //默认写入rd
-					reg1_addr<=rs;//reg1默认rs
-					reg2_addr<=rt;//reg2默认rt
-					reg1_data<= all_reg[reg1_addr];
-					reg2_data<= all_reg[reg2_addr];
-					wdata<=$signed(reg2_data)>>>reg1_data;
-					all_reg[wraddr] <= wdata;
+				//is_jmp<=0;
+					wraddr=rd;   //默认写入rd
+					reg1_addr=rs;//reg1默认rs
+					reg2_addr=rt;//reg2默认rt
+					reg1_data= all_reg[reg1_addr];
+					reg2_data= all_reg[reg2_addr];
+					wdata=$signed(reg2_data)>>>reg1_data;
+					all_reg[wraddr] = wdata;
 				end
 				
 				EXE_JR:begin
-				is_jmp<=1;
-					reg1_addr<=rs;//reg1默认rs
-					reg1_data<= all_reg[reg1_addr];
-					jmp_addr<=reg1_data;
-					jmp_pc<=jmp_addr;
+				is_jmp=1;
+					reg1_addr=rs;//reg1默认rs
+					reg1_data= all_reg[reg1_addr];
+					jmp_addr=reg1_data;
+					jmp_pc=jmp_addr;
 				end
 				default:begin
 				end
@@ -313,157 +314,175 @@ always @ (posedge clk) begin
 			end
 		
 		EXE_ADDI:begin   //I-type   rt<-rs+(sign-extended)immediate			
-		is_jmp<=0;
-			wraddr<=rt;   //默认写入rd
-			reg1_addr<=rs;//reg1默认rs
-			reg1_data<= all_reg[reg1_addr];
-			imm<=imm_sext;   //符号扩展
-			wdata<=reg1_data+imm;  //这里的reg2_o是imm
-			all_reg[wraddr] <= wdata;
+		//is_jmp<=0;
+			wraddr=rt;   //默认写入rd
+			reg1_addr=rs;//reg1默认rs
+			reg1_data= all_reg[reg1_addr];
+			imm=imm_sext;   //符号扩展
+			wdata=reg1_data+imm;  //这里的reg2_o是imm
+			all_reg[wraddr] = wdata;
 		end
 		
 		EXE_ADDIU:begin
-		is_jmp<=0;
-			wraddr<=rt;   //默认写入rd
-			reg1_addr<=rs;//reg1默认rs
-			reg1_data<= all_reg[reg1_addr];
-			imm<=imm_zext;   //符号扩展
-			wdata<=reg1_data+imm;  //这里的reg2_o是imm
-			all_reg[wraddr] <= wdata;
+		//is_jmp<=0;
+			wraddr=rt;   //默认写入rd
+			reg1_addr=rs;//reg1默认rs
+			reg1_data= all_reg[reg1_addr];
+			imm=imm_zext;   //符号扩展
+			wdata=reg1_data+imm;  //这里的reg2_o是imm
+			all_reg[wraddr] = wdata;
 		end
 		
 		EXE_ANDI:begin
-		is_jmp<=0;
-			wraddr<=rt;   //默认写入rd
-			reg1_addr<=rs;//reg1默认rs
-			reg1_data<= all_reg[reg1_addr];
-			imm<=imm_zext;   //零扩展
-			wdata<=reg1_data&imm;
-			all_reg[wraddr] <= wdata;
+		//is_jmp<=0;
+			wraddr=rt;   //默认写入rd
+			reg1_addr=rs;//reg1默认rs
+			reg1_data= all_reg[reg1_addr];
+			imm=imm_zext;   //零扩展
+			wdata=reg1_data&imm;
+			all_reg[wraddr] = wdata;
 		end
 		//001100 00001 00011 
 		EXE_ORI:begin
-		is_jmp<=0;
-			wraddr<=rt;   //默认写入rd
-			reg1_addr<=rs;//reg1默认rs
-			reg1_data<= all_reg[reg1_addr];
-			imm<=imm_zext;   //零扩展
-			wdata<=reg1_data|imm;
-			all_reg[wraddr] <= wdata;
+	//	is_jmp<=0;
+			wraddr=rt;   //默认写入rd
+			reg1_addr=rs;//reg1默认rs
+			reg1_data= all_reg[reg1_addr];
+			imm=imm_zext;   //零扩展
+			wdata=reg1_data|imm;
+			all_reg[wraddr] = wdata;
 		end
 		
+
+		
 		EXE_XORI:begin
-		is_jmp<=0;
-			wraddr<=rt;   //默认写入rd
-			reg1_addr<=rs;//reg1默认rs
-			reg1_data<= all_reg[reg1_addr];
-			imm<=imm_zext;   //零扩展
-			wdata<=reg1_data^imm;
-			all_reg[wraddr] <= wdata;
+		is_jmp=0;
+			wraddr=rt;   //默认写入rd
+			reg1_addr=rs;//reg1默认rs
+			reg1_data= all_reg[reg1_addr];
+			imm=imm_zext;   //零扩展
+			wdata=reg1_data^imm;
+			all_reg[wraddr] = wdata;
 		end
 		
 		EXE_LUI:begin
-		is_jmp<=0;
+		//is_jmp<=0;
 			//aluop<=LUI;   //将16位立即数放到目标寄存器高16位，低16位填0
-			wraddr<=rt;
-			imm<={Iimm[15:0],16'H0};  //imm*65536
-			wdata<=imm;
-			all_reg[wraddr] <= wdata;
+			wraddr=rt;
+			imm={Iimm[15:0],16'H0};  //imm*65536
+			wdata=imm;
+			all_reg[wraddr] = wdata;
 		end
 		
 		EXE_LW:begin
-		is_jmp<=0;
+		//is_jmp=0;
 		//不确定
 			//aluop<=LW;    //$1=memory[$2+10]
-			wraddr<=rt;   //默认写入rd
-			reg1_addr<=rs;//reg1默认rs
-			reg1_data<= all_reg[reg1_addr];
-			imm<=imm_sext;   //符号扩展
-			mem_addr<=reg1_data+imm;
-			wren<=1'b0;  //读内存
-			wdata<=mem_read_data;
-			all_reg[wraddr] <= wdata;
+			wraddr=rt;   //默认写入rd
+			reg1_addr=rs;//reg1默认rs
+			reg1_data= all_reg[reg1_addr];
+			imm=imm_sext;   //符号扩展
+			mem_addr=reg1_data+imm;
+			wren=1'b0;  //读内存
+			wdata=mem_read_data;
+			all_reg[wraddr] = wdata;
 		end
 		
+		
+		
 		EXE_SW:begin
-		is_jmp<=0;
+		//is_jmp=0;
 		//不确定
 			//aluop<=SW;    //memory[$2+10]=$1
-			reg1_addr<=rs;//reg1默认rs
-			reg2_addr<=rt;//reg2默认rt
-			reg1_data<= all_reg[reg1_addr];
-			reg2_data<= all_reg[reg2_addr];
-			imm<=imm_sext;   //符号扩展
-			wren<=1'b1;  //写内存
-			mem_addr<=reg1_data+imm;
-			mem_write_data<=reg2_data;
+			reg1_addr=rs;//reg1默认rs
+			reg2_addr=rt;//reg2默认rt
+			reg1_data= all_reg[reg1_addr];
+			reg2_data= all_reg[reg2_addr];
+			imm=imm_sext;   //符号扩展
+			wren=1'b1;  //写内存
+			mem_addr=reg1_data+imm;
+			mem_write_data=reg2_data;
+		end
+		
+		EXE_SB:begin
+
+			reg1_addr=rs;//reg1默认rs
+			reg2_addr=rt;//reg2默认rt
+			reg1_data= all_reg[reg1_addr];
+			reg2_data= all_reg[reg2_addr];
+			imm=imm_sext;
+			wren=1'b1;
+			mem_addr=reg1_data+imm;
+				mem_write_data={reg2_data[7:0],reg2_data[7:0],reg2_data[7:0],reg2_data[7:0]};
 		end
 		
 		EXE_BEQ:begin
-		is_jmp<=1;
+		
 			//aluop<=BEQ;
-			imm<=imm_sext_mov2;
-			reg1_addr<=rs;//reg1默认rs
-			reg2_addr<=rt;//reg2默认rt
-			reg1_data<= all_reg[reg1_addr];
-			reg2_data<= all_reg[reg2_addr];
+			imm=imm_sext_mov2;
+			reg1_addr=rs;//reg1默认rs
+			reg2_addr=rt;//reg2默认rt
+			reg1_data= all_reg[reg1_addr];
+			reg2_data= all_reg[reg2_addr];
 			if(reg1_data==reg2_data)begin
 				//_flag<=1;
-				jmp_addr<=pcadd4+imm;
-				jmp_pc<=jmp_addr;
+				is_jmp=1;
+				jmp_addr=pcadd4+imm;
+				jmp_pc=jmp_addr;
 			end
 		end
 		
 		EXE_BNE:begin    //和BEQ类似，只不过是不等于
-		is_jmp<=1;
+		
 			//aluop<=BEQ;
-			imm<=imm_sext_mov2;
-			reg1_addr<=rs;//reg1默认rs
-			reg2_addr<=rt;//reg2默认rt
-			reg1_data<= all_reg[reg1_addr];
-			reg2_data<= all_reg[reg2_addr];
+			imm=imm_sext_mov2;
+			reg1_addr=rs;//reg1默认rs
+			reg2_addr=rt;//reg2默认rt
+			reg1_data= all_reg[reg1_addr];
+			reg2_data= all_reg[reg2_addr];
 			if(reg1_data!=reg2_data)begin
 				//_flag<=1;
-				jmp_addr<=pcadd4+imm;
-				jmp_pc<=jmp_addr;
+				is_jmp=1;
+				jmp_addr=pcadd4+imm;
+				jmp_pc=jmp_addr;
 			end
 		end
 		
 		EXE_SLTI:begin
-		is_jmp<=0;
+	//	is_jmp=0;
 			imm=imm_sext;   //符号扩展
-			wraddr<=rt;
-			reg1_addr<=rs;//reg1默认rs
-			reg1_data<= all_reg[reg1_addr];
-			if(reg1_data<imm)wdata<=1;
-			else wdata<=0;
-			all_reg[wraddr] <= wdata;
+			wraddr=rt;
+			reg1_addr=rs;//reg1默认rs
+			reg1_data= all_reg[reg1_addr];
+			if(reg1_data<imm)wdata=1;
+			else wdata=0;
+			all_reg[wraddr] = wdata;
 		end
 		
 		EXE_SLTIU:begin
-		is_jmp<=0;
+		//is_jmp=0;
 			imm=imm_zext;   //符号扩展
-			wraddr<=rt;
-			reg1_addr<=rs;//reg1默认rs
-			reg1_data<= all_reg[reg1_addr];
-			if(reg1_data<imm)wdata<=1;
-			else wdata<=0;
-			all_reg[wraddr] <= wdata;
+			wraddr=rt;
+			reg1_addr=rs;//reg1默认rs
+			reg1_data= all_reg[reg1_addr];
+			if(reg1_data<imm)wdata=1;
+			else wdata=0;
+			all_reg[wraddr] = wdata;
 		end
 		
 		//EXE_PREF:begin
 			
 		//end
 		EXE_BLEZ:begin
-		is_jmp<=1;
+		is_jmp=1;
 			//aluop<=BLEZ;
-			reg1_addr<=rs;//reg1默认rs
-			reg1_data<= all_reg[reg1_addr];
+			reg1_addr=rs;//reg1默认rs
+			reg1_data= all_reg[reg1_addr];
 			if(reg1_data[31]==1||reg1_data==31'd0)begin
-				imm<=pcadd4+imm_sext_mov2;
+				imm=pcadd4+imm_sext_mov2;
 				//jmp_flag<=1;
-				jmp_addr<=imm;
-				jmp_pc<=jmp_addr;
+				jmp_addr=imm;
+				jmp_pc=jmp_addr;
 			end
 		end
 		
@@ -471,50 +490,54 @@ always @ (posedge clk) begin
 		//end
 		//EXE_REGIMM:  //先不写吧
 		EXE_J:begin
-			is_jmp<=1;
-			imm<={{pcadd4[31:28]},Jimm,{2'b00}};
+			is_jmp=1;
+			imm={{pcadd4[31:28]},Jimm,{2'b00}};
 			//jmp_flag<=1;
-			jmp_addr<=imm;
-			jmp_pc<=jmp_addr;
+			jmp_addr=imm;
+			jmp_pc=jmp_addr;
 		end
 		
 		
 		EXE_JAL:begin
-		is_jmp<=1;
+		is_jmp=1;
 			//aluop<=JAL;
 			//wreg<=ENABLE;
-			wraddr<=5'b11111;  //貌似是$31
-			imm<={{pcadd4[31:28]},Jimm,{2'b00}};
-			wdata<=pcadd8;
-			all_reg[wraddr] <= wdata;
-			jmp_addr<=imm;
-			jmp_pc<=jmp_addr;
+			wraddr=5'b11111;  //貌似是$31
+			imm={{pcadd4[31:28]},Jimm,{2'b00}};
+			wdata=pc;
+			all_reg[wraddr] = wdata;
+			jmp_addr=imm;
+			jmp_pc=jmp_addr;
 		end
 		
 		//EX_LB:begin
 		//end
 		EXE_LBU:begin
-		is_jmp<=0;
-			wraddr<=rt;   //默认写入rd
-			reg1_addr<=rs;//reg1默认rs
-			reg1_data<= all_reg[reg1_addr];
-			imm<=imm_sext;   //符号扩展
-			mem_addr<=reg1_data+imm;
-			wren<=1'b0;  //读内存
+		is_jmp=0;
+			wraddr=rt;   //默认写入rd
+			reg1_addr=rs;//reg1默认rs
+			reg1_data= all_reg[reg1_addr];
+			imm=imm_sext;   //符号扩展
+			mem_addr=reg1_data+imm;
+			wren=1'b0;  //读内存
 			case(mem_addr[1:0])
-				2'b00:wdata<={{24{1'b0}},mem_read_data[31:24]};
-				2'b01:wdata<={{24{1'b0}},mem_read_data[23:16]};
-				2'b10:wdata<={{24{1'b0}},mem_read_data[15:8]};
-				2'b11:wdata<={{24{1'b0}},mem_read_data[7:0]};
+				2'b11:wdata={{24{1'b0}},mem_read_data[31:24]};
+				2'b10:wdata={{24{1'b0}},mem_read_data[23:16]};
+				2'b01:wdata={{24{1'b0}},mem_read_data[15:8]};
+				2'b00:wdata={{24{1'b0}},mem_read_data[7:0]};
 				default:begin
 				end
 			endcase
-			all_reg[wraddr] <= wdata;
+			all_reg[wraddr] = wdata;
 		end
 		
 		default:begin
 		end
 	endcase
+	if(rst) pc <= 32'b0;
+	else if(is_jmp)pc<=jmp_pc;
+	else pc <= pc + 32'd4;
+	
 end
 	
 /*always @ (*)begin

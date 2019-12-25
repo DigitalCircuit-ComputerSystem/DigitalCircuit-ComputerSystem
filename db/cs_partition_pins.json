@@ -68,6 +68,90 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[6]",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_BLANK_N",
 					"strict" : false
 				},
@@ -385,6 +469,134 @@
 				},
 				{
 					"name" : "r23[31]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[1]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[6]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[7]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[8]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[9]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[10]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[11]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[12]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[13]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[14]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[15]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[16]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[17]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[18]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[19]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[20]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[21]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[22]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[23]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[24]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[25]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[26]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[27]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[28]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[29]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[30]",
+					"strict" : false
+				},
+				{
+					"name" : "r5[31]",
 					"strict" : false
 				},
 				{

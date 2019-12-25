@@ -1,5 +1,5 @@
 Analysis & Synthesis report for cs
-Wed Dec 25 18:57:40 2019
+Wed Dec 25 22:02:56 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -60,16 +60,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Dec 25 18:57:39 2019       ;
+; Analysis & Synthesis Status     ; Successful - Wed Dec 25 22:02:56 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; cs                                          ;
 ; Top-level Entity Name           ; cs                                          ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1373                                        ;
-; Total pins                      ; 175                                         ;
+; Total registers                 ; 1201                                        ;
+; Total pins                      ; 207                                         ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 557,056                                     ;
+; Total block memory bits         ; 98,304                                      ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -175,14 +175,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.92        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processor 2            ;  37.0%      ;
+;     Processor 3            ;  37.0%      ;
+;     Processor 4            ;  18.4%      ;
 +----------------------------+-------------+
 
 
@@ -221,27 +221,27 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 2205         ;
+; Estimate of Logic utilization (ALMs needed) ; 2596         ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 2631         ;
-;     -- 7 input functions                    ; 159          ;
-;     -- 6 input functions                    ; 1500         ;
-;     -- 5 input functions                    ; 258          ;
-;     -- 4 input functions                    ; 175          ;
-;     -- <=3 input functions                  ; 539          ;
+; Combinational ALUT usage for logic          ; 3199         ;
+;     -- 7 input functions                    ; 207          ;
+;     -- 6 input functions                    ; 1678         ;
+;     -- 5 input functions                    ; 524          ;
+;     -- 4 input functions                    ; 360          ;
+;     -- <=3 input functions                  ; 430          ;
 ;                                             ;              ;
-; Dedicated logic registers                   ; 1373         ;
+; Dedicated logic registers                   ; 1201         ;
 ;                                             ;              ;
-; I/O pins                                    ; 175          ;
+; I/O pins                                    ; 207          ;
 ; Total MLAB memory bits                      ; 0            ;
-; Total block memory bits                     ; 557056       ;
+; Total block memory bits                     ; 98304        ;
 ;                                             ;              ;
 ; Total DSP Blocks                            ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 1394         ;
-; Total fan-out                               ; 20419        ;
-; Average fan-out                             ; 4.58         ;
+; Maximum fan-out                             ; 1183         ;
+; Total fan-out                               ; 21309        ;
+; Average fan-out                             ; 4.38         ;
 +---------------------------------------------+--------------+
 
 
@@ -250,17 +250,17 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |cs                                       ; 2631 (660)          ; 1373 (12)                 ; 557056            ; 0          ; 175  ; 0            ; |cs                                                                                                  ; cs              ; work         ;
+; |cs                                       ; 3199 (650)          ; 1201 (1)                  ; 98304             ; 0          ; 207  ; 0            ; |cs                                                                                                  ; cs              ; work         ;
 ;    |clkgen:my_vgaclk|                     ; 40 (40)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |cs|clkgen:my_vgaclk                                                                                 ; clkgen          ; work         ;
-;    |cpu:cpu0|                             ; 1856 (1856)         ; 1297 (1297)               ; 0                 ; 0          ; 0    ; 0            ; |cs|cpu:cpu0                                                                                         ; cpu             ; work         ;
-;    |memery:memery0|                       ; 2 (0)               ; 1 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |cs|memery:memery0                                                                                   ; memery          ; work         ;
-;       |altsyncram:altsyncram_component|   ; 2 (0)               ; 1 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |cs|memery:memery0|altsyncram:altsyncram_component                                                   ; altsyncram      ; work         ;
-;          |altsyncram_duj2:auto_generated| ; 2 (0)               ; 1 (1)                     ; 524288            ; 0          ; 0    ; 0            ; |cs|memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated                    ; altsyncram_duj2 ; work         ;
-;             |decode_5la:decode2|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cs|memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|decode_5la:decode2 ; decode_5la      ; work         ;
+;    |cpu:cpu0|                             ; 2454 (2454)         ; 1143 (1143)               ; 0                 ; 0          ; 0    ; 0            ; |cs|cpu:cpu0                                                                                         ; cpu             ; work         ;
+;    |memery:memery0|                       ; 1 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |cs|memery:memery0                                                                                   ; memery          ; work         ;
+;       |altsyncram:altsyncram_component|   ; 1 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |cs|memery:memery0|altsyncram:altsyncram_component                                                   ; altsyncram      ; work         ;
+;          |altsyncram_duj2:auto_generated| ; 1 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |cs|memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated                    ; altsyncram_duj2 ; work         ;
+;             |decode_5la:decode2|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cs|memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|decode_5la:decode2 ; decode_5la      ; work         ;
 ;    |mips_os:os0|                          ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |cs|mips_os:os0                                                                                      ; mips_os         ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |cs|mips_os:os0|altsyncram:altsyncram_component                                                      ; altsyncram      ; work         ;
 ;          |altsyncram_7sf1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |cs|mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated                       ; altsyncram_7sf1 ; work         ;
-;    |vga_ctrl:my_vga|                      ; 73 (73)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |cs|vga_ctrl:my_vga                                                                                  ; vga_ctrl        ; work         ;
+;    |vga_ctrl:my_vga|                      ; 54 (54)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |cs|vga_ctrl:my_vga                                                                                  ; vga_ctrl        ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -291,7 +291,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Register name                                                                                  ; Reason for Removal                     ;
 +------------------------------------------------------------------------------------------------+----------------------------------------+
 ; memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|address_reg_b[0] ; Stuck at VCC due to stuck port data_in ;
-; Total Number of Removed Registers = 1                                                          ;                                        ;
+; cpu:cpu0|mem_write_data[8..31]                                                                 ; Lost fanout                            ;
+; vgadata1[0..10]                                                                                ; Merged with vgadata1[11]               ;
+; Total Number of Removed Registers = 36                                                         ;                                        ;
 +------------------------------------------------------------------------------------------------+----------------------------------------+
 
 
@@ -300,12 +302,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1373  ;
-; Number of registers using Synchronous Clear  ; 122   ;
-; Number of registers using Synchronous Load   ; 83    ;
+; Total registers                              ; 1201  ;
+; Number of registers using Synchronous Clear  ; 81    ;
+; Number of registers using Synchronous Load   ; 30    ;
 ; Number of registers using Asynchronous Clear ; 10    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1312  ;
+; Number of registers using Clock Enable       ; 1061  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -316,7 +318,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
 ; vga_ctrl:my_vga|x_cnt[0]               ; 7       ;
-; vga_ctrl:my_vga|y_cnt[0]               ; 28      ;
+; vga_ctrl:my_vga|y_cnt[0]               ; 27      ;
 ; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
 
@@ -326,75 +328,148 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |cs|clkgen:my_vgaclk|clkcount[2] ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |cs|vga_ctrl:my_vga|hblock[1]    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |cs|vga_ctrl:my_vga|boffset[3]   ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |cs|vga_ctrl:my_vga|y_cnt[4]     ;
-; 21:1               ; 5 bits    ; 70 LEs        ; 0 LEs                ; 70 LEs                 ; Yes        ; |cs|cpu:cpu0|reg2_addr[0]        ;
-; 25:1               ; 32 bits   ; 512 LEs       ; 64 LEs               ; 448 LEs                ; Yes        ; |cs|cpu:cpu0|jmp_addr[7]         ;
-; 83:1               ; 32 bits   ; 1760 LEs      ; 672 LEs              ; 1088 LEs               ; Yes        ; |cs|cpu:cpu0|reg1_data[21]       ;
-; 21:1               ; 5 bits    ; 70 LEs        ; 0 LEs                ; 70 LEs                 ; Yes        ; |cs|cpu:cpu0|reg1_addr[4]        ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |cs|cpu:cpu0|pc[1]               ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[31][1]      ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[30][3]      ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[29][14]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[28][22]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[27][15]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[26][2]      ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[25][10]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[24][1]      ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[23][8]      ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[22][29]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[21][19]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[20][19]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[19][31]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[18][19]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[17][23]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[16][17]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[15][17]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[14][17]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[13][17]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[12][17]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[11][17]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[10][17]     ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[9][17]      ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[8][17]      ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[7][17]      ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[6][17]      ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[5][30]      ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[4][18]      ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[3][5]       ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[2][7]       ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[1][4]       ;
-; 102:1              ; 32 bits   ; 2176 LEs      ; 0 LEs                ; 2176 LEs               ; Yes        ; |cs|cpu:cpu0|all_reg[0][4]       ;
-; 25:1               ; 5 bits    ; 80 LEs        ; 10 LEs               ; 70 LEs                 ; Yes        ; |cs|cpu:cpu0|wraddr[0]           ;
-; 25:1               ; 2 bits    ; 32 LEs        ; 6 LEs                ; 26 LEs                 ; Yes        ; |cs|cpu:cpu0|imm[0]              ;
-; 25:1               ; 13 bits   ; 208 LEs       ; 26 LEs               ; 182 LEs                ; Yes        ; |cs|cpu:cpu0|imm[9]              ;
-; 8:1                ; 30 bits   ; 150 LEs       ; 0 LEs                ; 150 LEs                ; Yes        ; |cs|cpu:cpu0|pc[5]               ;
-; 23:1               ; 13 bits   ; 195 LEs       ; 26 LEs               ; 169 LEs                ; Yes        ; |cs|cpu:cpu0|imm[27]             ;
-; 140:1              ; 31 bits   ; 2883 LEs      ; 651 LEs              ; 2232 LEs               ; Yes        ; |cs|cpu:cpu0|reg2_data[16]       ;
-; 116:1              ; 8 bits    ; 616 LEs       ; 144 LEs              ; 472 LEs                ; Yes        ; |cs|cpu:cpu0|wdata[24]           ;
-; 114:1              ; 3 bits    ; 228 LEs       ; 69 LEs               ; 159 LEs                ; Yes        ; |cs|cpu:cpu0|wdata[13]           ;
-; 118:1              ; 2 bits    ; 156 LEs       ; 46 LEs               ; 110 LEs                ; Yes        ; |cs|cpu:cpu0|wdata[10]           ;
-; 122:1              ; 3 bits    ; 243 LEs       ; 72 LEs               ; 171 LEs                ; Yes        ; |cs|cpu:cpu0|wdata[30]           ;
-; 120:1              ; 2 bits    ; 160 LEs       ; 48 LEs               ; 112 LEs                ; Yes        ; |cs|cpu:cpu0|wdata[26]           ;
-; 118:1              ; 4 bits    ; 312 LEs       ; 104 LEs              ; 208 LEs                ; Yes        ; |cs|cpu:cpu0|wdata[6]            ;
-; 124:1              ; 3 bits    ; 246 LEs       ; 81 LEs               ; 165 LEs                ; Yes        ; |cs|cpu:cpu0|wdata[3]            ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft1          ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft1          ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft1          ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[23][20]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[5][16]      ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[0][26]      ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[1][20]      ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[2][31]      ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[3][16]      ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[4][23]      ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[6][16]      ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[7][21]      ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[8][23]      ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[9][31]      ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[10][22]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[11][21]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[12][24]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[13][19]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[14][30]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[15][19]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[16][27]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[17][21]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[18][30]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[19][28]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[20][31]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[21][17]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[22][25]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[24][26]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[25][18]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[26][20]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[27][31]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[28][17]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[29][25]     ;
+; 85:1               ; 16 bits   ; 896 LEs       ; 192 LEs              ; 704 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[30][30]     ;
+; 86:1               ; 16 bits   ; 912 LEs       ; 192 LEs              ; 720 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[31][26]     ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[23][15]     ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[5][9]       ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[0][10]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[1][6]       ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[2][9]       ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[3][11]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[4][6]       ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[6][13]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[7][13]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[8][6]       ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[9][6]       ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[10][13]     ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[11][11]     ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[12][12]     ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[13][8]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[14][2]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[15][6]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[16][8]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[17][15]     ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[18][8]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[19][7]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[20][15]     ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[21][3]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[22][9]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[24][14]     ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[25][14]     ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[26][9]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[27][3]      ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[28][12]     ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[29][12]     ;
+; 87:1               ; 13 bits   ; 754 LEs       ; 156 LEs              ; 598 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[30][10]     ;
+; 88:1               ; 13 bits   ; 754 LEs       ; 169 LEs              ; 585 LEs                ; Yes        ; |cs|cpu:cpu0|all_reg[31][15]     ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[23][4]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[5][5]       ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[0][4]       ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[1][4]       ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[2][4]       ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[3][4]       ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[4][5]       ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[6][4]       ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[7][4]       ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[8][5]       ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[9][5]       ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[10][4]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[11][4]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[12][5]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[13][5]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[14][5]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[15][5]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[16][5]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[17][5]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[18][5]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[19][4]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[20][5]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[21][5]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[22][5]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[24][4]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[25][5]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[26][4]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[27][5]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[28][4]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[29][5]      ;
+; 91:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[30][4]      ;
+; 92:1               ; 2 bits    ; 122 LEs       ; 28 LEs               ; 94 LEs                 ; Yes        ; |cs|cpu:cpu0|all_reg[31][5]      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |cs|cpu:cpu0|pc[1]               ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |cs|cpu:cpu0|pc[8]               ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |cs|clkgen:my_vgaclk|clkcount[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |cs|vga_ctrl:my_vga|boffset[0]   ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |cs|vga_ctrl:my_vga|y_cnt[8]     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight2         ;
+; 4:1                ; 49 bits   ; 98 LEs        ; 98 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight3         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight3         ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight2         ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight3         ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft1          ;
-; 4:1                ; 49 bits   ; 98 LEs        ; 98 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft1          ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight3         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft1          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft1          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft1          ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft1          ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight2         ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |cs|cpu:cpu0|ShiftRight3         ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight3         ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight3         ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight2         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight3         ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight2         ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight3         ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight3         ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft1          ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |cs|cpu:cpu0|Mux1068             ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |cs|cpu:cpu0|Mux1105             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft1          ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |cs|cpu:cpu0|Selector1152        ;
+; 10:1               ; 30 bits   ; 180 LEs       ; 60 LEs               ; 120 LEs                ; No         ; |cs|cpu:cpu0|Selector1136        ;
+; 127:1              ; 32 bits   ; 2688 LEs      ; 0 LEs                ; 2688 LEs               ; Yes        ; |cs|cpu:cpu0|reg2_data[9]        ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight0         ;
 ; 4:1                ; 49 bits   ; 98 LEs        ; 98 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft0          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight1         ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight0         ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight1         ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight1         ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft0          ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft0          ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft0          ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |cs|rdata[27]                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight0         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight1         ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight0         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight1         ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight1         ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft0          ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftRight1         ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |cs|cpu:cpu0|ShiftLeft0          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 
 
@@ -531,6 +606,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; EXE_J          ; 000010 ; Unsigned Binary             ;
 ; EXE_JAL        ; 000011 ; Unsigned Binary             ;
 ; EXE_LBU        ; 100100 ; Unsigned Binary             ;
+; EXE_SB         ; 101000 ; Unsigned Binary             ;
 +----------------+--------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -646,39 +722,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "vga_ctrl:my_vga"                                                                         ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; h_addr    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; v_addr[9] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_ctrl:my_vga"                                                                            ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; h_addr       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; v_addr[9..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hblock       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "memery:memery0"                                                                                                                                                                                  ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port              ; Type   ; Severity ; Details                                                                                                                                                                             ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; address_a         ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (14 bits) it drives.  The 18 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; address_b[12..11] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; address_b[13]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; wren_b            ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; q_b               ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (8 bits) it drives; bit(s) "q_b[31..8]" have no fanouts                                                            ;
-; data_b            ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                                        ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "memery:memery0"                                                                                                                                          ;
++------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                                                                                      ;
++------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; q_a              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; address_b[12..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; address_b[13]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
+; wren_b           ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; q_b              ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (8 bits) it drives; bit(s) "q_b[31..8]" have no fanouts                     ;
+; data_b           ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cpu:cpu0"                                                                                                                                                                     ;
-+------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                                                                                                                 ;
-+------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; pc         ; Output ; Warning  ; Output or bidir port (32 bits) is smaller than the port expression (33 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; pc[31..12] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
-; pc[1..0]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
-+------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu0"                                                                                                                                                                               ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                 ; Type   ; Severity ; Details                                                                                                                                                                 ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; pc                   ; Output ; Warning  ; Output or bidir port (32 bits) is smaller than the port expression (33 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
+; pc[31..12]           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
+; pc[1..0]             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
+; mem_addr[31..14]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
+; mem_read_data[5..4]  ; Input  ; Info     ; Stuck at VCC                                                                                                                                                            ;
+; mem_read_data[31..6] ; Input  ; Info     ; Stuck at GND                                                                                                                                                            ;
+; mem_read_data[3..0]  ; Input  ; Info     ; Stuck at GND                                                                                                                                                            ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------+
@@ -695,37 +776,37 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1373                        ;
+; arriav_ff             ; 1201                        ;
 ;     CLR               ; 1                           ;
 ;     CLR SCLR          ; 9                           ;
-;     ENA               ; 1200                        ;
-;     ENA SCLR          ; 29                          ;
-;     ENA SCLR SLD      ; 51                          ;
-;     ENA SLD           ; 32                          ;
+;     ENA               ; 1052                        ;
+;     ENA SCLR          ; 9                           ;
 ;     SCLR              ; 33                          ;
-;     plain             ; 18                          ;
+;     SCLR SLD          ; 30                          ;
+;     plain             ; 67                          ;
 ; arriav_io_obuf        ; 8                           ;
-; arriav_lcell_comb     ; 2632                        ;
-;     arith             ; 244                         ;
-;         1 data inputs ; 118                         ;
-;         2 data inputs ; 126                         ;
-;     extend            ; 159                         ;
-;         7 data inputs ; 159                         ;
-;     normal            ; 2197                        ;
+; arriav_lcell_comb     ; 3200                        ;
+;     arith             ; 255                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 82                          ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 126                         ;
+;     extend            ; 207                         ;
+;         7 data inputs ; 207                         ;
+;     normal            ; 2738                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 74                          ;
-;         3 data inputs ; 187                         ;
-;         4 data inputs ; 175                         ;
-;         5 data inputs ; 258                         ;
-;         6 data inputs ; 1500                        ;
-;     shared            ; 32                          ;
-;         2 data inputs ; 32                          ;
-; boundary_port         ; 175                         ;
-; stratixv_ram_block    ; 96                          ;
+;         2 data inputs ; 83                          ;
+;         3 data inputs ; 216                         ;
+;         4 data inputs ; 234                         ;
+;         5 data inputs ; 524                         ;
+;         6 data inputs ; 1678                        ;
+; boundary_port         ; 207                         ;
+; stratixv_ram_block    ; 40                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 4.85                        ;
+; Max LUT depth         ; 10.10                       ;
+; Average LUT depth     ; 8.20                        ;
 +-----------------------+-----------------------------+
 
 
@@ -734,7 +815,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:46     ;
+; Top            ; 00:00:23     ;
 +----------------+--------------+
 
 
@@ -744,7 +825,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Dec 25 18:56:39 2019
+    Info: Processing started: Wed Dec 25 22:02:18 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cs -c cs
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -4866,21 +4947,18 @@ Warning (10230): Verilog HDL assignment warning at vga_font.txt(4093): truncated
 Warning (10230): Verilog HDL assignment warning at vga_font.txt(4094): truncated value with size 12 to match size of target (9) File: D:/program/FPGA/11/vga_font.txt Line: 4094
 Warning (10230): Verilog HDL assignment warning at vga_font.txt(4095): truncated value with size 12 to match size of target (9) File: D:/program/FPGA/11/vga_font.txt Line: 4095
 Warning (10230): Verilog HDL assignment warning at vga_font.txt(4096): truncated value with size 12 to match size of target (9) File: D:/program/FPGA/11/vga_font.txt Line: 4096
-Warning (10030): Net "allchar.data_a" at cs.v(60) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 60
-Warning (10030): Net "allchar.waddr_a" at cs.v(60) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 60
-Warning (10030): Net "allchar.we_a" at cs.v(60) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 60
+Warning (10030): Net "allchar.data_a" at cs.v(61) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 61
+Warning (10030): Net "allchar.waddr_a" at cs.v(61) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 61
+Warning (10030): Net "allchar.we_a" at cs.v(61) has no driver or initial value, using a default initial value '0' File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 61
 Warning (10034): Output port "HEX0" at cs.v(18) has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 18
 Warning (10034): Output port "HEX1[6]" at cs.v(19) has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 19
-Warning (10034): Output port "HEX3" at cs.v(21) has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 21
-Warning (10034): Output port "HEX4" at cs.v(22) has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 22
-Warning (10034): Output port "HEX5" at cs.v(23) has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 23
 Warning (10034): Output port "AUD_DACDAT" at cs.v(39) has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 39
 Warning (10034): Output port "AUD_XCK" at cs.v(41) has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 41
 Warning (10034): Output port "FPGA_I2C_SCLK" at cs.v(50) has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 50
 Warning (12125): Using design file clkgen.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: clkgen File: D:/program/FPGA/DigitalCircuit-ComputerSystem/clkgen.v Line: 1
-Info (12128): Elaborating entity "clkgen" for hierarchy "clkgen:my_vgaclk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 80
-Info (12128): Elaborating entity "mips_os" for hierarchy "mips_os:os0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 91
+Info (12128): Elaborating entity "clkgen" for hierarchy "clkgen:my_vgaclk" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 82
+Info (12128): Elaborating entity "mips_os" for hierarchy "mips_os:os0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 92
 Info (12128): Elaborating entity "altsyncram" for hierarchy "mips_os:os0|altsyncram:altsyncram_component" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/mips_os.v Line: 81
 Info (12130): Elaborated megafunction instantiation "mips_os:os0|altsyncram:altsyncram_component" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/mips_os.v Line: 81
 Info (12133): Instantiated megafunction "mips_os:os0|altsyncram:altsyncram_component" with the following parameter: File: D:/program/FPGA/DigitalCircuit-ComputerSystem/mips_os.v Line: 81
@@ -4901,8 +4979,10 @@ Info (12133): Instantiated megafunction "mips_os:os0|altsyncram:altsyncram_compo
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7sf1.tdf
     Info (12023): Found entity 1: altsyncram_7sf1 File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_7sf1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_7sf1" for hierarchy "mips_os:os0|altsyncram:altsyncram_component|altsyncram_7sf1:auto_generated" File: d:/program_files/fpga/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 93
-Info (12128): Elaborating entity "memery" for hierarchy "memery:memery0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 96
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 94
+Warning (10036): Verilog HDL or VHDL warning at cpu.v(54): object "pcadd8" assigned a value but never read File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v Line: 54
+Warning (10855): Verilog HDL warning at cpu.v(60): initial value for variable all_reg should be constant File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v Line: 60
+Info (12128): Elaborating entity "memery" for hierarchy "memery:memery0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 97
 Info (12128): Elaborating entity "altsyncram" for hierarchy "memery:memery0|altsyncram:altsyncram_component" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v Line: 99
 Info (12130): Elaborated megafunction instantiation "memery:memery0|altsyncram:altsyncram_component" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v Line: 99
 Info (12133): Instantiated megafunction "memery:memery0|altsyncram:altsyncram_component" with the following parameter: File: D:/program/FPGA/DigitalCircuit-ComputerSystem/memery.v Line: 99
@@ -4945,11 +5025,69 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mux_
 Info (12128): Elaborating entity "mux_2hb" for hierarchy "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|mux_2hb:mux4" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 53
 Warning (12125): Using design file vga_ctrl.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: vga_ctrl File: D:/program/FPGA/DigitalCircuit-ComputerSystem/vga_ctrl.v Line: 1
-Info (12128): Elaborating entity "vga_ctrl" for hierarchy "vga_ctrl:my_vga" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 107
+Info (12128): Elaborating entity "vga_ctrl" for hierarchy "vga_ctrl:my_vga" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 111
 Warning (10230): Verilog HDL assignment warning at vga_ctrl.v(45): truncated value with size 32 to match size of target (4) File: D:/program/FPGA/DigitalCircuit-ComputerSystem/vga_ctrl.v Line: 45
 Warning (10230): Verilog HDL assignment warning at vga_ctrl.v(48): truncated value with size 32 to match size of target (6) File: D:/program/FPGA/DigitalCircuit-ComputerSystem/vga_ctrl.v Line: 48
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a0" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 55
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a1" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 90
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a2" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 125
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a3" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 160
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a4" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 195
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a5" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 230
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a6" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 265
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a7" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 300
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a8" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 335
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a9" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 370
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a10" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 405
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a11" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 440
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a12" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 475
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a13" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 510
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a14" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 545
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a15" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 580
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a16" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 615
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a17" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 650
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a18" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 685
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a19" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 720
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a20" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 755
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a21" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 790
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a22" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 825
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a23" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 860
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a24" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 895
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a25" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 930
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a26" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 965
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a27" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1000
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a28" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1035
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a29" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1070
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a30" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1105
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a31" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1140
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a40" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1455
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a41" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1490
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a42" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1525
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a43" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1560
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a44" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1595
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a45" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1630
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a46" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1665
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a47" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1700
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a48" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1735
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a49" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1770
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a50" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1805
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a51" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1840
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a52" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1875
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a53" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1910
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a54" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1945
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a55" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 1980
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a56" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2015
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a57" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2050
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a58" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2085
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a59" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2120
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a60" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2155
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a61" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2190
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a62" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2225
+        Warning (14320): Synthesized away node "memery:memery0|altsyncram:altsyncram_component|altsyncram_duj2:auto_generated|ram_block1a63" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/db/altsyncram_duj2.tdf Line: 2260
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "allchar" is uninferred due to asynchronous read logic File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 60
+    Info (276007): RAM logic "allchar" is uninferred due to asynchronous read logic File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 61
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "AUD_ADCLRCK" has no driver File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 37
@@ -4976,27 +5114,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX2[4]" is stuck at VCC File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 20
     Warning (13410): Pin "HEX2[5]" is stuck at VCC File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 20
     Warning (13410): Pin "HEX2[6]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 20
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 21
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 21
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 21
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 21
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 21
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 21
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 21
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 22
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 22
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 22
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 22
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 22
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 22
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 22
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 23
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 23
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 23
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 23
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 23
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 23
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 23
     Warning (13410): Pin "VGA_B[0]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 27
     Warning (13410): Pin "VGA_B[1]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 27
     Warning (13410): Pin "VGA_B[2]" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 27
@@ -5014,6 +5131,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "AUD_XCK" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 41
     Warning (13410): Pin "FPGA_I2C_SCLK" is stuck at GND File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 50
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 24 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/program/FPGA/DigitalCircuit-ComputerSystem/output_files/cs.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -5034,17 +5152,17 @@ Warning (21074): Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[8]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 12
     Warning (15610): No output dependent on input pin "SW[9]" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 12
     Warning (15610): No output dependent on input pin "AUD_ADCDAT" File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 36
-Info (21057): Implemented 4075 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4543 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
-    Info (21059): Implemented 148 output pins
+    Info (21059): Implemented 180 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 3804 logic cells
-    Info (21064): Implemented 96 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4197 warnings
-    Info: Peak virtual memory: 4943 megabytes
-    Info: Processing ended: Wed Dec 25 18:57:40 2019
-    Info: Elapsed time: 00:01:01
-    Info: Total CPU time (on all processors): 00:01:14
+    Info (21061): Implemented 4296 logic cells
+    Info (21064): Implemented 40 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4233 warnings
+    Info: Peak virtual memory: 4954 megabytes
+    Info: Processing ended: Wed Dec 25 22:02:56 2019
+    Info: Elapsed time: 00:00:38
+    Info: Total CPU time (on all processors): 00:01:01
 
 
 +------------------------------------------+

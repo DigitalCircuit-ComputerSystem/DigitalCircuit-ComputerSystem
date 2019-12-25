@@ -69,6 +69,7 @@ key_input:
 #	beq $23, $0, noinput
 #	nop
 	lbu $23, 0x1600($0)  #键盘输入
+	lbu $23, 0x1600($0)  #键盘输入
 	nop
 	beq $23, $0, noinput
 	nop
@@ -102,7 +103,7 @@ print_asc:
 #从1900开始存放每一行的行位置, 0x2000起存放vga映射，每行只能显示64个字符
 input_newline:
 	nop
-	sb $25, 0x2000($24) 
+	sb $25, 0x1900($24) 
 	ori $25, $0, 0x0
 	addi $24, $24, 0x1
 	j finish_input

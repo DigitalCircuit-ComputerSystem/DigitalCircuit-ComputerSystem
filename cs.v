@@ -50,7 +50,8 @@ module cs(
 	output		          		FPGA_I2C_SCLK,
 	inout 		          		FPGA_I2C_SDAT,
 	output [31:0] r31,
-	output [31:0] r23
+	output [31:0] r23,
+	output [31:0] r5
 );
 
 reg [23:0]vgadata1;
@@ -67,11 +68,12 @@ reg[8:0]linedata;
 wire fsmen;
 wire [32:0] pc;
 wire [31:0] intr;  //执行指令
-wire [7:0]fsmin;
+reg [7:0]fsmin;
 wire cs_clk;
 wire vga_clk;
 initial begin
 	VGA_SYNC_N = 0;
+	fsmin = 8'h30;
 	$readmemh("D:/program/FPGA/11/vga_font.txt", allchar, 0, 4095);
 end
 
@@ -79,7 +81,6 @@ end
 assign cs_clk = KEY[0];
 clkgen #(25000000) my_vgaclk(CLOCK_50,SW[0],1'b1,vga_clk);
 //fsm myfsm(.clk(PS2_CLK), .data(PS2_DAT), .asc(fsmin),.en(fsmen));   //当前存数据的地址
-assign fsmin = 8'h30;
 assign HEX2 = fsmin[6:0];
 wire [31:0] wdata;
 wire wren;
@@ -90,16 +91,19 @@ wire rst;
 
 mips_os os0(.clock(cs_clk), .address(pc[11:2]), .q(intr));
 cpu cpu0(.rst(rst),.clk(cs_clk), .inst(intr),.pc(pc),.mem_addr(memaddr),
-		.mem_read_data(rdata),.wren(wren),.mem_write_data(wdata), .r31(r31), .r23(r23));
+		.mem_read_data(rdata),.wren(wren),.mem_write_data(wdata), .r31(r31), .r23(r23), .r5(r5));
 
-memery memery0(.address_a(memaddr), .data_a(wdata), .wren_a(wren),.clock_a(cs_clk), .q_a(rdata1),
-					.address_b(14'h2000|{vgavaddr[8:4],pos[5:0]}),.wren_b(1'b0), .q_b(vga_asc), .clock_b(vga_clk));
+memery memery0(.address_a(memaddr[13:0]), .data_a(wdata), .wren_a(wren),.clock_a(cs_clk), .q_a(rdata1),
+					.address_b(/*{3'b100,vgavaddr[8:4],pos[5:0]}*/14'h2000),.wren_b(1'b0), .q_b(vga_asc), .clock_b(vga_clk));
 
-assign rdata = memaddr == 14'h1600 ? fsmin: rdata1;
+assign rdata = 8'h30;// memaddr == 14'h1600 ? fsmin: rdata1;
 always @(negedge vga_clk) begin
 	 linedata = allchar[{vga_asc,vgavaddr[3:0]}];
 	 vgadata1 = linedata[offset]? 24'hFFFFFF: 24'h000000;
 end
+assign HEX3 = vga_asc[6:0];
+assign HEX4 = memaddr[6:0];
+assign HEX5 = memaddr[13:7];
 assign vgadata = vgadata1;
 assign VGA_CLK = vga_clk;
 vga_ctrl my_vga(.pclk(vga_clk), .reset(rst), .vga_data(vgadata), .h_addr(vgahaddr), 

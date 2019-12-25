@@ -1,3 +1,3 @@
 Info (10281): Verilog HDL Declaration information at cs.v(28): object "VGA_CLK" differs only in case from object "vga_clk" in the same scope File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v Line: 28
-Warning (10268): Verilog HDL information at cpu.v(120): always construct contains both blocking and non-blocking assignments File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v Line: 120
+Warning (10268): Verilog HDL information at cpu.v(126): always construct contains both blocking and non-blocking assignments File: D:/program/FPGA/DigitalCircuit-ComputerSystem/cpu.v Line: 126
 Warning (10268): Verilog HDL information at fsm.v(37): always construct contains both blocking and non-blocking assignments File: D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v Line: 37
