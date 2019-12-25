@@ -11,7 +11,7 @@ module cpu(
 	output wire [31:0] r31
 );
 
-//reg is_jmp;
+reg is_jmp;
 reg [31:0] jmp_addr;
 reg [31:0] reg1_data;
 reg [31:0] reg2_data;
@@ -118,6 +118,7 @@ parameter  EXE_LBU=6'b100100;
 always @ (posedge clk) begin
 
 	if(rst) pc <= 32'b0;
+	else if(is_jmp)pc<=pc;
 	else pc <= pc + 32'd4;
 	
 	case(opcode)
@@ -125,6 +126,7 @@ always @ (posedge clk) begin
 			case(funct)
 			
 				EXE_ADD: begin   //rd<-rs+rt
+					is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -135,6 +137,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_ADDU: begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -145,6 +148,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_SUB:begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -155,6 +159,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_SUBU:begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -165,6 +170,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_AND:begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -175,6 +181,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_OR:begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -185,6 +192,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_XOR:begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -195,6 +203,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_NOR:begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -205,6 +214,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_SLT:begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -216,6 +226,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_SLTU:begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -227,6 +238,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_SLL:begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg2_addr<=rt;//reg2默认rt
 					reg2_data<= all_reg[reg2_addr];
@@ -243,6 +255,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_SRA:begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg2_addr<=rt;//reg2默认rt
 					reg2_data<= all_reg[reg2_addr];
@@ -251,6 +264,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_SLLV:begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -261,6 +275,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_SRLV:begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -271,6 +286,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_SRAV:begin
+				is_jmp<=0;
 					wraddr<=rd;   //默认写入rd
 					reg1_addr<=rs;//reg1默认rs
 					reg2_addr<=rt;//reg2默认rt
@@ -281,6 +297,7 @@ always @ (posedge clk) begin
 				end
 				
 				EXE_JR:begin
+				is_jmp<=1;
 					reg1_addr<=rs;//reg1默认rs
 					reg1_data<= all_reg[reg1_addr];
 					jmp_addr<=reg1_data;
@@ -292,6 +309,7 @@ always @ (posedge clk) begin
 			end
 		
 		EXE_ADDI:begin   //I-type   rt<-rs+(sign-extended)immediate			
+		is_jmp<=0;
 			wraddr<=rt;   //默认写入rd
 			reg1_addr<=rs;//reg1默认rs
 			reg1_data<= all_reg[reg1_addr];
@@ -301,6 +319,7 @@ always @ (posedge clk) begin
 		end
 		
 		EXE_ADDIU:begin
+		is_jmp<=0;
 			wraddr<=rt;   //默认写入rd
 			reg1_addr<=rs;//reg1默认rs
 			reg1_data<= all_reg[reg1_addr];
@@ -310,6 +329,7 @@ always @ (posedge clk) begin
 		end
 		
 		EXE_ANDI:begin
+		is_jmp<=0;
 			wraddr<=rt;   //默认写入rd
 			reg1_addr<=rs;//reg1默认rs
 			reg1_data<= all_reg[reg1_addr];
@@ -319,6 +339,7 @@ always @ (posedge clk) begin
 		end
 		//001100 00001 00011 
 		EXE_ORI:begin
+		is_jmp<=0;
 			wraddr<=rt;   //默认写入rd
 			reg1_addr<=rs;//reg1默认rs
 			reg1_data<= all_reg[reg1_addr];
@@ -328,6 +349,7 @@ always @ (posedge clk) begin
 		end
 		
 		EXE_XORI:begin
+		is_jmp<=0;
 			wraddr<=rt;   //默认写入rd
 			reg1_addr<=rs;//reg1默认rs
 			reg1_data<= all_reg[reg1_addr];
@@ -337,6 +359,7 @@ always @ (posedge clk) begin
 		end
 		
 		EXE_LUI:begin
+		is_jmp<=0;
 			//aluop<=LUI;   //将16位立即数放到目标寄存器高16位，低16位填0
 			wraddr<=rt;
 			imm<={Iimm[15:0],16'H0};  //imm*65536
@@ -345,6 +368,7 @@ always @ (posedge clk) begin
 		end
 		
 		EXE_LW:begin
+		is_jmp<=0;
 		//不确定
 			//aluop<=LW;    //$1=memory[$2+10]
 			wraddr<=rt;   //默认写入rd
@@ -358,6 +382,7 @@ always @ (posedge clk) begin
 		end
 		
 		EXE_SW:begin
+		is_jmp<=0;
 		//不确定
 			//aluop<=SW;    //memory[$2+10]=$1
 			reg1_addr<=rs;//reg1默认rs
@@ -371,6 +396,7 @@ always @ (posedge clk) begin
 		end
 		
 		EXE_BEQ:begin
+		is_jmp<=1;
 			//aluop<=BEQ;
 			imm<=imm_sext_mov2;
 			reg1_addr<=rs;//reg1默认rs
@@ -385,6 +411,7 @@ always @ (posedge clk) begin
 		end
 		
 		EXE_BNE:begin    //和BEQ类似，只不过是不等于
+		is_jmp<=1;
 			//aluop<=BEQ;
 			imm<=imm_sext_mov2;
 			reg1_addr<=rs;//reg1默认rs
@@ -399,6 +426,7 @@ always @ (posedge clk) begin
 		end
 		
 		EXE_SLTI:begin
+		is_jmp<=0;
 			imm=imm_sext;   //符号扩展
 			wraddr<=rt;
 			reg1_addr<=rs;//reg1默认rs
@@ -409,6 +437,7 @@ always @ (posedge clk) begin
 		end
 		
 		EXE_SLTIU:begin
+		is_jmp<=0;
 			imm=imm_zext;   //符号扩展
 			wraddr<=rt;
 			reg1_addr<=rs;//reg1默认rs
@@ -422,6 +451,7 @@ always @ (posedge clk) begin
 			
 		//end
 		EXE_BLEZ:begin
+		is_jmp<=1;
 			//aluop<=BLEZ;
 			reg1_addr<=rs;//reg1默认rs
 			reg1_data<= all_reg[reg1_addr];
@@ -437,7 +467,7 @@ always @ (posedge clk) begin
 		//end
 		//EXE_REGIMM:  //先不写吧
 		EXE_J:begin
-			
+			is_jmp<=1;
 			imm<={{pcadd4[31:28]},Jimm,{2'b00}};
 			//jmp_flag<=1;
 			jmp_addr<=imm;
@@ -446,6 +476,7 @@ always @ (posedge clk) begin
 		
 		
 		EXE_JAL:begin
+		is_jmp<=1;
 			//aluop<=JAL;
 			//wreg<=ENABLE;
 			wraddr<=5'b11111;  //貌似是$31
@@ -459,6 +490,7 @@ always @ (posedge clk) begin
 		//EX_LB:begin
 		//end
 		EXE_LBU:begin
+		is_jmp<=0;
 			wraddr<=rt;   //默认写入rd
 			reg1_addr<=rs;//reg1默认rs
 			reg1_data<= all_reg[reg1_addr];
