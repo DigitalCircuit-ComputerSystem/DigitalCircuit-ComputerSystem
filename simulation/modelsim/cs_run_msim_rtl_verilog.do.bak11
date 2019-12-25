@@ -11,7 +11,6 @@ vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSys
 vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/clkgen.v}
 vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/vga_ctrl.v}
 vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/cs.v}
-vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem {D:/program/FPGA/DigitalCircuit-ComputerSystem/fsm.v}
 
 vlog -vlog01compat -work work +incdir+D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim {D:/program/FPGA/DigitalCircuit-ComputerSystem/simulation/modelsim/cs.vt}
 

@@ -8,9 +8,12 @@ module cpu(
 	output reg [31:0] mem_addr,  //内存访问地址
 	output reg [31:0] mem_write_data,  //要写到内存里的内容
 	output reg wren,  //内存访问使能端
-	output wire [31:0] r31
+	output wire [31:0] r31,
+	output wire [31:0] r23
 );
-
+initial begin
+	pc = 0;
+end
 reg is_jmp;
 reg [31:0] jmp_addr;
 reg [31:0] reg1_data;
@@ -39,6 +42,7 @@ regs regs0 (.clk(clk), .write_data(write_data), .write_reg(write_reg), .write_en
 reg [31:0] imm;
 reg[31:0] all_reg[31:0];    //cpu内部32个寄存器
 assign r31 = all_reg[31];
+assign r23 = all_reg[23];
 wire [5:0] opcode=inst[31:26];
 wire [4:0] rs=inst[25:21];    //R-type&I-type
 wire [4:0] rt=inst[20:16];    //R-type&I-type
@@ -113,12 +117,12 @@ parameter  EXE_LBU=6'b100100;
 	.reg1_data(reg1_data), .read_data2_O(reg2_data));
 */
 
-
+reg [31:0] jmp_pc;
 
 always @ (posedge clk) begin
 
 	if(rst) pc <= 32'b0;
-	else if(is_jmp)pc<=pc;
+	else if(is_jmp)pc<=jmp_pc;
 	else pc <= pc + 32'd4;
 	
 	case(opcode)
@@ -301,7 +305,7 @@ always @ (posedge clk) begin
 					reg1_addr<=rs;//reg1默认rs
 					reg1_data<= all_reg[reg1_addr];
 					jmp_addr<=reg1_data;
-					pc<=jmp_addr;
+					jmp_pc<=jmp_addr;
 				end
 				default:begin
 				end
@@ -406,7 +410,7 @@ always @ (posedge clk) begin
 			if(reg1_data==reg2_data)begin
 				//_flag<=1;
 				jmp_addr<=pcadd4+imm;
-				pc<=jmp_addr;
+				jmp_pc<=jmp_addr;
 			end
 		end
 		
@@ -421,7 +425,7 @@ always @ (posedge clk) begin
 			if(reg1_data!=reg2_data)begin
 				//_flag<=1;
 				jmp_addr<=pcadd4+imm;
-				pc<=jmp_addr;
+				jmp_pc<=jmp_addr;
 			end
 		end
 		
@@ -459,7 +463,7 @@ always @ (posedge clk) begin
 				imm<=pcadd4+imm_sext_mov2;
 				//jmp_flag<=1;
 				jmp_addr<=imm;
-				pc<=jmp_addr;
+				jmp_pc<=jmp_addr;
 			end
 		end
 		
@@ -471,7 +475,7 @@ always @ (posedge clk) begin
 			imm<={{pcadd4[31:28]},Jimm,{2'b00}};
 			//jmp_flag<=1;
 			jmp_addr<=imm;
-			pc<=jmp_addr;
+			jmp_pc<=jmp_addr;
 		end
 		
 		
@@ -484,7 +488,7 @@ always @ (posedge clk) begin
 			wdata<=pcadd8;
 			all_reg[wraddr] <= wdata;
 			jmp_addr<=imm;
-			pc<=jmp_addr;
+			jmp_pc<=jmp_addr;
 		end
 		
 		//EX_LB:begin

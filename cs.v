@@ -49,7 +49,8 @@ module cs(
 	//////////// I2C for Audio and Video-In //////////
 	output		          		FPGA_I2C_SCLK,
 	inout 		          		FPGA_I2C_SDAT,
-	output [31:0] r31
+	output [31:0] r31,
+	output [31:0] r23
 );
 
 reg [23:0]vgadata1;
@@ -66,7 +67,9 @@ reg[8:0]linedata;
 wire fsmen;
 wire [32:0] pc;
 wire [31:0] intr;  //执行指令
-
+wire [7:0]fsmin;
+wire cs_clk;
+wire vga_clk;
 initial begin
 	VGA_SYNC_N = 0;
 	$readmemh("D:/program/FPGA/11/vga_font.txt", allchar, 0, 4095);
@@ -75,7 +78,9 @@ end
 //clkgen #(500000) my_csclk(CLOCK_50,SW[0],1'b1,cs_clk);
 assign cs_clk = KEY[0];
 clkgen #(25000000) my_vgaclk(CLOCK_50,SW[0],1'b1,vga_clk);
-fsm myfsm(.clk(PS2_CLK), .data(PS2_DAT), .asc(fsmin),.en(fsmen));   //当前存数据的地址
+//fsm myfsm(.clk(PS2_CLK), .data(PS2_DAT), .asc(fsmin),.en(fsmen));   //当前存数据的地址
+assign fsmin = 8'h30;
+assign HEX2 = fsmin[6:0];
 wire [31:0] wdata;
 wire wren;
 wire [31:0] rdata;
@@ -85,7 +90,7 @@ wire rst;
 
 mips_os os0(.clock(cs_clk), .address(pc[11:2]), .q(intr));
 cpu cpu0(.rst(rst),.clk(cs_clk), .inst(intr),.pc(pc),.mem_addr(memaddr),
-		.mem_read_data(rdata),.wren(wren),.mem_write_data(wdata), .r31(r31));
+		.mem_read_data(rdata),.wren(wren),.mem_write_data(wdata), .r31(r31), .r23(r23));
 
 memery memery0(.address_a(memaddr), .data_a(wdata), .wren_a(wren),.clock_a(cs_clk), .q_a(rdata1),
 					.address_b(14'h2000|{vgavaddr[8:4],pos[5:0]}),.wren_b(1'b0), .q_b(vga_asc), .clock_b(vga_clk));

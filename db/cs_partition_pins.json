@@ -260,11 +260,131 @@
 					"strict" : false
 				},
 				{
-					"name" : "PS2_CLK",
+					"name" : "r23[0]",
 					"strict" : false
 				},
 				{
-					"name" : "PS2_DAT",
+					"name" : "r23[1]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[2]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[3]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[4]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[5]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[6]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[7]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[8]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[9]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[10]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[11]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[12]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[13]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[14]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[15]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[16]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[17]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[18]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[19]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[20]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[21]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[22]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[23]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[24]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[25]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[26]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[27]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[28]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[29]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[30]",
+					"strict" : false
+				},
+				{
+					"name" : "r23[31]",
 					"strict" : false
 				},
 				{

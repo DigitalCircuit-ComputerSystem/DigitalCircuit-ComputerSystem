@@ -17,7 +17,7 @@
 // suit user's needs .Comments are provided in each section to help the user    
 // fill out necessary details.                                                  
 // *****************************************************************************
-// Generated on "12/23/2019 21:29:13"
+// Generated on "12/25/2019 18:43:16"
                                                                                 
 // Verilog Test Bench template for design : cs
 // 
@@ -72,6 +72,7 @@ wire VGA_HS;
 wire [7:0]  VGA_R;
 wire VGA_SYNC_N;
 wire VGA_VS;
+wire [31:0]  r23;
 wire [31:0]  r31;
 
 // assign statements (if any)                          
@@ -118,6 +119,7 @@ cs i1 (
 	.VGA_R(VGA_R),
 	.VGA_SYNC_N(VGA_SYNC_N),
 	.VGA_VS(VGA_VS),
+	.r23(r23),
 	.r31(r31)
 );
 initial                                                
@@ -136,6 +138,6 @@ begin
                                                        
 #2; KEY[0] = ~KEY[0];                                             
 // --> end                                             
-end                                                  
+end                                                      
 endmodule
 
