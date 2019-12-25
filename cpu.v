@@ -7,7 +7,8 @@ module cpu(
 	output reg [31:0] pc,
 	output reg [31:0] mem_addr,  //内存访问地址
 	output reg [31:0] mem_write_data,  //要写到内存里的内容
-	output reg wren  //内存访问使能端
+	output reg wren,  //内存访问使能端
+	output wire [31:0] r31
 );
 
 //reg is_jmp;
@@ -18,7 +19,9 @@ reg [31:0] wdata;
 reg [4:0] wraddr;
 reg [4:0] reg1_addr;  //读的寄存器的地址
 reg [4:0] reg2_addr;
-
+initial begin
+	pc = 0;
+end
 //assign address=pc[6:2];    //暂时用的5位pc
 
 /*fetch_pc fetch_pc0 (.rst(rst), .clk(clk), .pc_i(pc), .is_jmp(is_jmp), .jmp_pc(jmp_pc), .pc_o(pc));  //取指令以及更新pc
@@ -35,7 +38,7 @@ regs regs0 (.clk(clk), .write_data(write_data), .write_reg(write_reg), .write_en
 	
 reg [31:0] imm;
 reg[31:0] all_reg[31:0];    //cpu内部32个寄存器
-
+assign r31 = all_reg[31];
 wire [5:0] opcode=inst[31:26];
 wire [4:0] rs=inst[25:21];    //R-type&I-type
 wire [4:0] rt=inst[20:16];    //R-type&I-type
@@ -444,7 +447,7 @@ always @ (posedge clk) begin
 		
 		EXE_JAL:begin
 			//aluop<=JAL;
-			wreg<=ENABLE;
+			//wreg<=ENABLE;
 			wraddr<=5'b11111;  //貌似是$31
 			imm<={{pcadd4[31:28]},Jimm,{2'b00}};
 			wdata<=pcadd8;

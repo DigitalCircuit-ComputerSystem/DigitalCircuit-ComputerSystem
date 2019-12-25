@@ -84,7 +84,7 @@ wire [31:0] memaddr;
 wire rst;
 
 mips_os os0(.clock(cs_clk), .address(pc[11:2]), .q(intr));
-cpu cpu0(.rst(rst),.clk(cs_clk), .inst(intr),.pc_o(pc),.mem_addr(memaddr),
+cpu cpu0(.rst(rst),.clk(cs_clk), .inst(intr),.pc(pc),.mem_addr(memaddr),
 		.mem_read_data(rdata),.wren(wren),.mem_write_data(wdata), .r31(r31));
 
 memery memery0(.address_a(memaddr), .data_a(wdata), .wren_a(wren),.clock_a(cs_clk), .q_a(rdata1),
