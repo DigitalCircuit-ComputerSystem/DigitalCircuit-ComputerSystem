@@ -38,7 +38,7 @@ module vga_ctrl(
 			if (x_cnt == h_total)begin x_cnt <= 1; end
 			else
 				x_cnt <= x_cnt + 10'd1;
-			if(x_cnt <= 145 || x_cnt >722) begin     //是否需要等于呢
+			if(x_cnt <= 145 || x_cnt >721) begin     //是否需要等于呢
 				boffset <= 0;
 				hblock <= 0;
 			end
