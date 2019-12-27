@@ -10,7 +10,16 @@ module cpu(
 	output reg wren,  //内存访问使能端
 	output wire [31:0] r31,
 	output wire [31:0] r23,
-	output wire [31:0] r5
+	output wire [31:0] r4,
+	output wire [31:0] r5,
+	output wire [31:0] r6,
+	output wire [31:0] r24,
+	output wire [31:0] r25,
+	output wire [31:0] r8,
+	output wire [31:0] r9,
+	output wire [31:0] r10,
+	output wire [31:0] r11,
+	output wire [31:0] r12
 );
 
 reg is_jmp;
@@ -41,6 +50,16 @@ reg[31:0] all_reg[31:0];    //cpu内部32个寄存器
 assign r31 = all_reg[31];
 assign r23 = all_reg[23];
 assign r5 = all_reg[5];
+assign r4 = all_reg[4];
+assign r6 = all_reg[6];
+assign r24 = all_reg[24];
+assign r25 = all_reg[25];
+assign r9 = all_reg[9];
+assign r10 = all_reg[10];
+assign r11 = all_reg[11];
+assign r12 = all_reg[12];
+assign r8 = all_reg[8];
+
 wire [5:0] opcode=inst[31:26];
 wire [4:0] rs=inst[25:21];    //R-type&I-type
 wire [4:0] rt=inst[20:16];    //R-type&I-type
@@ -123,7 +142,7 @@ parameter  EXE_SB=6'b101000;
 
 reg [31:0] jmp_pc;
 
-always @ (posedge clk) begin
+always @ (negedge clk) begin
 
 	is_jmp = 0;
 	case(opcode)
@@ -159,7 +178,7 @@ always @ (posedge clk) begin
 					reg2_addr=rt;//reg2默认rt
 					reg1_data= all_reg[reg1_addr];
 					reg2_data= all_reg[reg2_addr];
-					wdata=reg1_data+neg;
+					wdata=reg1_data - reg2_data;
 					all_reg[wraddr] = wdata;    //需要写入寄存器，默认的rd 
 				end
 				
@@ -427,7 +446,7 @@ always @ (posedge clk) begin
 			if(reg1_data==reg2_data)begin
 				//_flag<=1;
 				is_jmp=1;
-				jmp_addr=pcadd4+imm;
+				jmp_addr=pc+imm;
 				jmp_pc=jmp_addr;
 			end
 		end
@@ -443,7 +462,7 @@ always @ (posedge clk) begin
 			if(reg1_data!=reg2_data)begin
 				//_flag<=1;
 				is_jmp=1;
-				jmp_addr=pcadd4+imm;
+				jmp_addr=pc+imm;
 				jmp_pc=jmp_addr;
 			end
 		end
@@ -504,7 +523,7 @@ always @ (posedge clk) begin
 			//wreg<=ENABLE;
 			wraddr=5'b11111;  //貌似是$31
 			imm={{pcadd4[31:28]},Jimm,{2'b00}};
-			wdata=pc;
+			wdata=pcadd4;
 			all_reg[wraddr] = wdata;
 			jmp_addr=imm;
 			jmp_pc=jmp_addr;

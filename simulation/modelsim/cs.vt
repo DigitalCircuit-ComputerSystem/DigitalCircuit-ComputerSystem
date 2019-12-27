@@ -17,7 +17,7 @@
 // suit user's needs .Comments are provided in each section to help the user    
 // fill out necessary details.                                                  
 // *****************************************************************************
-// Generated on "12/25/2019 21:44:47"
+// Generated on "12/27/2019 03:03:32"
                                                                                 
 // Verilog Test Bench template for design : cs
 // 
@@ -45,6 +45,7 @@ reg treg_PS2_CLK2;
 reg treg_PS2_DAT;
 reg treg_PS2_DAT2;
 reg [9:0] SW;
+reg [7:0] fsmin1;
 // wires                                               
 wire AUD_ADCLRCK;
 wire AUD_BCLK;
@@ -72,8 +73,17 @@ wire VGA_HS;
 wire [7:0]  VGA_R;
 wire VGA_SYNC_N;
 wire VGA_VS;
+wire [31:0]  r4;
 wire [31:0]  r5;
+wire [31:0]  r6;
+wire [31:0]  r8;
+wire [31:0]  r9;
+wire [31:0]  r10;
+wire [31:0]  r11;
+wire [31:0]  r12;
 wire [31:0]  r23;
+wire [31:0]  r24;
+wire [31:0]  r25;
 wire [31:0]  r31;
 
 // assign statements (if any)                          
@@ -120,26 +130,39 @@ cs i1 (
 	.VGA_R(VGA_R),
 	.VGA_SYNC_N(VGA_SYNC_N),
 	.VGA_VS(VGA_VS),
+	.fsmin1(fsmin1),
+	.r4(r4),
 	.r5(r5),
+	.r6(r6),
+	.r8(r8),
+	.r9(r9),
+	.r10(r10),
+	.r11(r11),
+	.r12(r12),
 	.r23(r23),
+	.r24(r24),
+	.r25(r25),
 	.r31(r31)
 );
 initial                                                
-begin                                                  
-// code that executes only once                        
-// insert code here --> begin                          
-CLOCK_50 = 0;
-KEY = 0;                     
+begin                                                                          
+   KEY = 0;                
 end                                                    
-always                                                 
-// optional sensitivity list                           
-// @(event1 or event2 or .... eventn)                  
-begin                                                  
-#10; KEY[0] = ~KEY[0];                                          
-end                   
+always                                                                 
+begin                                                                           
+                                                       
+#1; KEY[0] = ~KEY[0];                                          
+end 
 
 always begin
-#1;  CLOCK_50 = ~CLOCK_50;
-end                                
+#60; fsmin1 = 8'h2e;
+#90; fsmin1 = 8'h2f;
+#90; fsmin1 = 8'h66;
+#90; fsmin1 = 8'h69;
+#90; fsmin1 = 8'h62;
+#90; fsmin1 = 8'h0d;
+#120; fsmin1 = 8'h38;
+#90; fsmin1 = 8'h0d;
+end                                                        
 endmodule
 
